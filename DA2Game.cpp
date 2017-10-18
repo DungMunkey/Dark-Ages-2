@@ -1,6 +1,6 @@
 #include "DA2Game.h"
 
-bool cDA2Game::Init(CDisplay* d, cDA2Gfx *gfx, cDA2Input *inp, cItemController *itm, cDA2Music *mus){
+bool cDA2Game::Init(CDisplay* d, cDA2Gfx *gfx, cDA2Input *inp, cItemController *itm, cDA2Music *mus, sConf* con){
 	if((display=d)==NULL) return false;
 	if((ddGfx=gfx)==NULL) return false;
 	if((diObj=inp)==NULL) return false;
@@ -36,10 +36,12 @@ bool cDA2Game::Init(CDisplay* d, cDA2Gfx *gfx, cDA2Input *inp, cItemController *
 	shop.Init(d,gfx,inp,&Party,itm);
 	journal.Init(d,gfx,inp,&Flags[0]);
 	options.Init(d,gfx,inp);
+  options.SetConf(con);
   options.Update();
 	loadSave.Init(d,gfx,inp,&Player,&Party,&Maps[0],&Flags[0],&animCounter,&journal,&renderSpeed,&options);
 	intro.Init(d,gfx,inp,&Party,&animCounter);
 	battleEngine.Init(d,gfx,inp,&Party,itm);
+  conf=con;
 	
 
 	mainStack.Push(GameRender);
@@ -788,7 +790,7 @@ void cDA2Game::NewGame(){
 	intro.SetDefault();
 	mainStack.Push(IntroScreen);
 
-  cout << "NewGame() ok" << endl;
+  //cout << "NewGame() ok" << endl;
 
 }
 
@@ -876,8 +878,8 @@ bool cDA2Game::Render() {
 
 	//Test text display
 	char txt[128];
-	sprintf(txt,"Map: %d\nX-Coord: %d\nY-Coord: %d\nFPS: %d\nxs: %d  ys:%d",MapWin[1][1],PlayerCam.TilePosX,PlayerCam.TilePosY,FPS,xSpeed,ySpeed);
-	text.drawText(display->renderer,50,50,0,txt);
+	//sprintf(txt,"Map: %d\nX-Coord: %d\nY-Coord: %d\nFPS: %d\nxs: %d  ys:%d",MapWin[1][1],PlayerCam.TilePosX,PlayerCam.TilePosY,FPS,xSpeed,ySpeed);
+	//text.drawText(display->renderer,50,50,0,txt);
 
 	//Display border
 	if(bBorder){
@@ -901,8 +903,8 @@ bool cDA2Game::Render() {
   r.w=16;
   SDL_RenderCopy(display->renderer, ddGfx->Cursor->texture, &ddGfx->aCursor[Cursor[x][y]], &r);
   //ddObj->ddsb->Blt(&r, ddGfx->Cursor,&ddGfx->aCursor[Cursor[x][y]],DDBLT_WAIT|DDBLT_KEYSRC,NULL);
-	sprintf(txt,"MouseX: %d  MouseY: %d  Cursor: %d",diObj->MouseX(),diObj->MouseY(),Cursor[x][y]);
-	text.drawText(display->renderer,50,35,0,txt);
+	//sprintf(txt,"MouseX: %d  MouseY: %d  Cursor: %d",diObj->MouseX(),diObj->MouseY(),Cursor[x][y]);
+	//text.drawText(display->renderer,50,35,0,txt);
 
 
 	//f=fopen("Render.txt","at");
@@ -1367,21 +1369,6 @@ bool cDA2Game::Logic() {
 		}
 	}
 
-  /*1
-	ElapsedTime=msTime-PlayerTimer;
-	if(ElapsedTime > 4 || ElapsedTime<0){
-		PlayerTimer=msTime;
-    */
-		if(diObj->MousePress(0)){
-			xProgress+=0.25*xSpeed*renderSpeed;
-			yProgress+=0.25*ySpeed*renderSpeed;
-		}
-    /*1
-	}
-  */
-	
-
-	//bool bPlayerMove=true;
 	if(diObj->MousePress(0)){
 
 		diObj->LockMouse(0);
@@ -1391,190 +1378,109 @@ bool cDA2Game::Logic() {
     bool bX=false;
 		if(diObj->MouseX() > (diObj->MouseY()+480)/2.25) {
 			if(diObj->MouseX()>500) {
-				//x+=3;
-        //xSpeed+=3;
-        if(tickX > 2){  
-          xSpeed+=1;
-          bX=true;
-        }
+        xSpeed+=3;
+        if(tickX >= 1 * renderSpeed) bX=true;
 			}	else if(diObj->MouseX()>410) {
-				//x+=2;
-				//xSpeed+=2;
-        if(tickX > 4){
-          xSpeed+=1;
-          bX=true;
-        }
+				xSpeed+=2;
+        if(tickX >= 2 * renderSpeed) bX=true;
 			}	else {
-				//x++;
-				//xSpeed+=1;
-        if(tickX > 6){
-          xSpeed+=1;
-          bX=true;
-        }
+				xSpeed+=1;
+        if(tickX >= 3 * renderSpeed) bX=true;
 			}
 		}
 		if(diObj->MouseX() < (diObj->MouseY()-1040)/-2.5) {
 			if(diObj->MouseX()<140) {
-				//x-=3;
-				//xSpeed-=3;
-        if(tickX > 2){
-          xSpeed-=1;
-          bX=true;
-        }
+				xSpeed-=3;
+        if(tickX >= 1 * renderSpeed) bX=true;
 			}	else if(diObj->MouseX()<230) {
-				//x-=2;
-				//xSpeed-=2;
-        if(tickX > 4){
-          xSpeed-=1;
-          bX=true;
-        }
+				xSpeed-=2;
+        if(tickX >= 2 * renderSpeed) bX=true;
 			}	else {
-				//x--;
-				//xSpeed-=1;
-        if(tickX > 6){
-          xSpeed-=1;
-          bX=true;
-        }
+				xSpeed-=1;
+        if(tickX >= 3 * renderSpeed)  bX=true;
 			}
 		}
     if(bX)tickX=0;
 
-		if(xProgress>yProgress){
-			randomCounter=(int)xProgress;
-		} else {
-			randomCounter=(int)yProgress;
-		}
-
-
-		x=0;
-		while(xProgress>1.0){
-			x++;
-			xProgress-=1.0;
-		}
-		while(xProgress<-1.0){
-			x--;
-			xProgress+=1.0;
-		}
-
-		while(x!=0){
-			if(x>0){
+		if(bX) {
+			if(xSpeed>0){
 				PlayerCam.BumpCamera(1,0);
 				Player.X+=1;
 				if(!CheckCollide(1)){
 					PlayerCam.BumpCamera(-1,0);
 					Player.X--;
 				}
-				Player.dir=1;
 				Player.Moving=true;
-				x--;
-			} else if(x<0){
+			} else if(xSpeed<0){
 				PlayerCam.BumpCamera(-1,0);
 				Player.X-=1;
 				if(!CheckCollide(3)){
 					PlayerCam.BumpCamera(1,0);
 					Player.X++;
 				}
-				Player.dir=3;
 				Player.Moving=true;
-				x++;
 			}
 		}
 	
     bool bY=false;
 		if(diObj->MouseY() > (diObj->MouseX()*0.25)+160) {
 			if(diObj->MouseY()>380) {
-				//y+=3;
-				//ySpeed+=3;
-        if(tickY > 2){
-          ySpeed+=1;
-          bY=true;
-        }
+				ySpeed+=3;
+        if(tickY >= 1*renderSpeed) bY=true;
 			}	else if(diObj->MouseY()>310) {
-				//y+=2;
-				//ySpeed+=2;
-        if(tickY > 4){
-          ySpeed+=1;
-          bY=true;
-        }
+				ySpeed+=2;
+        if(tickY >= 2*renderSpeed) bY=true;
 			}	else {
-				//y++;
-				//ySpeed+=1;
-        if(tickY > 6){
-          ySpeed+=1;
-          bY=true;
-        }
+				ySpeed+=1;
+        if(tickY >= 3*renderSpeed) bY=true;
 			}
 		}
 		if(diObj->MouseY() < (diObj->MouseX()*-0.25)+320) {
 			if(diObj->MouseY()<100) {
-				//y-=3;
-				//ySpeed-=3;
-        if(tickY > 2){
-          ySpeed-=1;
-          bY=true;
-        }
+				ySpeed-=3;
+        if(tickY >= 1*renderSpeed) bY=true;
 			} else if(diObj->MouseY()<170) {
-				//y-=2;
-				//ySpeed-=2;
-        if(tickY > 4){
-          ySpeed-=1;
-          bY=true;
-        }
+				ySpeed-=2;
+        if(tickY >= 2 * renderSpeed) bY=true;
 			} else {
-				//y--;
-				//ySpeed-=1;
-        if(tickY > 6){
-          ySpeed-=1;
-          bY=true;
-        }
+				ySpeed-=1;
+        if(tickY >= 3 * renderSpeed) bY=true;
 			}
 		}
     if(bY)tickY=0;
 
-		y=0;
-		while(yProgress>1.0){
-			y++;
-			yProgress-=1.0;
-		}
-		while(yProgress<-1.0){
-			y--;
-			yProgress+=1.0;
-		}
-
-		while(y!=0){
-			if(y>0){
+		if(bY) {
+			if(ySpeed>0){
 				PlayerCam.BumpCamera(0,1);
 				Player.Y+=1;
 				if(!CheckCollide(0)){
 					PlayerCam.BumpCamera(0,-1);
 					Player.Y--;
 				}
-				if(abs(ySpeed)>abs(xSpeed)) Player.dir=0;
 				Player.Moving=true;
-				y--;
-			} else if(y<0){
+			} else if(ySpeed<0){
 				PlayerCam.BumpCamera(0,-1);
 				Player.Y-=1;
 				if(!CheckCollide(2)){
 					PlayerCam.BumpCamera(0,1);
 					Player.Y++;
 				}
-				if(abs(ySpeed)>abs(xSpeed)) Player.dir=2;
 				Player.Moving=true;
-				y++;
 			}
 		}
 
-		
-		if(abs(ySpeed)>abs(xSpeed)) x=ySpeed;
-		else x=xSpeed;
-		playerRender++;
-		if(playerRender>=(32-x) ){
-			if(Player.Moving) Player.frame++;
-			if(Player.frame>3)Player.frame=0;
-			playerRender=0;
-		}
+    if(xSpeed>0) Player.dir=1;
+    else if(xSpeed<0) Player.dir=3;
+    if(ySpeed>0 && abs(ySpeed)>abs(xSpeed)) Player.dir=0;
+    else if(ySpeed<0 && abs(ySpeed)>abs(xSpeed)) Player.dir=2;
 
+    if(Player.Moving) xProgress++; 
+    if(xProgress > 11) {
+      Player.frame++;
+      if(Player.frame > 3) Player.frame=0;
+      xProgress=0;
+    }
+      
 	}
 
 	if(diObj->KeyPress(KEY_S)){
@@ -1635,13 +1541,13 @@ bool cDA2Game::Logic() {
 	if(diObj->KeyPress(KEY_ADD)==true && !diObj->CheckLock(KEY_ADD)) {
 		diObj->LockKey(KEY_ADD);
 		renderSpeed++;
-		if(renderSpeed>16) renderSpeed=16;
+		if(renderSpeed>4) renderSpeed=4;
 		options.Options.GameSpeed=renderSpeed;
 	}
 	if(diObj->KeyPress(KEY_SUBTRACT)==true && !diObj->CheckLock(KEY_SUBTRACT)) {
 		diObj->LockKey(KEY_SUBTRACT);
 		renderSpeed--;
-		if(renderSpeed<4) renderSpeed=4;
+		if(renderSpeed<1) renderSpeed=1;
 		options.Options.GameSpeed=renderSpeed;
 	}
 	if(diObj->KeyPress(KEY_RIGHT)==true) {

@@ -26,9 +26,11 @@ public:
 	bool GetButton();
 	bool Logic();
 	bool Render();
+  void SetConf(sConf* con);
 	void Update();
 
 	OptionsStruct Options;
+  sConf* conf;
 
 protected:
 	SDL_Rect targets[3];

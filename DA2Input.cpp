@@ -96,7 +96,7 @@ void cDA2Input::setButton(Uint8 k, bool b){
   case SDL_BUTTON_LEFT:
     buttonState[0]=b;
     if(!b) {
-      printf("Button 1 release\n");
+      //printf("Button 1 release\n");
       mouseLocked[0]=false;
       lastButton=1;
     }
@@ -104,7 +104,7 @@ void cDA2Input::setButton(Uint8 k, bool b){
   case SDL_BUTTON_RIGHT:
     buttonState[1]=b;
     if(!b) {
-      printf("Button 2 release\n");
+      //printf("Button 2 release\n");
       mouseLocked[1]=false;
       lastButton=2;
     }
@@ -112,7 +112,7 @@ void cDA2Input::setButton(Uint8 k, bool b){
   case SDL_BUTTON_MIDDLE:
     buttonState[2]=b;
     if(!b) {
-      printf("Button 3 release\n");
+      //printf("Button 3 release\n");
       lastButton=3;
     }
     break;
@@ -127,19 +127,51 @@ void cDA2Input::setKey(SDL_Keycode k, bool b){
   case SDLK_a:      x=KEY_A; break;
   case SDLK_b:      x=KEY_B; break;
   case SDLK_c:      x=KEY_C; break;
+  case SDLK_d:      x=KEY_D; break;
+  case SDLK_e:      x=KEY_E; break;
+  case SDLK_f:      x=KEY_F; break;
   case SDLK_g:      x=KEY_G; break;
+  case SDLK_h:      x=KEY_H; break;
+  case SDLK_i:      x=KEY_I; break;
   case SDLK_j:      x=KEY_J; break;
+  case SDLK_k:      x=KEY_K; break;
   case SDLK_l:      x=KEY_L; break;
+  case SDLK_m:      x=KEY_M; break;
+  case SDLK_n:      x=KEY_N; break;
+  case SDLK_o:      x=KEY_O; break;
+  case SDLK_p:      x=KEY_P; break;
   case SDLK_q:      x=KEY_Q; break;
+  case SDLK_r:      x=KEY_R; break;
   case SDLK_s:      x=KEY_S; break;
+  case SDLK_t:      x=KEY_T; break;
+  case SDLK_u:      x=KEY_U; break;
+  case SDLK_v:      x=KEY_V; break;
+  case SDLK_w:      x=KEY_W; break;
+  case SDLK_x:      x=KEY_X; break;
+  case SDLK_y:      x=KEY_Y; break;
   case SDLK_z:      x=KEY_Z; break;
   case SDLK_SPACE:  x=KEY_SPACE; break;
+  case SDLK_BACKSPACE:      x=KEY_BACKSPACE; break;
   case SDLK_ESCAPE: x=KEY_ESCAPE; break;
   case SDLK_TAB:    x=KEY_TAB; break;
+  case SDLK_COMMA:      x=KEY_COMMA; break;
+  case SDLK_PERIOD:      x=KEY_PERIOD; break;
   case SDLK_UP:     x=KEY_UP; break;
   case SDLK_DOWN:   x=KEY_DOWN; break;
   case SDLK_LEFT:   x=KEY_LEFT; break;
   case SDLK_RIGHT:  x=KEY_RIGHT; break;
+  case SDLK_KP_PLUS:  x=KEY_ADD; break;
+  case SDLK_KP_MINUS:  x=KEY_SUBTRACT; break;
+  case SDLK_0:      x=KEY_0; break;
+  case SDLK_1:      x=KEY_1; break;
+  case SDLK_2:      x=KEY_2; break;
+  case SDLK_3:      x=KEY_3; break;
+  case SDLK_4:      x=KEY_4; break;
+  case SDLK_5:      x=KEY_5; break;
+  case SDLK_6:      x=KEY_6; break;
+  case SDLK_7:      x=KEY_7; break;
+  case SDLK_8:      x=KEY_8; break;
+  case SDLK_9:      x=KEY_9; break;
   default: return;
   }
   keyState[x]=b;

@@ -33,7 +33,7 @@ private:
 	int Cursor;
 	int currentPlayer;
 
-	char DIKtoASCII(int dik);
+  char DIKtoASCII(DA2KEYS dik);
 
 
 };

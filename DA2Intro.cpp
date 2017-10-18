@@ -53,7 +53,7 @@ bool cDA2Intro::Logic(){
 		for(i=0;i<=100;i++){
       if(diObj->KeyPress((DA2KEYS)i) && !diObj->CheckLock((DA2KEYS)i)){
         diObj->LockKey((DA2KEYS)i);
-				c=DIKtoASCII(i);
+        c=DIKtoASCII((DA2KEYS)i);
 				if(c>=97 && c<=122)	{
 					if(diObj->KeyPress(KEY_LSHIFT) || diObj->KeyPress(KEY_RSHIFT)) c-=32;
 					if(strlen(party->Players[currentPlayer].PlayerName)==19) continue;
@@ -130,6 +130,7 @@ bool cDA2Intro::Logic(){
 			case 0:
 				currentPlayer++;
 				if(currentPlayer==3) mode++;
+        else Cursor=strlen(party->Players[currentPlayer].PlayerName);
 				break;
 			case 1:
 				return false;
@@ -253,53 +254,51 @@ bool cDA2Intro::Render(){
 
 }
 
-char cDA2Intro::DIKtoASCII(int dik){
-  /*1
+char cDA2Intro::DIKtoASCII(DA2KEYS dik){
 	switch(dik){
-		case DIK_BACKSPACE: return 8;
-		case DIK_SPACE: return ' ';
-		case DIK_PERIOD: return '.';
-		case DIK_COMMA: return ',';
-		case DIK_MINUS: return '-';
-		case DIK_0: return '0';
-		case DIK_1: return '1';
-		case DIK_2: return '2';
-		case DIK_3: return '3';
-		case DIK_4: return '4';
-		case DIK_5: return '5';
-		case DIK_6: return '6';
-		case DIK_7: return '7';
-		case DIK_8: return '8';
-		case DIK_9: return '9';
-		case DIK_A: return 'a';
-		case DIK_B: return 'b';
-		case DIK_C: return 'c';
-		case DIK_D: return 'd';
-		case DIK_E: return 'e';
-		case DIK_F: return 'f';
-		case DIK_G: return 'g';
-		case DIK_H: return 'h';
-		case DIK_I: return 'i';
-		case DIK_J: return 'j';
-		case DIK_K: return 'k';
-		case DIK_L: return 'l';
-		case DIK_M: return 'm';
-		case DIK_N: return 'n';
-		case DIK_O: return 'o';
-		case DIK_P: return 'p';
-		case DIK_Q: return 'q';
-		case DIK_R: return 'r';
-		case DIK_S: return 's';
-		case DIK_T: return 't';
-		case DIK_U: return 'u';
-		case DIK_V: return 'v';
-		case DIK_W: return 'w';
-		case DIK_X: return 'x';
-		case DIK_Y: return 'y';
-		case DIK_Z: return 'z';
+		case KEY_BACKSPACE: return 8;
+		case KEY_SPACE: return ' ';
+		case KEY_PERIOD: return '.';
+		case KEY_COMMA: return ',';
+		case KEY_MINUS: return '-';
+		case KEY_0: return '0';
+		case KEY_1: return '1';
+		case KEY_2: return '2';
+		case KEY_3: return '3';
+		case KEY_4: return '4';
+		case KEY_5: return '5';
+		case KEY_6: return '6';
+		case KEY_7: return '7';
+		case KEY_8: return '8';
+		case KEY_9: return '9';
+		case KEY_A: return 'a';
+		case KEY_B: return 'b';
+		case KEY_C: return 'c';
+		case KEY_D: return 'd';
+		case KEY_E: return 'e';
+		case KEY_F: return 'f';
+		case KEY_G: return 'g';
+		case KEY_H: return 'h';
+		case KEY_I: return 'i';
+		case KEY_J: return 'j';
+		case KEY_K: return 'k';
+		case KEY_L: return 'l';
+		case KEY_M: return 'm';
+		case KEY_N: return 'n';
+		case KEY_O: return 'o';
+		case KEY_P: return 'p';
+		case KEY_Q: return 'q';
+		case KEY_R: return 'r';
+		case KEY_S: return 's';
+		case KEY_T: return 't';
+		case KEY_U: return 'u';
+		case KEY_V: return 'v';
+		case KEY_W: return 'w';
+		case KEY_X: return 'x';
+		case KEY_Y: return 'y';
+		case KEY_Z: return 'z';
 		default:
 			break;
 	}
-  */
 	return 0;
 }

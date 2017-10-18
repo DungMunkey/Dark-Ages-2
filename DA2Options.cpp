@@ -26,7 +26,7 @@ cDA2Options::cDA2Options(){
 }
 
 cDA2Options::~cDA2Options(){
-
+  conf=NULL;
 }
 
 bool cDA2Options::Logic(){
@@ -85,6 +85,8 @@ bool cDA2Options::Logic(){
             SDL_SetRenderTarget(display->renderer, tempText);
             tempText=NULL;
             diObj->setMouseOffsets(sx, (display->screenWidth / sx - 640) / 2, sy, (display->screenHeight / sy - 480) / 2);
+            conf->h=display->screenHeight;
+            conf->w=display->screenWidth;
           }
           break;
         case 11:
@@ -95,8 +97,13 @@ bool cDA2Options::Logic(){
         case 13:
           if(tmpFullscreen!=Options.Fullscreen) {
             Options.Fullscreen=tmpFullscreen;
-            if(tmpFullscreen) SDL_SetWindowFullscreen(display->window, SDL_WINDOW_FULLSCREEN);
-            else SDL_SetWindowFullscreen(display->window, 0);
+            if(tmpFullscreen) {
+              SDL_SetWindowFullscreen(display->window, SDL_WINDOW_FULLSCREEN);
+              conf->fullScreen=true;
+            } else {
+              SDL_SetWindowFullscreen(display->window, 0);
+              conf->fullScreen=false;
+            }
           }
           break;
 				default:
@@ -175,6 +182,10 @@ bool cDA2Options::Render(){
 
 	return true;
 
+}
+
+void cDA2Options::SetConf(sConf* con){
+  conf=con;
 }
 
 void cDA2Options::Update(){

@@ -66,7 +66,7 @@ private:
 	int Offset;
 	int Cursor;
 
-	char DIKtoASCII(int dik);
+  char DIKtoASCII(DA2KEYS dik);
 	bool ReadHeader(char *file, SaveInfo &sav);
 	bool SaveGame(int index);
 	bool LoadGame(int index);

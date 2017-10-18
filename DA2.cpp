@@ -73,7 +73,7 @@ int main(int argc, char* args[]) {
   if(MyTitle.Init(&display,&input) == false) return 0;
 
   if(!ItemList.LoadItems()) return false;
-  if(!MyGame.Init(&display, &MyGfx, &input, &ItemList, &MyMusic)) return false;
+  if(!MyGame.Init(&display, &MyGfx, &input, &ItemList, &MyMusic, &conf)) return false;
 
   bool bQuit=false;
 
@@ -142,6 +142,12 @@ int main(int argc, char* args[]) {
   //CDarkages game(&display);
   //game.title();
   //game.run();
+
+  f=fopen("da2.cfg", "wb");
+  if(f != NULL){
+    fwrite(&conf, sizeof(sConf), 1, f);
+    fclose(f);
+  }
 
   return 0;
 }

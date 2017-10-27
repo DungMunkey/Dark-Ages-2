@@ -10,7 +10,7 @@
 #include "DA2Map.h"
 #include "DA2Journal.h"
 #include "DA2Options.h"
-#include <io.h>
+#include "dirent.h"
 #include <vector>
 
 using namespace std;

@@ -426,21 +426,41 @@ int cDA2LoadSave::Logic(bool bLoad){
 }
 
 void cDA2LoadSave::ReadDir(){
-	
-	struct _finddata_t savFile;
-  long hFile;
+
+	//struct _finddata_t savFile;
+  DIR* dir_p;
+  dirent* de;
+  //long hFile;
 	string path;
-	string newpath;
+	//string newpath;
 	SaveInfo si;
-	
+  
 	vFiles.clear();
 
 	//Change directory to the saves directory
-	if(_chdir("Saves")<0) {
-		_mkdir("Saves");
-		_chdir("Saves");
-	}
-  
+
+  dir_p = opendir("Saves");
+  if(dir_p==NULL) {
+    _mkdir("Saves");
+    dir_p = opendir("Saves");
+  }
+
+  while(dir_p){
+    de=readdir(dir_p);
+    if(de!=NULL){
+      if(strstr(de->d_name,".sav")!=NULL){
+        path="Saves/";
+        path+=de->d_name;
+        if(ReadHeader(&path[0], si)) vFiles.push_back(si);
+      } else {
+      }
+    } else {
+      break;
+    }
+  }
+  closedir(dir_p);
+
+  /*
 	//Get first file
   if( (hFile = _findfirst( "*.sav", &savFile )) == -1L ) {
 		//Go back to game directory
@@ -460,6 +480,7 @@ void cDA2LoadSave::ReadDir(){
 
 	//Go back to game directory
 	_chdir("..");
+  */
 
 }
 

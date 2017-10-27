@@ -1,7 +1,8 @@
 #ifndef _STACKMANAGER_H
 #define _STACKMANAGER_H
 
-#include <windows.h>
+#include <cstdlib>
+//#include <windows.h>
 
 enum GameStack{
 	NoGameStack,

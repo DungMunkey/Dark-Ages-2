@@ -693,6 +693,7 @@ bool cDA2LoadSave::LoadGame(int index){
 		}
 	}
 
+  /* for diagnostics only?
 	f2=fopen("journal.txt","wt");
 	for(i=0;i<100;i++) {
 		fprintf(f2,"%d: %hd %hd\n",i,journal->JournalText[i].ID, journal->JournalText[i].Difficulty);
@@ -702,13 +703,14 @@ bool cDA2LoadSave::LoadGame(int index){
 		fprintf(f2,"%hd, %hd\n",journal->JournalText[i].EndPoint.X,journal->JournalText[i].EndPoint.Y);
 		if(journal->JournalText[i].Active==1) fprintf(f2,"In Use\n");
 		else fprintf(f2,"Unused\n");
-		fprintf(f2,"Text Count: %hd %d\n",i,journal->JournalText[i].TextCount,journal->JournalText[i].Text->size());
+		fprintf(f2,"Text Count: %hd %d %d\n",i,journal->JournalText[i].TextCount,journal->JournalText[i].Text->size());
 		for(j=0;j<journal->JournalText[i].Text->size();j++){
 			fprintf(f2,"%s\n",&journal->JournalText[i].Text->at(j)[0]);
 		}
 		fprintf(f2,"\n");
 	}
 	fclose(f2);
+  */
 
 	if(version>0){
 		for(i=0;i<3;i++){

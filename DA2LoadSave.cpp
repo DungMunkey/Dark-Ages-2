@@ -1,6 +1,4 @@
 #include "DA2LoadSave.h"
-#include <time.h>
-#include <direct.h>
 
 cDA2LoadSave::cDA2LoadSave(){
 	display=NULL;
@@ -441,7 +439,7 @@ void cDA2LoadSave::ReadDir(){
 
   dir_p = opendir("Saves");
   if(dir_p==NULL) {
-    _mkdir("Saves");
+    mkdir("Saves");
     dir_p = opendir("Saves");
   }
 

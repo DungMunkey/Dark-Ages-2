@@ -10,8 +10,19 @@
 #include "DA2Map.h"
 #include "DA2Journal.h"
 #include "DA2Options.h"
-#include "dirent.h"
+#include <time.h>
 #include <vector>
+
+#ifdef _MSC_VER
+#include "dirent.h"
+#include <direct.h>
+#define mkdir(a) _mkdir(a)
+#define getcwd(a,b) _getcwd(a,b)
+#define chdir(a) _chdir(a)
+#else
+#include <dirent.h>
+#include <unistd.h>
+#endif
 
 using namespace std;
 

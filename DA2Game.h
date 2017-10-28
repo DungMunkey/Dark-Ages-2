@@ -25,7 +25,7 @@
 #include "DA2Intro.h"
 #include "Camera.h"
 #include "StackManager.h"
-#include <windows.h>
+//#include <windows.h>
 #include <CMath>
 #include <vector>
 #include <string>

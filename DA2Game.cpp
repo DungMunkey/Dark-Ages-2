@@ -639,7 +639,7 @@ void cDA2Game::LoadMaps(){
 	fclose(f);
 	
 	//read list data
-	f=fopen("Data/lis.dat","rt");
+	f=fopen("Data/LIS.DAT","rt");
 	i=0;
 	int j=0;
 	char str[10];
@@ -653,7 +653,7 @@ void cDA2Game::LoadMaps(){
 	}
 	fclose(f);
 
-	f=fopen("Data/npc.dat","rb");
+	f=fopen("Data/NPC.DAT","rb");
 	i=0;
 	while(!feof(f)){
 		i++;
@@ -674,7 +674,7 @@ void cDA2Game::LoadMaps(){
 	}
 	fclose(f);
 
-  f=fopen("Data/obj.dat","rb");
+  f=fopen("Data/OBJ.DAT","rb");
 	i=0;
 	while(!feof(f)){
 		i++;
@@ -690,7 +690,7 @@ void cDA2Game::LoadMaps(){
 	fclose(f);
 
 	int idx;
-	f=fopen("Data/tlk.idx","rt");
+	f=fopen("Data/TLK.IDX","rt");
 	for(i=1;i<500;i++){
 		fscanf(f,"%d\n",&idx);
 		NPCFileIndex[i]=idx-1;
@@ -698,7 +698,7 @@ void cDA2Game::LoadMaps(){
 	fclose(f);
 	NPCFileIndex[0]=0;
 
-	f=fopen("Data/osc.idx","rt");
+	f=fopen("Data/OSC.IDX","rt");
 	for(i=1;i<500;i++){
 		fscanf(f,"%d\n",&idx);
 		ObjFileIndex[i]=idx-1;
@@ -707,7 +707,7 @@ void cDA2Game::LoadMaps(){
 	ObjFileIndex[0]=0;
 
 	//read random battles
-	f=fopen("Data/randbat.dat","rt");
+	f=fopen("Data/RANDBAT.DAT","rt");
 	for(i=1;i<500;i++){
 		fscanf(f,"%d\n",&idx);
 		Maps[i].BattleNum=idx;
@@ -2049,7 +2049,7 @@ EventTag cDA2Game::NPCScript(int map, int npc){
 	string s;
 
 	FILE *f;
-	f=fopen("Data/tlk.dat","rt");
+	f=fopen("Data/TLK.DAT","rt");
 	long fpos = NPCFileIndex[map];
 	fseek(f,fpos,SEEK_SET);
 
@@ -2539,7 +2539,7 @@ EventTag cDA2Game::ObjScript(int map, int obj){
 	string s;
 
 	FILE *f;
-	f=fopen("Data/osc.dat","rt");
+	f=fopen("Data/OSC.DAT","rt");
 	long fpos = ObjFileIndex[map];
 	fseek(f,fpos,SEEK_SET);
 

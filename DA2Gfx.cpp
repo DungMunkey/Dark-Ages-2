@@ -246,7 +246,7 @@ void cDA2Gfx::CutTiles(){
   fclose(f);
 
 	//Set solidity level
-  f=fopen("Data/kaboom.oof","rt");
+  f=fopen("Data/KABOOM.OOF","rt");
 	for(x=0;x<3000;x++){
 		fscanf(f,"%d\n",&y);
 		if(y>0) vTile->at(x).solid=1;

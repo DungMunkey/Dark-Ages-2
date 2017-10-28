@@ -359,8 +359,12 @@ int cDA2LoadSave::Logic(bool bLoad){
 					}
 					time(&saveTime);
 					CurrentInfo.ID=ID;
-					_strdate(CurrentInfo.dateStr);
-					_strtime(CurrentInfo.timeStr);
+          struct tm* timeinfo;
+          timeinfo = localtime(&saveTime);
+          strftime(CurrentInfo.dateStr, 9, "%m/%d/%y", timeinfo);
+          strftime(CurrentInfo.timeStr, 9, "%H:%M:%S", timeinfo);
+					//_strdate(CurrentInfo.dateStr);
+					//_strtime(CurrentInfo.timeStr);
 					strcpy(CurrentInfo.descript,"");
 					CurrentInfo.playTime=playTime+(int)difftime(saveTime,loadTime);
 					for(j=0;j<3;j++){
@@ -503,8 +507,12 @@ bool cDA2LoadSave::SaveGame(int index){
 	char str[256];
 
 	time(&saveTime);
-	_strdate(CurrentInfo.dateStr);
-	_strtime(CurrentInfo.timeStr);
+  struct tm* timeinfo;
+  timeinfo = localtime(&saveTime);
+  strftime(CurrentInfo.dateStr, 9, "%m/%d/%y", timeinfo);
+  strftime(CurrentInfo.timeStr, 9, "%H:%M:%S", timeinfo);
+	//_strdate(CurrentInfo.dateStr);
+	//_strtime(CurrentInfo.timeStr);
 	CurrentInfo.playTime=playTime+(int)difftime(saveTime,loadTime);
 	for(j=0;j<3;j++){
 		CurrentInfo.HP[j][0]=party->Players[j].HP;

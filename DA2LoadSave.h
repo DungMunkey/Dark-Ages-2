@@ -22,6 +22,7 @@
 #else
 #include <dirent.h>
 #include <unistd.h>
+#include <sys/stat.h>
 #endif
 
 using namespace std;

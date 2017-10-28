@@ -26,7 +26,7 @@
 #include "Camera.h"
 #include "StackManager.h"
 //#include <windows.h>
-#include <CMath>
+#include <cmath>
 #include <vector>
 #include <string>
 #include <ctime>

@@ -391,7 +391,7 @@ bool cDA2Gfx::LoadGfx(CDisplay* display){
   Windows= new CGraphic("Gfx/windows.bmp", display, true, 0, 0, 0);
   Font = new CGraphic("Gfx/font.bmp", display, true, 0, 0, 0);
   WorldMap= new CGraphic("Gfx/map.bmp", display, true, 0, 0, 0);
-  Frame= new CGraphic("Gfx/loadsave.bmp", display, true, 0, 0, 0);
+  Frame= new CGraphic("Gfx/LoadSave.bmp", display, true, 0, 0, 0);
   Cursor= new CGraphic("Gfx/cursors.bmp", display, true, 0, 0, 0);
 
   CutTiles();

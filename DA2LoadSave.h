@@ -16,7 +16,7 @@
 #ifdef _MSC_VER
 #include "dirent.h"
 #include <direct.h>
-#define mkdir(a) _mkdir(a)
+#define mkdir(a,b) _mkdir(a)
 #define getcwd(a,b) _getcwd(a,b)
 #define chdir(a) _chdir(a)
 #else

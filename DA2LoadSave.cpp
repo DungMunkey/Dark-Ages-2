@@ -443,7 +443,7 @@ void cDA2LoadSave::ReadDir(){
 
   dir_p = opendir("Saves");
   if(dir_p==NULL) {
-    mkdir("Saves");
+    mkdir("Saves", ACCESSPERMS);
     dir_p = opendir("Saves");
   }
 

@@ -1,6 +1,8 @@
 #ifndef _DA2TEXTPARSER_H
 #define _DA2TEXTPARSER_H
 
+#include <cstdio>
+#include <cstring>
 #include <string>
 
 using namespace std;

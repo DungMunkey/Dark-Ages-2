@@ -17,7 +17,7 @@ cDA2Music::cDA2Music(){
   strcpy(song[2].FileName,"TownB");
   strcpy(song[3].FileName,"Travel");
   strcpy(song[4].FileName,"Dungeon");
-  strcpy(song[5].FileName,"CutScene");
+  strcpy(song[5].FileName,"Cutscene");
   
   for(i=0;i<6;i++){
     song[i].Track = 1;

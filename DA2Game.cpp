@@ -806,7 +806,7 @@ bool cDA2Game::Render() {
 	int Tile;
 	SDL_Rect r;
 	//RECT r2;
-	HRESULT hr;
+	//HRESULT hr;
 	bool ShowRoof=true;
 
 	int TrueMap,TrueX,TrueY;
@@ -1213,8 +1213,10 @@ bool cDA2Game::CheckRender(){
 bool cDA2Game::NPCClick(int atX, int atY, int &MapNum, int &NPCNum){
 	int i,x,y,mx,my;
 	int TrueMap;
-	RECT r;
+	SDL_Rect r;
 
+  r.w=32;
+	r.h=32;
 	for(my=0;my<3;my++){
 		for(mx=0;mx<3;mx++){
 			TrueMap=MapWin[mx][my];
@@ -1228,11 +1230,10 @@ bool cDA2Game::NPCClick(int atX, int atY, int &MapNum, int &NPCNum){
 
 				if(x-(PlayerCam.TilePosX-10) >=0 && x-(PlayerCam.TilePosX-10) <=20 &&
 					 y-(PlayerCam.TilePosY-8) >=0 && y-(PlayerCam.TilePosY-8) <=16) {
-					r.left=(x-(PlayerCam.TilePosX-10))*32-PlayerCam.OffsetX+Maps[TrueMap].NPCArray[i].xoffset;
-					r.top=(y-(PlayerCam.TilePosY-8))*32-PlayerCam.OffsetY+Maps[TrueMap].NPCArray[i].yoffset;
-					r.right=r.left+32;
-					r.bottom=r.top+32;
-					if( atX>=r.left && atX <=r.right && atY>=r.top && atY<=r.bottom){
+					r.x=(x-(PlayerCam.TilePosX-10))*32-PlayerCam.OffsetX+Maps[TrueMap].NPCArray[i].xoffset;
+					r.y=(y-(PlayerCam.TilePosY-8))*32-PlayerCam.OffsetY+Maps[TrueMap].NPCArray[i].yoffset;
+					
+					if( atX>=r.x && atX <=r.x+r.w && atY>=r.y && atY<=r.y+r.h){
 						MapNum=TrueMap;
 						NPCNum=i;
 						return true;
@@ -1249,7 +1250,10 @@ bool cDA2Game::NPCClick(int atX, int atY, int &MapNum, int &NPCNum){
 int cDA2Game::ObjClick(int atX, int atY, int &MapNum, int &ObjNum){
 	int i,x,y,mx,my;
 	int TrueMap;
-	RECT r;
+  SDL_Rect r;
+
+  r.w=32;
+  r.h=32;
 
 	for(my=0;my<3;my++){
 		for(mx=0;mx<3;mx++){
@@ -1262,12 +1266,10 @@ int cDA2Game::ObjClick(int atX, int atY, int &MapNum, int &ObjNum){
 				x=Maps[TrueMap].ObjArray->at(i).Xco+96*(mx-1);
 				y=Maps[TrueMap].ObjArray->at(i).Yco+96*(my-1);
 
-				r.left=(x-(PlayerCam.TilePosX-10))*32-PlayerCam.OffsetX;
-				r.top=(y-(PlayerCam.TilePosY-8))*32-PlayerCam.OffsetY;
-				r.right=r.left+32;
-				r.bottom=r.top+32;
-				if(r.left>256 && r.right<384 && r.top>176 && r.bottom<304){
-					if( atX>=r.left && atX <=r.right && atY>=r.top && atY<=r.bottom){
+				r.x=(x-(PlayerCam.TilePosX-10))*32-PlayerCam.OffsetX;
+				r.y=(y-(PlayerCam.TilePosY-8))*32-PlayerCam.OffsetY;
+				if(r.x>256 && r.x+r.w<384 && r.y>176 && r.y+r.h<304){
+          if(atX >= r.x && atX <= r.x + r.w && atY >= r.y && atY <= r.y + r.h){
 						MapNum=TrueMap;
 						ObjNum=i;
 						return Maps[TrueMap].ObjArray->at(i).Status;

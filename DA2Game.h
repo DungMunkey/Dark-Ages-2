@@ -56,6 +56,7 @@ typedef struct MapChanger{
 	int y;
 } MapChanger;
 
+/*
 typedef struct BitMapHeader{
    WORD    bfType;        // must be 'BM' 
    DWORD   bfSize;        // size of the whole .bmp file
@@ -77,7 +78,7 @@ typedef struct BitMapInfoHeader {
    DWORD  biClrUsed;         // colors used
    DWORD  biClrImportant;    // important colors
 } BitMapInfoHeader;
-                
+ */               
 
 class cDA2Game {
 public:

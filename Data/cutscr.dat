@@ -1,0 +1,3031 @@
+*
+0
+14
+1
+0
+401
+9
+1504,128
+3
+0,1,1472,128
+3
+1,17,1472,128
+3
+2,33,1472,128
+5
+1,4,1440,160,1
+5
+2,6,1504,160,1
+10
+6
+1,6
+6
+2,4
+10
+7
+1
+^: Wonderful! This is just wonderful! A simple assignment? Then why the hell are we suddenly wading knee deep in crap?!
+1
+$: You think you can take the whole city guard?
+5
+2,2,1504,224,1
+2
+1504,300,2
+10
+7
+1
+^: Might be better than crawling around in a sewer. What do we do now?
+1
+$: We stick to the plan: We've got the gem, now we go to Willowbrook by whatever means possible.
+1
+^: Who's giving these crazy orders? This wasn't a normal burglary, this guy owed the Guild nothing...
+5
+1,6,1504,160,1
+10
+6
+1,2
+10
+7
+1
+$: Orders from Dieb. I don't know why, just that our client paid a large commission. Large enough to bend a few rules. Not that it matters much anyway, the Guild has abandoned Tristen. The chaos is getting dangerous and The Rein is getting in the way. We need funds to start rebuilding the Guild.
+1
+$: 'Acquire the gem, head to Willowbrook, report to Nina.' Those were the exact words in the letter.
+1
+^: I still don't like it. This gem better be worth an awful lot to risk our necks like that. Something weird is going on.
+2
+1504,128,1
+10
+7
+1
+@: Standing here complaining isn't going to solve anything. I don't like this place, let's find a way out fast.
+5
+1,4,1472,128,1
+5
+2,8,1472,128,1
+10
+!
+*
+1
+14
+1
+0
+226
+9
+2100,2375
+3
+0,1,2085,2285
+3
+1,17,2050,2250
+3
+2,33,2120,2250
+3
+3,257,2000,2250
+6
+3,6
+3
+4,193,2025,2300
+6
+4,6
+3
+5,257,2035,2325
+6
+5,8
+3
+6,193,2085,2425
+6
+6,8
+3
+7,257,2135,2325
+6
+7,8
+3
+8,193,2140,2300
+6
+8,4
+3
+9,257,2165,2250
+6
+9,4
+7
+5
+6,8,2085,2360,1
+10
+1
+Fanatic: Halt! You will hand over the crystal and come with us!
+5
+0,4,2050,2285,1
+5
+2,4,2085,2285,1
+10
+6
+2,2
+6
+0,2
+10
+7
+1
+^: What makes you think we're going to listen to you?
+1
+Fanatic: You are prisoners of The Rein. You shall do whatever we say!
+1
+^: Oh yeah?
+5
+2,2,2085,2325,2
+5
+5,6,2070,2325,2
+5
+7,4,2100,2325,2
+10
+1
+^: ARRRGGHH! You can't do this!
+1
+Fanatic: I can do as I please. I know your blue-robed friend is a mage. This gives me the right to burn you at the stake right here and now. However, you are wanted for interrogation.
+1
+<The fanatic reaches over and takes the crystal.> We've been looking for this for some time. You are a rather crafty group. Guards, take them to Hans-Dirk.
+0
+408
+9
+450,500
+3
+0,1,410,360
+3
+1,17,380,390
+6
+1,6
+3
+2,33,430,390
+6
+2,4
+10
+1
+@: This is all wrong. We were set up. Somebody sold us out to The Rein.
+1
+^: The Necris Monks! They betrayed us!
+1
+$: I don't think so. Why would they let us take the crystal? And they hate The Rein as much as we do. It had to have been someone else.
+1
+^: Who else knew we were looking for the crystal?
+1
+@: Just the Guild. Someone is working for the other side. It could be anyone, our assignment wasn't exactly a big secret.
+1
+$: But why The Rein? What do they want with the crystals? They must be magical if The Rein is gathering them.
+1
+@: I don't like being in the dark. I suggest we start looking for the answers ourselves. What's the plan?
+1
+$: That lock is pretty flimsy. Give me just a few minutes.
+5
+1,6,410,360,1
+5
+2,4,410,360,1
+10
+!
+*
+2
+14
+1
+0
+285
+9
+1300,750
+3
+0,1,1300,650
+3
+1,17,1330,680
+6
+1,4
+3
+2,33,1300,710
+6
+2,8
+7
+7
+1
+^: What a relief to get out of there! We need some answers, what's the plan?
+1
+$: I think we should pay Hans-Dirk a visit. Perhaps we can wring a few answers out of him.
+1
+^: Screw him! We owe The Rein some payback! And they have our crystal. They're camped just south of Erond. They'll never suspect a surprise attack.
+1
+@: I think we should find Madigan in Willowbrook.
+1
+^: Are you crazy?!
+1
+$: I don't think we're in a position to trust Guild members. We don't know who is leaking information.
+1
+^: That ends it! No Madigan. Let's go bash some Rein skulls!
+5
+2,6,1450,710,2
+10
+6
+0,6
+7
+7
+1
+@: Wait ^!
+6
+2,4
+7
+7
+1
+@: She didn't do it. Believe me, we can trust her.
+1
+^: What makes you so sure?
+1
+@: I don't have time to explain it right now. You have to take my word. The Guild is as important to her as it is to us and she promised to help find some answers. Perhaps she has information we can use.
+1
+^: I don't like it. Kill 'em and ask questions later...
+6
+1,6
+7
+7
+1
+$: You don't have to like it, but @ is right. We need answers and she might have them.
+1
+@: So we have three choices. We can find Madigan in Willowbrook, attack The Rein camp south of Erond, or interrogate Hans-Dirk. Let's be off, we're wasting time.
+5
+1,4,1300,650,1
+5
+2,4,1300,650,3
+10
+7
+7
+!
+*
+3
+14
+1
+11
+0
+285
+9
+2350,1100
+3
+0,1,2340,1028
+3
+1,17,2375,1028
+3
+2,33,2360,1060
+3
+3,257,2300,1060
+3
+4,257,2420,1060
+3
+5,529,2360,1160
+7
+7
+1
+^: Time for some answers, Hans-Dirk!
+5
+5,8,2360,1140,2
+10
+7
+7
+1
+Hans-Dirk: How'd you get out!! Stop them! GUARDS!
+5
+4,4,2383,1060,1
+5
+2,6,2370,1060,2
+5
+3,6,2340,1060,1
+10
+5
+4,4,2430,1060,3
+5
+3,6,2350,1060,1
+5
+2,4,2360,1060,2
+10
+5
+3,6,2290,1060,3
+10
+4
+4
+4
+3
+5
+2,2,2360,1100,1
+2
+2350,1200,1
+10
+7
+1
+^: You better start talking before I put your head on a pike and parade it around town!
+1
+Hans-Dirk: Gaaah! It wasn't my fault! They left me no choice! They moved in too swiftly.
+5
+0,2,2340,1060,1
+10
+7
+7
+1
+@: Who are they?
+1
+Hans-Dirk: Can't you tell? The Rein! I wouldn't dare risk my shipping against the Thieves' Guild! Especially being so close to Tristen. It would destroy my revenue and leave me helpless against the increase in bandits and chaos.
+5
+1,2,2375,1140,1
+10
+6
+1,4
+7
+7
+1
+$: Don't you know who we work for? Have you gone insane??
+1
+Hans-Dirk: AAAHHH!!
+1
+^: Answer her!
+1
+Hans-Dirk: Yes, I know! They commanded it! I couldn't stop them! They hired pirates to hijack my main galleon. It contained my WindStone. It's the only advantage I have, being able to control the winds to stay ahead of the pirates and smugglers. But The Rein tipped them off! They had several ships waiting in ambush.
+1
+Hans-Dirk: Without the stone, I would be ruined. The Rein blackmailed me with it. They said if I captured and held you, they would return the stone. I had no choice! I swear! The Guild has all but vanished from Tristen, I thought I could risk it. Don't kill me!
+1
+^: You're disgusting.
+1
+@: We need more answers. Why was The Rein after us? Why are they moving in on Tristen?
+1
+Hans-Dirk: I don't know! I've told you everything!
+1
+$: We can't just let him go. We can't trust him.
+1
+Hans-Dirk: W-w-wait! I can help you! Really! I can find you some answers!
+1
+@: Keep Talking.
+1
+Hans-Dirk: The Rein is still in my territory. There is an acolyte with a few guards. Get rid of him and we can talk in the open without fear of further attack.
+1
+^: We'll be back. Don't go anywhere.
+!
+*
+4
+14
+1
+0
+85
+11
+9
+416,1100
+3
+0,1,416,992
+6
+0,8
+3
+1,17,384,992
+6
+1,8
+3
+2,33,448,992
+6
+2,8
+3
+3,673,416,960
+10
+7
+1
+Madigan: I'm very sorry about that. Things have not been well and I'm getting paranoid. I'll tell you what I know, perhaps you can do something about it. ^, could you please watch the door.
+1
+^: Sure.
+5
+2,2,448,1024,1
+10
+7
+5
+2,4,370,1024,1
+10
+7
+5
+2,4,370,1056,1
+6
+2,2
+10
+7
+1
+<Satisfied that you are alone, Madigan continues.>
+1
+Madigan: As you probably don't know, I keep an eyes-and-ears network within the guild. Although we are an organized and disciplined guild, Dieb trusts very few people. It has been my job to gather information on questionable members.
+1
+Madigan: Lately, though, several of my spies have not been reporting back. Some were discovered dead. Dieb was supposedly the only person who knew of my group, but somebody has been shutting down my operation and I can't even find a clue as to who it may be.
+1
+$: Maybe it is Dieb?
+1
+Madigan: Perhaps, but I can't be sure. Coincidentally, or maybe not, he has disappeared. A few days ago, his messages stopped arriving, so I sent my spies to find out what was wrong. That was when they started disappearing. Worse yet, those who have returned cannot find any trace of Dieb.
+1
+Madigan: I thought when you arrived that you might be one of the assassins killing my people. Which brings us to you. Why are you here? I thought you were on assignment on the mainland.
+1
+@: We were, but something went wrong.
+1
+$: We were ambushed by The Rein. Somebody sold us out. We ended up in Hans-Dirk's dungeon. Getting out wasn't too hard, but we're stuck now. It's getting dangerous and we need answers.
+1
+$: Khan gave us the assignment. What can you tell us about him?
+1
+Madigan: Khan's not the problem. He's always been in good standing with The Guild. What was your assignment?
+1
+@: Recover a crystal from Tristen. Stiletto was in town and was able to help us out.
+1
+Madigan: Khan's been assigning several people to gather crystals. He just sent someone to the temple near Maenig Keep where another was supposedly hidden. But did you say Stiletto? He's still in Tristen?
+1
+@: He was tailing a contact with the resistance. I think it was taking longer than expected. We helped him change places with a resistance member.
+1
+Madigan: My spies still report couriers from Dieb passing messages into Tristen. Stiletto has to know about them. Perhaps you can intercept one and we can trace it back to Dieb. Go see Stiletto.
+1
+$: Right. We'll try to keep you informed.
+1
+Madigan: Good luck.
+5
+1,6,416,992,1
+5
+2,8,416,992,2
+10
+7
+!
+*
+5
+14
+1
+0
+408
+9
+990,800
+3
+0,1,860,865
+3
+1,17,880,865
+3
+2,33,840,865
+3
+3,257,1504,896
+6
+0,8
+6
+1,8
+6
+2,8
+2
+1504,920,2
+10
+7
+1
+Guard: What was that!
+5
+3,4,1400,896,2
+10
+7
+5
+3,8,1400,736,2
+10
+7
+5
+3,4,940,736,2
+2
+1010,800,4
+10
+7
+5
+3,8,940,800,2
+10
+7
+1
+Guard: Ack! What happened!
+5
+3,4,704,800,2
+10
+7
+1
+@: Now's our chance. Let's go.
+5
+1,4,860,865,1
+5
+2,6,860,865,1
+10
+7
+!
+*
+6
+14
+1
+0
+154
+9
+1850,2350
+11
+3
+0,1,1820,2330
+6
+0,8
+3
+1,17,1788,2330
+6
+1,8
+3
+2,33,1852,2330
+6
+2,8
+3
+3,657,1820,2230
+3
+4,193,1520,2425
+3
+5,193,2120,2425
+3
+6,193,1760,2530
+3
+7,193,1880,2530
+10
+7
+1
+Nina: Welcome. I hope you didn't have much difficulty finding my little farm.
+1
+@: Where's Dieb?
+1
+Nina: Dieb is dead. I had him executed long ago. Taking care of him was easy. You three, on the other hand, have been very difficult.
+1
+^: What's going on?!
+5
+2,8,1852,2250,3
+10
+7
+1
+Nina: Stop! You can't hurt me. You've walked right into my trap!
+5
+4,6,1710,2425,3
+5
+5,4,1930,2425,3
+5
+6,8,1760,2475,3
+5
+7,8,1880,2475,3
+10
+7
+1
+$: The Rein! You traitor, why are you doing this?
+1
+Nina: Nobody had any idea who the guild has been working for except Dieb. Unfortunately, Dieb couldn't keep his nose out of our client's business. He found out what the crystals are for and tried to end the contract. But by then, The Rein was too large to escape from. Our 'client' was very convincing and payed much of the guild to betray and hunt down Dieb.
+1
+@: It was you passing the messages to Stiletto in Tristen!
+1
+Nina: Naturally, the offer was not extended to anyone in the guild whose loyalty could not be bought. Many were still following Dieb's original orders, which we were able to exploit. Stiletto's job was to watch the Resistance, but when you showed up, we thought it was time your tasks ended. It was foolish to trust Hans-Dirk, but no matter. Madigan could not cover for you much longer. It was only a matter of time before we had you again.
+1
+^: And Kahn?
+1
+Nina: Kahn will be dealt with soon. But our time is up. Madigan has been watching you. Her spies will be here soon to rescue you. Prepare yourselves for a long trip, we'll have to lose them. I wouldn't want her recovering and reviving your corpses. Acolytes!
+1
+$: WAIT! Who is the client? Who is leading The Rein?
+1
+Nina: Why should it matter to you? You will be dead soon. Get them out of here.
+0
+112
+9
+1000,1500
+3
+0,1,1000,1500
+3
+1,17,1050,1490
+6
+1,6
+3
+2,33,967,1510
+6
+2,8
+10
+7
+5
+1,4,1032,1500,1
+2
+1000,1600,1
+10
+7
+1
+$: @, ^, wake up.
+1
+^: ...uuggghhh....
+5
+2,6,1000,1532,1
+10
+7
+6
+2,8
+10
+7
+1
+@: What happened?
+1
+$: We were drugged. I think they are gone.
+1
+^: And we're still alive?
+1
+$: Not for long. It looks like we're on an island. And we're alone. There's a hut, but it's long abandoned. We'll die of thirst soon.
+1
+@: We need to find Madigan. We need to tell her about Nina. She isn't safe.
+1
+^: I don't think we're going anywhere right now.
+1
+$: Come on. Let's see what we can do.
+!
+*
+7
+14
+1
+0
+418
+9
+450,450
+3
+0,1,425,450
+6
+0,6
+3
+1,17,475,435
+6
+1,8
+3
+2,33,500,500
+5
+2,4,440,500,1
+10
+7
+5
+2,6,510,500,1
+10
+7
+5
+2,8,510,480,1
+10
+7
+1
+^: This is taking too long.
+1
+$: Almost there...
+2
+450,550,1
+10
+7
+1
+$: Done! It's open.
+1
+^: Well, is it in there?
+1
+$: Yeah, this is it.
+5
+0,6,460,430,1
+10
+7
+1
+@: Let me see it.
+1
+@: They are notes about some of the crystals. The usual stuff on a job. Locations, building plans, risks. Some notes near the end describe a book, supposedly containing locations for all the crystals. Kind of like a catalog...
+1
+$: A catalog? I thought these crystals were just rare collectors prizes until The Rein got involved. Now you're telling me that someone has been keeping track of them all along? Somebody knows what they are?
+1
+@: In a way, but not someone we'll ever meet. The notes describe the book as centuries old. There is something special about the crystals, and they were given to certain individuals to care for them.
+1
+^: And we've been stealing them back.
+1
+@: Maybe. The book is old, and there aren't many notes in here.
+1
+$: Well, what should we do? Is this book that important that Dieb had to die?
+1
+Nina: It wasn't the book that got him killed. He found out what the crystals are for and tried to back out of the deal. Our client was giving Dieb the locations of the crystals. But then Dieb disappeared, and the fool tried to find that book so that he could find the remaining crystals himself. However, he was captured before he could cause any trouble.
+3
+3,657,450,320
+3
+4,113,420,320
+3
+5,257,390,320
+3
+6,257,480,320
+2
+450,450,1
+10
+7
+5
+2,8,500,430,3
+6
+0,8
+10
+7
+1
+^: Nina! Stiletto! Dieb had a message he wanted me to deliver.
+1
+Stiletto: I don't think so. You're outnumbered. It will be just as fun to see your execution.
+1
+@: Why are you doing this?
+1
+Nina: Our 'client' is a very persuasive person. He was not willing to let go of the Guild's agreement. He hired those of us who better appreciated his offer to keep watch on Guild members. Let you gather the crystals in ignorance, and if you find out too much, eliminate you.
+1
+$: But who is this client?
+1
+Nina: It is none of your concern. Guards, take them to the pit. They're to be included in the next public execution.
+!
+*
+8
+14
+1
+0
+354
+9
+640,1140
+3
+3,417,690,960
+3
+0,1,580,1120
+3
+1,17,640,1120
+3
+2,33,,610,1060
+6
+2,8
+6
+1,8
+6
+0,8
+10
+7
+1
+Frye: Oh, hello! I thought I was alone.
+5
+3,4,610,960,1
+10
+7
+6
+3,2
+7
+7
+1
+^: Are you Frye?
+1
+Frye: Yes, I am. Who are you?
+1
+$: You are illegally hunting on Sebastian's land.
+1
+Frye: And why should that concern you?
+1
+^: We've come to stop this.
+1
+Frye: You're working for The Rein, aren't you! I will not be threatened by you!
+5
+0,8,580,1080,1
+10
+7
+1
+@: We work for Sebastian.
+1
+Frye: It makes no difference. Sebastian lets The Rein do as they please.
+1
+^: We will let you go unharmed if you stop poaching.
+1
+Frye: Hah! And go hungry? The Rein takes all my crops to feed their wars, and I am not compensated. My wife and I are starving! I will not stop.
+1
+$: You should find other means to earn a living.
+1
+Frye: Leave now! I will not be stopped. I am armed and will fight you.
+1
+^: Fool, your life is in danger.
+5
+3,2,610,1000,1
+10
+7
+1
+Frye: BASTARDS! I AM HERE TO TAKE BACK WHAT HAS BEEN STOLEN FROM ME! I SHALL TAKE WHAT I -- AAAGGHHH!! <Before Frye can react, ^ grabs hold of him.>
+5
+2,8,590,1010,2
+10
+7
+5
+2,6,600,1000,3
+5
+3,2,600,1010,3
+10,7
+6
+2,2
+7
+7
+1
+^: You will leave this land or I will kill you!
+1
+Frye: PLEASE!! I am just hungry! I won't leave - I will not starve to death. I -- AAAUUUGH!
+1
+<^ grabs Frye's hunting knife from his belt and drives it into his back. The stab is clean, penetrating between the ribs and reaching the heart. It only takes an instant, then Frye is dead.>
+4
+3
+7
+7
+1
+$: What are we becoming. The Thieves' Guild would never kill like this...
+1
+@: The Guild has changed.
+1
+^: We should hurry back. If you don't like it, stop thinking about it.
+!
+*
+9
+14
+1
+0
+276
+9
+1000,1850
+3
+0,1,780,1780
+3
+1,17,780,1750
+3
+2,33,750,1750
+3
+3,449,1020,1720
+3
+4,529,1340,1910
+6
+4,4
+3
+5,193,1245,1685
+3
+6,513,1370,1910
+6
+6,8
+3
+7,561,1030,2100
+3
+8,257,1030,2130
+3
+9,193,1300,1840
+6
+9,4
+6
+0,6
+6
+1,6
+6
+2,6
+7
+7
+5
+0,6,980,1780,1
+5
+1,6,980,1750,1
+5
+2,6,950,1750,1
+2
+1200,1850,1
+10
+5
+1,6,1020,1750,1
+10
+7
+6
+1,8
+10
+7
+1
+$: What is all this?
+1
+Daiann: There's another execution today.
+1
+$: Another?
+1
+Daiann: They are quite frequent, almost a daily occurance. This is the second execution today, which isn't normal, but the criminal cannot be allowed to live with his crimes.
+1
+$: What crimes?
+1
+Daiann: Treason to The Rein, conspiracy with mages, and the use of magic towards evil ends.
+1
+Daiann: Here he comes!
+5
+1,6,1090,1720,1
+5
+0,6,1120,1720,2
+5
+2,6,1150,1720,3
+10
+6
+0,2
+6
+1,2
+6
+2,2
+10
+7
+5
+7,8,1030,1760,1
+5
+8,8,1030,1790,1
+10
+5
+7,6,1060,1760,1
+5
+8,8,1030,1760,1
+10
+5
+7,6,1090,1760,1
+5
+8,6,1060,1760,1
+10
+5
+1,2,1090,1730,1
+10
+7
+1
+$: Dieb!
+6
+7,8
+10
+7
+1
+Dieb: $! What are you doing here? It's not safe! Our client works for The Rein! I didn't know until it was too late. You must get out of here!
+1
+$: Why are they doing this to you?
+1
+Dieb: I tried to stop them when I found out who we were working for. But Nina and Stiletto turned on me.
+1
+$: What should we do?
+1
+Dieb: They have my journal in their headquarters. Get it if you can, then get out of here. If they find you, they will kill you.
+1
+Guard: Keep moving!
+5
+7,6,1150,1760,1
+5
+8,6,1120,1760,1
+10
+7
+6
+1,6
+10
+7
+1
+$: Dieb!
+1
+Dieb: Get the journal, then run! Don't let them find you!
+5
+7,6,1250,1760,1
+5
+8,6,1220,1760,1
+10
+7
+6
+2,4
+10,7
+1
+^: Are we going to watch?
+1
+$: No.
+5
+1,4,550,1780,1
+5
+0,4,580,1780,1
+5
+2,4,610,1780,1
+2
+900,1780,2
+10
+7
+2
+1728,1252,5
+3
+0,657,1680,1152
+3
+1,113,1680,1500
+5
+1,8,1680,1180,1
+10
+7
+1
+Stiletto: They are in town. Dieb told them about the journal. Should I send some people to intercept?
+1
+Nina: No, make it easy for them to get into the headquarters. We'll wait to trap them. They won't escape this time.
+!
+*
+10
+14
+1
+0
+406
+9
+450,600
+3
+0,1,420,550
+3
+1,17,452,550
+3
+2,33,484,550
+3
+3,401,452,590
+3
+4,673,700,580
+3
+5,753,730,630
+3
+6,369,700,670
+6
+3,8
+6
+5,4
+6
+6,8
+10
+7
+1
+Stefan: Follow me.
+5
+3,2,472,640,1
+5
+0,2,420,600,1
+5
+1,2,452,600,1
+5
+2,2,484,600,1
+10
+7
+5
+3,6,512,640,1
+5
+0,2,420,640,1
+5
+1,2,452,640,1
+5
+2,2,484,640,1
+10
+7
+5
+3,6,632,640,1
+5
+0,6,540,640,1
+5
+1,6,572,640,1
+5
+2,6,604,640,1
+2
+700,700,5
+10
+7
+5
+3,6,660,670,1
+5
+0,6,660,580,1
+5
+1,6,620,610,1
+5
+2,6,620,640,1
+10
+7
+6
+3,8
+6
+4,4
+10
+7
+1
+Madigan: Hi guys. Looks like Stefan found you. How did things go?
+1
+@: Nina beat us to the crystal. We got there right as she escaped. Stiletto prevented us from catching up to her, but at least he won't get in the way anymore.
+6
+4,2
+6
+0,2
+10,7
+1
+Madigan: This is getting out of hand. We can't afford to keep losing to her like this. We need to find out what she is up to. @, $, ^, this is Isharia, leader of the Resistance.
+5
+5,4,700,630,1
+10,7
+1
+Isharia: I'm pleased to meet all of you. We are in desperate need of skilled people and are indebted to Madigan for offering us the services of the Thieves' Guild.
+1
+^: You're a mage?
+1
+Isharia: You seem a bit surprised? Several of our members are mages. The Rein has gotten out of control and our only chance of survival was to go underground and organize a way to protect ourselves. We've gotten help from several other people, too, but our numbers are small. We've even been forced to take in criminals from time to time.
+1
+Okyon: We should start planning our next move.
+6
+5,2
+10
+7
+1
+Isharia: You're right, Okyon. There will be time for explanations later.
+5
+5,6,730,630,1
+10
+7
+6
+5,4
+10
+7
+1
+Isharia: Okyon has been searching for information on the crystals since Madigan got word to us what The Rein was looking for.
+1
+Okyon: The crystals are very old, several centuries, and date back to the Hero's time. A total of seven were created, each with a unique power. They were entrusted to special orders, such as the Furin Elves - the ones now buried beneath Tristen.
+1
+Isharia: It is a possibility that The Rein is collecting the crystals to eliminate them, since they are magical. Yet, other than the crystal in Wisp, all of them were forgotten or buried. It is very strange how The Rein even knew of their existence, or why they would gather them up at the risk of our discovering them.
+1
+Okyon: Harold, the former owner of the crystal you stole in Wisp, acquired his prize in an auction of artifacts uncovered by explorers near the western coast of the mainland. The explorers were looting an abandoned temple. The temple used to be one of a few stops in a spiritual pilgrimmage. Some locations were said to contain a crystal, and the priests would use them to heal and revitalize the pilgrims in their long journeys.
+1
+Okyon: From this information, I started looking for information on such pilgrimages. It led me to a book, 'The Seven Stars'. This book contains the locations of all the crystals.
+1
+$: This must be the book Dieb was looking for.
+1
+Isharia: You've heard of this book? Please explain.
+1
+@: We're not sure if it is the same book, but Dieb had found a way to get the crystals before The Rein could. He found out what the crystals were for and The Rein had him executed.
+1
+Okyon: It is not an easy task. Only a small number of copies were made and they are so old now that I am sure most are lost. Undoubtedly, The Rein has a copy. We need to find another if it still exists.
+1
+^: Where do we look?
+1
+Okyon: The mages have long been divided into two schools, the Abastral and the Fastral. While the Abastral remained in the Floating City of Mages, the Fastral were banished to this realm and created the Universitat, a school for Fastral mages. Within the Universitat is one of the largest libraries of ancient tomes.
+1
+@: But the Universitat was destroyed in the Catastrophe. There was a giant landslide and the mountain pass closed, swallowing everything.
+1
+Okyon: That is what they wanted you to believe. With the formation of The Rein, they thought it best that the world think them dead. A few know their secret, particularly the surviving Abastral from the fall of the Floating City. The Fastral offered us asylum. I did not accept it but a few others did. They told us how to find the city should we ever change our minds.
+1
+Okyon: If there is still a copy of 'The Seven Stars' to be found, it would be in the Universitat. There is a mage in Trost who can help you. We were told to see him if we should need to find the Universitat.
+1
+$: We will seek him out.
+1
+Madigan: Be careful, and return here if you need to rest. We have limited supplies, but there is a merchant contact who sells to us and a training room. Good luck.
+!
+*
+11
+14
+1
+0
+406
+9
+450,600
+3
+0,1,420,550
+3
+1,17,452,550
+3
+2,33,484,550
+3
+3,401,452,590
+3
+4,673,700,580
+3
+5,753,730,630
+3
+6,369,700,670
+6
+3,8
+6
+5,4
+6
+6,8
+10
+7
+1
+Stefan: Follow me.
+5
+3,2,472,640,1
+5
+0,2,420,600,1
+5
+1,2,452,600,1
+5
+2,2,484,600,1
+10
+7
+5
+3,6,512,640,1
+5
+0,2,420,640,1
+5
+1,2,452,640,1
+5
+2,2,484,640,1
+10
+7
+5
+3,6,632,640,1
+5
+0,6,540,640,1
+5
+1,6,572,640,1
+5
+2,6,604,640,1
+2
+700,700,5
+10
+7
+5
+3,6,660,670,1
+5
+0,6,660,580,1
+5
+1,6,620,610,1
+5
+2,6,620,640,1
+10
+7
+6
+3,8
+6
+4,4
+10
+7
+1
+Madigan: Hi guys. Looks like Stefan found you. How did things go?
+1
+@: Nina beat us to the crystal. We got there right as she escaped. Stiletto prevented us from catching up to her, but at least he won't get in the way anymore.
+6
+4,2
+6
+0,2
+10,7
+1
+Madigan: This is getting out of hand. We can't afford to keep losing to her like this. We need to find out what she is up to. @, $, ^, this is Isharia, leader of the Resistance.
+5
+5,4,700,630,1
+10,7
+1
+Isharia: I'm pleased to meet all of you. We are in desperate need of skilled people and are indebted to Madigan for offering us the services of the Thieves' Guild.
+1
+^: You're a mage?
+1
+Isharia: You seem a bit surprised? Several of our members are mages. The Rein has gotten out of control and our only chance of survival was to go underground and organize a way to protect ourselves. We've gotten help from several other people, too, but our numbers are small. We've even been forced to take in criminals from time to time.
+1
+Okyon: We should start planning our next move.
+6
+5,2
+10
+7
+1
+Isharia: You're right, Okyon. There will be time for explanations later.
+5
+5,6,730,630,1
+10
+7
+6
+5,4
+10
+7
+1
+Isharia: Okyon has been searching for information on the crystals since Madigan got word to us what The Rein was looking for.
+1
+Okyon: The crystals are very old, several centuries, and date back to the Hero's time. A total of seven were created, each with a unique power. They were entrusted to special orders, such as the Furin Elves - the ones now buried beneath Tristen.
+1
+Isharia: It is a possibility that The Rein is collecting the crystals to eliminate them, since they are magical. Yet, other than the crystal in Wisp, all of them were forgotten or buried. It is very strange how The Rein even knew of their existence, or why they would gather them up at the risk of our discovering them.
+1
+Okyon: Harold, the former owner of the crystal you stole in Wisp, acquired his prize in an auction of artifacts uncovered by explorers near the western coast of the mainland. The explorers were looting an abandoned temple. The temple used to be one of a few stops in a spiritual pilgrimmage. Some locations were said to contain a crystal, and the priests would use them to heal and revitalize the pilgrims in their long journeys.
+1
+Okyon: From this information, I started looking for information on such pilgrimages. It led me to a book, 'The Seven Stars'. This book contains the locations of all the crystals.
+1
+Madigan: We believe Dieb was looking for this book when he was killed. Kahn arrived shortly before you did. He was captured while delivering one of the crystals to Nina. He had spoken to Dieb and discovered he knew where to find the crystals. Kahn was able to escape with this information, but not the title of the book.
+1
+Isharia: We're almost positive he was looking for 'The Seven Stars'. Only, we don't know if he ever found a location or if the book can even be found.
+1
+Okyon: It is not an easy task. Only a small number of copies were made and they are so old now that I am sure most are lost. Undoubtedly, The Rein has a copy. We need to find another if it still exists.
+1
+^: Where do we look?
+1
+Okyon: The mages have long been divided into two schools, the Abastral and the Fastral. While the Abastral remained in the Floating City of Mages, the Fastral were banished to this realm and created the Universitat, a school for Fastral mages. Within the Universitat is one of the largest libraries of ancient tomes.
+1
+@: But the Universitat was destroyed in the Catastrophe. There was a giant landslide and the mountain pass closed, swallowing everything.
+1
+Okyon: That is what they wanted you to believe. With the formation of The Rein, they thought it best that the world think them dead. A few know their secret, particularly the surviving Abastral from the fall of the Floating City. The Fastral offered us asylum. I did not accept it but a few others did. They told us how to find the city should we ever change our minds.
+1
+Okyon: If there is still a copy of 'The Seven Stars' to be found, it would be in the Universitat. There is a mage in Trost who can help you. We were told to see him if we should need to find the Universitat.
+1
+$: We will seek him out.
+1
+Madigan: Be careful, and return here if you need to rest. We have limited supplies, but there is a merchant contact who sells to us and a training room. Good luck.
+!
+*
+12
+14
+1
+0
+85
+11
+9
+770,1100
+3
+0,1,620,990
+3
+1,17,645,990
+3
+2,33,670,990
+3
+3,113,755,985
+3
+4,673,860,800
+10
+7
+5
+4,2,860,1070,1
+10
+5
+4,4,800,1070,1
+10
+5
+4,4,645,1100,1
+10
+5
+4,8,645,1020,1
+10
+7
+1
+Madigan: I've made preparations to leave Willowbrook. I'd ask you three to come with me, but I've got something that needs to be done.
+1
+Madigan: I have a report on Nina's last location. I have a feeling she is going to retrieve the rest of the crystals personally. Fortunately, she hasn't been too subtle. A small group of people were asking for the location of a cave near Nanten. They had bought a significant number of supplies - enough to draw attention. The description matches Nina almost exactly.
+1
+$: So you want us to head to Nanten and pick up the trail?
+1
+Madigan: Yes. See if you can intercept her before she finds the crystal.
+1
+@: What will you do?
+1
+Madigan: I am going to look for some outside help. I don't know who and I don't know where. I have a few leads from my contacts, but nothing I can trust. We are going to lose contact with each other for some time. Don't worry, as soon as I can, I will send for you.
+1
+^: So it looks like we're stuck in this mess for good. Why are we doing this? Our job is done and we shouldn't get involved any deeper. I think we should just lay low until whatever is going on blows over.
+1
+Madigan: The Guild is dead now, and Nina will be after us once she finds the crystals. We have to start fighting back if we want to live.
+1
+@: Very well, we'll go to Nanten and find Nina. Once she is dead, we're finished. Be careful, Madigan.
+1
+Madigan: I will be. I'll be gone in the morning before you leave, so this is farewell.
+5
+4,2,645,1100,1
+10
+5
+4,4,450,1100,1
+10
+5
+1,8,645,960,1
+10
+6
+1,2
+6
+0,6
+6
+2,4
+10
+7
+1
+$: We still don't know what the crystals are for and why The Rein is gathering them.
+1
+^: I really don't care. The Guild is dead, so we don't owe allegiance to anyone. We better start looking out for ourselves.
+1
+@: I agree. I don't want to get mixed up in this any more than we already are.
+5
+0,2,645,1100,1
+10
+7
+1
+$: Where are you going?
+6
+0,8
+6
+2,2
+10
+7
+1
+@: I'm going to spend the night with Madigan.
+1
+^: What is it with you two?
+1
+@: This is what happened...
+0
+226
+11
+9
+1400,1900
+3
+4,1,1800,1800
+3
+1,193,1875,1800
+3
+2,193,1380,1350
+3
+3,193,1380,2250
+10
+7
+5
+4,4,1380,1800,2
+5
+1,4,1430,1800,2
+5
+2,2,1380,1750,2
+5
+3,8,1380,1850,2
+10
+7
+6
+4,8
+10
+7
+6
+4,2
+10
+7
+6
+4,6
+10
+7
+1
+Acolyte #1: You're surrounded, mage! You can give up and stand trial, or you can fight and we'll sentence you here.
+1
+Acolyte #2: UUUAAAGGGHH!
+3
+0,673,1375,1680
+5
+0,2,1375,1740,3
+10
+7
+4
+2
+1
+Acolyte #1: Wha- AAARRRRGGGHHH!
+5
+0,2,1375,1840,3
+10
+7
+4
+3
+1
+Acolyte #3: Help!
+5
+1,6,1720,1800,3
+10
+7
+6
+0,8
+10
+7
+1
+Thief: This way. Move! NOW!
+5
+0,4,1220,1840,2
+5
+4,4,1200,1840,2
+10
+7
+6
+0,6
+6
+4,6
+10
+7
+3
+2,193,1760,1800
+5
+1,4,1400,1800,2
+5
+2,4,1440,1800,2
+10
+7
+6
+1,6
+10
+7
+1
+Acolyte #4: Murders! That mage will burn for this! Where did they go?
+1
+Acolyte #3: That way I think. Hurry!
+5
+1,8,1360,1600,2
+5
+2,8,1400,1600,2
+10
+7
+1
+@: Who are you?
+6
+0,4
+10
+7
+1
+Thief: My name is Madigan.
+1
+@: I am @. Why did you do that? They will hunt you too, now. You've put your own life in danger.
+1
+Madigan: That's never worried me before. Besides, they're bad for business. We're better off without them.
+1
+@: Bad for business? What do you mean?
+1
+Madigan: Come with me, I'll show you. Down here.
+5
+4,6,1260,1840,1
+5
+0,6,1350,1840,1
+10
+7
+1
+@: Where are you taking me?
+6
+0,4
+10
+7
+1
+Madigan: Stop asking so many questions, they'll be back before I can answer them. It's safe. Trust me, @.
+5
+0,2,1350,1930,1
+5
+4,6,1350,1840,1
+10
+5
+0,2,1350,2130,1
+5
+4,2,1350,2130,1
+10
+7
+0
+85
+11
+9
+770,1100
+3
+0,1,645,1100
+6
+0,8
+3
+1,17,645,960
+3
+2,33,670,990
+3
+3,113,755,985
+10
+7
+1
+@: She took me to see Dieb. The Guild never had any use for mages before, but things were changing. Madigan stood up for me before the Guild and they gave me sanctuary. We've been close ever since. I owe her more than I can repay.
+1
+^: So that's why you really keep coming back here - to see her!
+1
+@: She's the only one I trust. I'll see you in the morning. Goodnight.
+5
+0,4,450,1100,1
+10
+7
+5
+1,2,645,990,1
+10
+7
+6
+1,6
+6
+2,4
+10
+7
+1
+$: So, ^. You still haven't told me how you ended up in the Guild.
+1
+^: It's not a good story. But not tonight, I'm exhausted. You want the bed or the floor?
+1
+$: You have the bed. I don't think I'll be getting much rest tonight, anyway. I'm worried, the Guild was everything to me and now it's gone.
+5
+2,4,600,990,1
+10
+7
+6
+2,6
+10
+7
+1
+^: Try not to think about it. Goodnight.
+!
+*
+13
+14
+1
+0
+406
+9
+700,700
+3
+0,1,670,580
+3
+1,17,640,610
+3
+2,33,640,640
+3
+3,49,670,670
+3
+4,673,700,580
+3
+5,753,730,610
+3
+6,369,700,670
+3
+7,689,730,640
+6
+1,6
+6
+2,6
+6
+3,8
+6
+6,8
+6
+5,4
+6
+7,4
+10
+7
+1
+Madigan: What does the book say?
+1
+Okyon: It describes the locations of the seven crystals. Three had unique healing powers and were given to the great temples. According to Khan, two now have been found. One was given to the elven family now resting in the crypts below Tristen. Another was given to an order of warriors, which Madigan's spies have reported as recently stolen.
+1
+Okyon: Then there was the one given to the dwarves that used to live near Nanten. That leaves us with just two crystals left. One resides in the third great temple, the Sky Mountain Temple. The other was given to the Trocken order of monks.
+1
+Isharia: How do we get to these places?
+1
+Okyon: The Sky Mountain Temple is deep within the Great Range. The best point of entry is probably the caves north of Matthias's keep. The temple has long been abandoned and beasts probably infest the caves.
+1
+Okyon: The Trocken Monks used their crystal to initiate new members. Initiates would enter a 'dungeon' solve a series of puzzles to reach the crystal. Once at the end, they would intone a special prayer in conjunction with the crystal's power, and become full members. The Trocken no longer exist, but their dungeon is probably still accessible in the desert south of Nanten.
+1
+Isharia: We've lost so much time. I am proposing we go for both crystals now.
+5
+3,8,670,655,1
+10
+7
+1
+Khan: I will send a group out to the Trocken Dungeon. My thieves can get through it in no time.
+5
+7,4,715,640,1
+10
+7
+1
+Daisalan: And I can send my followers to the Sky Mountain Temple.
+1
+Isharia: I cannot spare that many people. You two control our largest forces and it would not be safe to send out so many. @, $, ^, could you find one of the crystals?
+1
+@: Yeah, we'll help. We still have to catch up to Nina.
+1
+Isharia: Good! I'll leave it up to you then. If you wish to search the Sky Mountain Temple, talk to Khan and send his people to the Trocken Dungeon. If you would rather search the dungeon, speak with Daisalan. Okyon will continue studying the book. Hopefully we can figure out what The Rein is up to.
+1
+Madigan: @, be sure to speak to me before you leave!
+!
+*
+14
+14
+1
+0
+406
+9
+700,700
+3
+0,1,670,580
+3
+1,17,640,610
+3
+2,33,640,640
+3
+3,49,670,670
+3
+4,673,700,580
+3
+5,753,730,610
+3
+6,369,700,670
+3
+7,689,730,640
+6
+1,6
+6
+2,6
+6
+3,8
+6
+6,8
+6
+5,4
+6
+7,4
+10
+7
+1
+Isharia: How has everyone fared?
+1
+$: Nina beat us to the crystal. We tried to stop her, but she escaped.
+1
+Isharia: Khan?
+1
+Khan: My thieves found the crystal, but a man, robed in black and white, arrived to take it. The thieves fought him, but he was a wizard of great strength. The crystal was taken and only a few of my people survived.
+1
+Isharia: Then we have nearly lost... Okyon, tell them what you've discovered.
+1
+Okyon: I have finished reading 'The Seven Stars' and discovered the true nature of the crystals. They are the seven pieces of Greyor's orb that the Hero shattered in his final battle against the evil wizard.
+1
+Madigan: What is so special about the orb?
+1
+Okyon: Greyor crafted the orb over several decades. It was to be the greatest magical device. With it he could link himself completely to the life energy within The Rift. He would be merged within the lifeforce, or perhaps the opposite, and would gain immortality. Such is all speculation, nobody ever believed it possible. But the orb, when whole, would give more power to one person than every mage combined.
+1
+@: The Rein must be trying to reassemble the orb! Is it even possible?
+1
+Okyon: Yes, it is possible, but would require a lot of skill and a nearly direct link to the life flows. The Rift is one place, but requires a link like the orb to already exist. That leaves the Life Caverns. The dwarven craftsmen used to enchant their armor in there many centuries ago.
+1
+$: How do we get to the Life Caverns?
+1
+Okyon: The Fastral mages built the Universitat at its location for proximity to the Caverns. I suggest you search that island.
+1
+^: We'll catch Nina before she can fix that orb.
+1
+Isharia: Please hurry.
+!
+*
+15
+14
+1
+0
+406
+9
+700,700
+3
+0,1,670,580
+3
+1,17,640,610
+3
+2,33,640,640
+3
+3,49,670,670
+3
+4,673,700,580
+3
+5,753,730,610
+3
+6,369,700,670
+3
+7,689,730,640
+6
+1,6
+6
+2,6
+6
+3,8
+6
+6,8
+6
+5,4
+6
+7,4
+10
+7
+1
+Isharia: How has everyone fared?
+1
+$: Nina beat us to the crystal. We tried to stop her, but she escaped.
+1
+Isharia: Daisalan?
+1
+Daisalan: Only a few of my people returned to me. A great wizard, robed in black and white, followed them to the temple. There he fought and killed many of them, and took the crystal. He was too strong. Nobody could stop him.
+1
+Isharia: Then we have nearly lost... Okyon, tell them what you've discovered.
+1
+Okyon: I have finished reading 'The Seven Stars' and discovered the true nature of the crystals. They are the seven pieces of Greyor's orb that the Hero shattered in his final battle against the evil wizard.
+1
+Madigan: What is so special about the orb?
+1
+Okyon: Greyor crafted the orb over several decades. It was to be the greatest magical device. With it he could link himself completely to the life energy within The Rift. He would be merged within the lifeforce, or perhaps the opposite, and would gain immortality. Such is all speculation, nobody ever believed it possible. But the orb, when whole, would give more power to one person than every mage combined.
+1
+@: The Rein must be trying to reassemble the orb! Is it even possible?
+1
+Okyon: Yes, it is possible, but would require a lot of skill and a nearly direct link to the life flows. The Rift is one place, but requires a link like the orb to already exist. That leaves the Life Caverns. The dwarven craftsmen used to enchant their armor in there many centuries ago.
+1
+$: How do we get to the Life Caverns?
+1
+Okyon: The Fastral mages built the Universitat at its location for proximity to the Caverns. I suggest you search that island.
+1
+^: We'll catch Nina before she can fix that orb.
+1
+Isharia: Please hurry.
+!
+*
+16
+14
+1
+0
+438
+9
+1200,840
+3
+3,817,1184,672
+3
+0,1,1100,830
+3
+1,17,1130,830
+3
+2,33,1160,830
+6
+0,8
+6
+1,8
+6
+2,8
+10
+7
+5
+3,2,1184,704,1
+10
+7
+1
+<The cavern is large with a pool of water in the middle. There is something strange about the water, almost magical. A man in black and white robes stands before it, the crystals scattered about him on the ground. It appears he is mumbling something, and @ strains to hear what it could be.>
+1
+<The process lasts only seconds then he pushes the crystals into the water. Smiling, he looks up at the three thieves. A triumphant glow lights up his eyes and he pulls a crystal orb out of the water. The orb seems both black and transparent at the same time, confounding the eye and forcing the three to look away. Finally, @ builds up the courage to speak.>
+5
+0,8,1100,800,1
+10
+7
+1
+@: What have you done?
+1
+Wizard: What I have been trying to do for centuries. This time, I will not be stopped.
+1
+@: Who are you?
+1
+Wizard: Of course you don't recognize me. Everyone seems to have forgotten. I am the creator of this orb.
+1
+@: Greyor...
+1
+Greyor: Yes, perhaps not everyone has forgotten me. You three must be the thieves that have been giving The Rein so much difficulty. It doesn't matter anymore, do what you will with them, I do not need them anymore.
+5
+1,8,1130,800,1
+10
+7
+1
+$: So you were the one leading The Rein!
+1
+Greyor: They were simply a pack of fanatical idiots. So disorganized and bloodthirsty. It didn't take long to earn my way to the top of their ranks and send them for the crystals. They readily served them up to me, thinking I would destroy them and rid the world of their presence. Well, in a way, I've completed my part of the bargain.
+1
+@: We won't let you use that orb. We won't let you become that powerful.
+1
+Greyor: Power? Do you mean invincibiltiy? Or do you mean immortality? Perhaps once I dreamed of such, but I've suffered inside The Rift for 500 years. I know what lies inside, what it is. Oh no, I don't dream of power. You see, it has let me out to do a simple task. One it has waited millennia to happen. You don't know what it is, and can't possibly comprehend it. It would consume and control you, should you try to touch it, as it has done to me.
+5
+2,8,1160,800,1
+10
+7
+1
+^: What the hell are you talking about!
+1
+Greyor: It doesn't matter, you and everyone else will find out soon enough. In a way, at least. You'll never know what I've done once it happens. You might almost say that you'll cease to exist.
+1
+$: You're not making any sense! You plan on killing everyone?
+1
+Greyor: No, I've come to finish my job. To correct the mistakes I made in the past. To reuinite all Engel's inhabitants. To finally restore life to Engel. I've wasted enough time with you. Your lives are part of it, so I shall not waste them.
+1
+<Greyor raises his hand and there is a blinding flash. When it subsides, @ finds himself on the ground, $ and ^ unconscious next to him. Greyor is gone and although it feels only a moment has passed, @ suspects it has perhaps been hours.>
+!
+*
+17
+14
+1
+0
+406
+9
+700,700
+3
+0,1,670,580
+3
+1,17,640,610
+3
+2,33,640,640
+3
+3,49,670,670
+3
+4,673,700,580
+3
+5,753,730,610
+3
+6,369,700,670
+3
+7,689,730,640
+6
+1,6
+6
+2,6
+6
+3,8
+6
+6,8
+6
+5,4
+6
+7,4
+10
+7
+1
+Isharia: Okyon and I have discussed matters for a long time. If Greyor gets control of The Rift then he could destroy everything. Many years ago, the mages were able to stop him. But it took an army and this time we don't have one. There is only one way to stop him. It is to enter The Rift and defeat him. Only inside The Rift would he be vulnerable.
+1
+Madigan: But that is impossible. Only the orb can link with The Rift.
+1
+Isharia: There is another device. Centuries before the orb was crafted, Greyor created a device to link with The Rift. It was more of a prototype, not having any power within The Rift, instead simply providing a gateway for the wielder. This device is a sceptre, with a crystal not too dissimilar from the orb. The mages confiscated it centuries ago and have kept it hidden.
+1
+Khan: How can we find it, then?
+1
+Isharia: Several mages know the location. It is called The Vault.
+1
+Okyon: It is more of a prison than an actual storage location. It housed rogue mages more than it did items of power. Wards were used to prevent magic use and a regular guard lived within.
+1
+Isharia: The Vault was used less and less over the years. It has been abandoned for centuries now. But the sceptre has never been removed.
+1
+Daisalan: I'll send my people to get it, immediately!
+1
+Okyon: Getting the sceptre is not that simple. The room it is in has three locks. They can only be opened with the right keys.
+1
+Isharia: To ensure the sceptre stayed locked away, the keys were scattered. The first key was thrown down the Schwarzloch, hoping it would never be found. The second was given to the dwarves of Westberg.
+1
+Okyon: The Schwarzloch is a 'bottomless pit', of a sort. Spelunkers have actually discovered an alternate cave system that can get you to the bottom.
+1
+Isharia: And the dwarves of Westberg still live in isolation. We'll have to find their cave in the Westberg to see if they still have the key. The third key has changed hands many times and I will need awhile to locate it.
+1
+Khan: I will help find the dwarves.
+1
+Daisalan: Send my people to the Schwarzloch.
+1
+^: Please let us do something.
+5
+0,2,670,610,2
+6
+1,2
+10
+7
+1
+@: WHAT!?!
+1
+Madigan: I thought you three were out once Nina was dead.
+1
+^: I don't think there will be anywhere to hide if Greyor succeeds. We will help.
+1
+Isharia: Thank you. I'll give you the choice of which key you wish to retrieve. If you would search the Schwarzloch, speak to Kahn and send him to Westberg. Otherwise, speak to Daisalan and go to Westberg yourself. But for now, rest yourselves.
+5
+2,4,610,640,1
+5
+1,2,640,640,1
+5
+0,2,670,640,1
+10
+2
+470,700,2
+5
+2,4,410,640,1
+5
+1,4,440,640,1
+5
+0,4,470,640,1
+10
+5
+2,2,410,940,1
+5
+1,2,440,940,1
+5
+0,2,470,940,1
+2
+470,1000,1
+10
+5
+2,6,750,940,1
+5
+1,6,780,940,1
+5
+0,6,810,940,1
+2
+810,1000,1
+10
+5
+0,8,810,780,1
+5
+1,8,810,810,1
+5
+2,6,810,840,1
+2
+810,880,1
+10
+6
+0,2
+5
+1,6,840,810,1
+5
+2,4,780,810,1
+10
+7
+6
+2,6
+6
+1,4
+10
+7
+1
+@: I thought we were out of this, ^. Why did you drag us back in?
+1
+^: We cannot turn our backs to this. I've made that mistake already.
+1
+@: What do you mean?
+1
+^: I joined the Thieves' Guild not because of any desire to do so, but because I had no choice.
+1
+^: I used to be a city guard in Ilmari. I had stumbled upon some of the Guild in the process of a burglary. They made me a deal: If I were to turn my back, pretend they never existed, they would finish their job and leave. A purse of gold would be hidden for me to recover once they were gone. I agreed, and turned my back to them. But also, I turned against the guard and my duty.
+1
+^: They had fulfilled their part. I returned to the scene an hour later and found a purse of gold. But by then, the crime had been discovered. The city guards were there and discovered the gold on me. I became suspect and fled the city. I had been on the run for months, with bounties on my head. I worked my way to Tristen where I survived by stealing from people foolish enough to walk the wrong streets at night.
+1
+^: Naturally, the Guild found out about me and had me captured. They were going to turn me in for the bounty, but that's when things started getting strange in the Guild. There was talk of this new client, of dangerous tasks, and the need for a strongarm. I was given a choice. I could work for the Guild for my freedom, or be sent to Ilmari to stand trial.
+1
+^: But I was already a criminal. I knew what was waiting for me in Ilmari, so I accepted the job. It was better than sitting in a prison cell for the rest of my life.
+1
+$: So that is why you were so eager to be rid of this mess once Dieb was killed.
+1
+^: Yes, but not any more. I've been thinking about this. I made the mistake of turning away from my duty and it led to hiding and stealing just to survive. I don't want to go back to that. If Greyor can destroy the world, I do not want to spend what little time I have left in hiding. I would rather face him.
+1
+@: You are full of crap. Your conscience is going to get us killed.
+1
+$: Madigan has promised the help of the Thieves' Guild, even if we aren't really a guild anymore. As far as I am concerned, if she is going to fight, so will I. @, I thought you'd do the same for her.
+1
+@: For her then. Not for the Guild. I never cared about the Guild. If we survive, I will part with you two and hopefully we'll never meet again.
+!
+*
+18
+14
+1
+0
+450
+9
+1150,875
+3
+0,1,1150,1000
+3
+1,17,1110,1000
+3
+2,33,1190,1000
+3
+3,849,1150,800
+10
+7
+5
+0,2,1150,1100,1
+5
+1,2,1110,1100,1
+5
+2,2,1190,1100,1
+10
+5
+0,6,1260,1100,1
+5
+1,4,1010,1100,1
+5
+2,6,1300,1100,1
+10
+5
+0,8,1260,900,1
+5
+1,8,1010,900,1
+5
+2,8,1300,900,1
+10
+5
+0,4,1150,850,1
+5
+1,6,1100,800,1
+5
+2,4,1200,800,1
+10
+6
+0,8
+10
+7
+1
+^: Hi! How's it going? Sorry about the golems...
+6
+3,6
+10
+7
+1
+Wilthanur: Get out! NOW!
+1
+@: We'll leave soon enough. We need your help first.
+6
+3,2
+1
+Wilthanur: You broke into my home! Leave or I will defend myself!
+1
+$: A few more illusions? They didn't stop us before. Look, we're not here to hurt you. We just need you to see something.
+1
+<Wilthanur lets out a woeful sigh of resignation.> I give up. I hide myself in a tower, surrounded by deadly traps, but still they come... What is it the great and tired Wilthanur can do to help today's inepts?
+1
+@: We were told you were an artifacer. You know how to create or modify magic artifacts?
+1
+Withanur: Yes, yes, what of it?
+1
+@: We need you to assemble these...
+5
+0,8,1150,816,1
+10
+5
+0,8,1150,850,1
+10
+7
+1
+Wilthanur: Where did you get these?!
+1
+$: They're just minor things us adepts managed to scrounge up...
+1
+Wilthanur: It seems I've underestimated you three. This is Greyor's sceptre, and that is Saghure! These are two of the most powerful magic artifacts this world knows!
+1
+@: And they're nothing compared to the orb Greyor reformed.
+1
+Wilthanur: What is this?
+1
+^: Greyor has returned - you probably would have noticed all the turmoil outside if you ever bothered to leave your tower. He's already combined the shattered crystals back into his orb and is heading to The Rift.
+1
+@: We need you to assemble the sceptre and Saghure so that we can follow him.
+1
+Wilthanur: Then he's going to do it. He'll control Engel...
+1
+$: Huh? Rule the world?
+1
+Wilthanur: Listen closely, this is important. The old life force theory is true. Life is energy, and it must come from somewhere.
+1
+@: From the sun, or stored in matter, so what?
+1
+Wilthanur: You must look deeper than that. Magic is the manipulation of this energy through the flows of the life force - energy emitted through the earth itself. What happens when you lose control of magic?
+1
+@: It creates a backlash, a reaction resulting in adverse effects.
+1
+Wilthanur: What do you think is causing the backlash? When you lose control, something else grabs the energy and redirects it to some other purpose. What if that something was the entity that is the life force itself?
+1
+^: That makes no sense. Are you saying that magic is alive?
+1
+Wilthanur: Not magic, the life force that makes magic possible - it in itself is life, capable of action and reaction. Although action is quite limited, reaction is made possible through our mistakes. By casting magic, we open a flow within the life force and that enables the life force to interact with its environment.
+1
+@: That's nonsense. Energy cannot think or feel. It only moves from one source to another.
+1
+Wilthanur: Not energy itself, but the life force that provides the energy. Engel, our planet, is a container holding the life force. It is emitting energy that gives us life and magic. You know it is there even if you cannot see it. Few possess the ability to wield magic, but those that do know that it is a struggle against a force fighting back at the mage.
+1
+@: So what? What does this mean?
+1
+Wilthanur: Greyor knows this - knows it better than anyone. It was this intricate knowledge of the life force that made him the greatest of all mages. That is why he is going to The Rift. The Rift was created by mages thousands of years ago, back in our golden age, when we better understood the life force. When it was opened, the backlash was enormous. It was as if the life force was trying to escape.
+1
+Wilthanur: The Rift was sealed shut, too powerful for anyone to control. Too powerful for anyone until Greyor. Twice he was stopped from controlling The Rift. If he succeeds, he will become omnipotent, able to control all the magic of Engel.
+1
+$: Not if you can get that rod to work.
+1
+Wilthanur: It will take some time...
+1
+@: Please hurry.
+2
+1150,500,2
+10
+3
+0,1,960,830
+3
+1,17,1060,800
+3
+2,33,1250,850
+3
+3,849,1000,1100
+6
+0,8
+6
+1,8
+10
+2
+1150,860,2
+10
+5
+2,4,1060,850,1
+10
+5
+2,6,1240,850,1
+10
+5
+2,4,1060,850,1
+10
+6
+2,8
+6
+1,2
+10
+7
+1
+^: This is taking too long.
+1
+@: He's got some interesting books here...
+6
+2,4
+1
+^: How can you be so calm?
+1
+Wilthanur: It's ready!
+5
+0,6,1000,830,1
+6
+2,2
+2
+1150,920,1
+5
+3,8,1000,1060,1
+10
+6
+0,2
+5
+3,8,1000,846,1
+10
+5
+3,8,1000,880,1
+10
+7
+1
+Wilthanur: It is assembled. If you channel your magic through the Saghure, you can open a link to The Rift. Be careful. Only Greyor knows what can be found within.
+1
+@: Thank you.
+1
+Wilthanur: Oh, one other thing. You can go back down through the tower, or you can just take the portal out.
+!
+*
+19
+14
+1
+0
+456
+9
+360,320
+10
+7
+1
+$: @? ^?
+1
+@: I am here.
+1
+@: Greyor is gone.
+1
+$: Where are you? Why can't I see you?
+1
+@: We aren't physical anymore. We're reverting back into the life force.
+1
+^: What? Where's Greyor? Why is this happening?
+1
+@: ^ is gone already. Relax, don't resist it. Can't you feel it? Engel. It is everything. It is us. We are returning to the force that created us. I understand now what Greyor was talking about.
+8
+1
+$: @! I don't want this!
+1
+@: Yes you do. We are all Engel, all of us. The theory was correct. Engel is alive. It is trapped, it's energy slowly seeping to the surface bringing life. Until it runs out. Engel is dying in here. It's energy will run out some day.
+1
+@: I can hear it, all the knowledge of an eternity. Just give in and it becomes part of you - it always was you. So many times it tried to escape. Great disasters occured on the surface. We always thought it was us, or Greyor, but it was always Engel. Greyor realized this. He was going to free Engel.
+1
+$: He would have killed us all!
+1
+@: No, he was right. We wouldn't have died, we would have returned to Engel - all life, everything, restoring Engel, freeing it from the earth. Don't you understand, we'd all be eternal in the entity of Engel.
+1
+@: I can do it myself... I can reverse my link, create an escape for Engel. We would be free.
+1
+$: No @...
+1
+@: No more wars, no more fighting, no more hiding... No guilds, no warlords, no fear...
+1
+$: Stop it @...
+1
+@: We wouldn't exist without Engel. How can we leave it trapped in here, until it dies, until we die... I will do it.
+1
+$: NO @! I don't want to be a part of Engel. I don't care if it gave us life, I don't care if it makes us exist! I want to be me! I don't care if I struggle, or if I die trying... It is my decision to have and I don't want to share my existance with Engel.
+1
+@: How can you be so selfish? How can you let there be suffering? How can you deny the force that will make us all immortal? If I don't do this, we will die someday. Everyone will die someday. Engel will die and life will end...
+1
+$: I don't care. When I'm dead I won't care. But while I'm alive I will be me. You will be you. @, there must be something you want. Think of Madigan. What does she want?
+1
+@: She will be Engel, like you and me.
+1
+$: But she will no longer be Madigan, and you will no longer be @.
+8
+1
+$: @?
+1
+@: If I seal it back up, we will return. I can save you and ^... and Madigan.
+1
+$: Do that, @.
+1
+@: It is wrong. Engel will die someday. We will all die someday.
+1
+$: We have the strength to resist Engel.
+1
+@: No, it is our weakness that gives us that...
+8
+1
+$: @?
+8
+1
+$: @!
+9
+1000,1000
+10
+7
+1
+That night, the earth quaked. Engel, so close to freedom, was once again trapped in its shell. It roared in silent rage and threatened to level mountains. Then suddenly it stopped. Weak and bruised, it gave up. All it had left to do was wait.
+0
+457
+9
+1540,1000
+3
+0,257,1540,1200
+3
+1,257,1450,1230
+3
+2,97,1600,1210
+3
+3,257,1500,1350
+3
+4,193,1500,1366
+6
+4,8
+3
+5,193,1600,1400
+3
+6,193,1450,1400
+6
+6,8
+6
+5,8
+10
+5
+0,2,1540,1300,1
+5
+1,2,1450,1330,1
+5
+2,2,1600,1310,1
+2
+1540,1200,2
+10
+5
+3,2,1500,1320,3
+5
+4,8,1500,1336,1
+5
+0,2,1540,1336,1
+5
+1,2,1450,1350,1
+5
+6,8,1450,1366,1
+5
+2,2,1600,1360,1
+5
+5,8,1600,1376,1
+2
+1540,1400,2
+10
+5
+0,4,1510,1336,2
+10
+5
+4,6,1480,1336,3
+10
+5
+4,2,1480,1650,1
+5
+5,2,1600,1650,1
+5
+6,2,1450,1650,1
+10
+7
+1
+Without Greyor, The Rein army began to fall apart. The nobles associated with them quickly divided and began fighting amongst themselves for power. The whole countryside was driven to war.
+0
+456
+9
+1000,1000
+10
+7
+1
+Nearly a tenth of the population died during the war from starvation and disease as civilization continued to dissolve. Season after season was met with carnage and destruction while borders changed as quickly as alliances.
+1
+Lord Matthias, realizing the war could not be won on multiple fronts, signed a treaty with Lady Illana, unifying their borders. Thousands of refugees flocked to their banner to take up arms in hope of winning the war. With ease, he conquered Maenig's Isle. Yet, the war would continue to be brutal.
+1
+Brightblade, swearing loyalty to Matthias, led the great assault against Sebastian in the spring, 515 RE. Sebastian was captured and executed, but Brightblade died in battle. Without his best general, Matthias would not solidify the east against rebel bands for several more years. ^ would successfully lead the final campaign.
+1
+In the west, Illana quickly secured Wisp, but suffered defeat after defeat to Hans-Dirk. In the year 516 RE, the east was nearly lost. The remnants of the Thieves' Guild, led by $, conducted a night raid into Hans-Dirk's compound and slaughtered his generals. Nearly every thief died in the attack.
+1
+The surprise gave Illana enough time to regroup her battered army. In the winter of 516 RE, risking deathly cold and a shortage of supplies, she assaulted Hans-Dirk's compound. The attack lasted for two weeks. Eventually, Illana's forces broke his spirit. He surrendered his army and swore fealty.
+1
+After years of struggle, peace finally returned.
+4
+0
+4
+1
+4
+2
+4
+3
+4
+4
+4
+5
+4
+6
+0
+431
+11
+9
+1380,1900
+10
+3
+0,1,1360,1430
+6
+0,8
+3
+1,737,1360,1900
+5
+1,8,1360,1480,1
+2
+1380,1530,1
+10
+7
+1
+Isharia: @, can't I convince you to join the Academy? We could use someone with your skill. There is a lot of work to be done to build ourselves a new way of life.
+6
+0,2
+1
+@: No. I'm finished here.
+1
+Isharia: I know, the Thieves' Guild has been abandoned - but the mages still need you. Our Academy will help educate people about magic and Engel. We won't make this mistake again.
+1
+@: I'm not so sure about that, but it doesn't matter to me anyway. I'm still here for one reason only.
+1
+Isharia: Well, what about the coronation? It would mean a lot to everyone if you attend. Okyon is presenting the crowns.
+1
+@: Wish them my best. I've already made other plans.
+5
+0,4,1330,1430,1
+10
+6
+1,4
+5
+0,2,1330,1520,1
+10
+5
+0,6,1360,1520,1
+10
+5
+0,2,1360,1600,1
+6
+1,2
+2
+1380,1610,1
+10
+1
+Isharia: @.
+1
+Isharia: We'll miss you...
+5
+0,2,1360,1650,1
+2
+1380,1660,1
+10
+1
+Isharia: @!
+1
+Isharia: I know what you had to do in there... Thank you.
+6
+0,8
+10
+1
+@: I'm no better than anyone else.
+5
+0,2,1360,1900,1
+2
+1380,2300,2
+10
+7
+0
+136
+9
+1600,2400
+3
+0,689,1550,1620
+3
+1,561,1615,1620
+3
+2,161,1520,1580
+3
+3,161,1490,1610
+3
+4,161,1645,1580
+3
+5,161,1675,1610
+3
+6,369,1582,1675
+3
+7,49,1450,1800
+6
+7,8
+3
+8,145,1475,1830
+6
+8,8
+3
+9,753,1400,1850
+6
+9,8
+3
+10,497,1700,1810
+6
+10,8
+3
+11,529,1680,1870
+6
+11,8
+3
+12,129,1730,1850
+6
+12,8
+3
+13,17,1550,2070
+3
+14,33,1615,2070
+3
+15,737,1582,2400
+6
+15,8
+5
+15,8,1582,2110,1
+2
+1600,2110,1
+10
+7
+1
+$: What's the news?
+1
+Isharia: He won't come.
+1
+^: It's been so long since we've seen him. I was hoping he would show up for this at least.
+1
+Isharia: He's become too detached. Only Madigan can get a reaction out of him anymore.
+1
+$: Will he be alright?
+1
+Isharia: I think so, but don't worry about it. Come, the ceremony has already started. There's a surprise for both of you.
+5
+13,8,1550,1880,1
+5
+14,8,1615,1880,1
+5
+15,8,1582,1870,1
+2
+1600,1750,1
+10
+7
+1
+Okyon: ...though not without bloodshed, yet a peaceful conclusion was found. With the sworn fealty of the remaining nobles, and the Tristen Treaty, the war is officially over. As a representative of the newly founded Magi Arcanum, I declare these two Queen Illana, Guardian of the West, and King Matthias, Protector of the East.
+1
+Okyon: We are also here to reward a few people who led the battle against Greyor. Heroes usually rise from where you least expect them, as did the two who are here today. King Matthias, may you please present the gifts.
+5
+1,2,1582,1680,1
+5
+13,8,1550,1850,1
+5
+14,8,1615,1850,1
+5
+6,4,1550,1675,1
+2
+1600,1870,1
+10
+6
+6,2
+10
+7
+1
+King Matthias: $, you have shown great strength on the battlefield. Recently, you lost your friends, the Thieves' Guild. I, likewise have lost a dear friend, Brightblade. I have need of a new Captain of the Guard to take his place, and I believe your valor has proven you the best person for the job. Will you accept?
+1
+$: Yes, your majesty.
+1
+King Matthias: Good! I hereby grant $ the title Captain of the Guard, and all the rights and landholdings that accompany this position.
+1
+King Matthias: ^, your troubled past has brought shame to the Warriors' Guild. But your unselfish acts in defeating Greyor, and your courage in leading my forces, have proven that even criminals can be redeemed. By invitation of the Warriors' Guild, you have been reinstated to full membership. May your bravery continue to be an example for everyone.
+1
+^: Thank you, your majesty.
+1
+Isharia: Congratulations both of you!
+0
+123
+4
+2
+4
+3
+4
+4
+4
+5
+4
+6
+4
+7
+4
+8
+4
+9
+4
+10
+4
+11
+4
+12
+4
+13
+4
+14
+4
+15
+9
+1436,1536
+3
+0,1,1400,1480
+3
+1,673,1800,1480
+6
+0,6
+5
+1,4,1430,1480,1
+10
+7
+1
+@: You wanted to see me? What's the big surprise you wrote about?
+1
+Madigan: Are you ready to go?
+1
+@: Where?
+1
+Madigan: Somewhere. Far away. Where we can just live in peace.
+1
+@: Think there is such a place?
+1
+Madigan: No... I don't think so. But I think its worth trying.
+1
+@: You don't have to do this for me.
+1
+Madigan: @, this is probably the easiest decision I've ever made. I have everything already set. Let's go.
+5
+0,6,1800,1480,1
+5
+1,6,1830,1480,1
+10
+7
+0
+456
+9
+1000,1000
+10
+7
+1
+$ carved the remnants of a war weary army into a stunning legion that was the pride of Engel. They eliminated the twisted creatures from the realm and brought true peace to land.
+1
+$ became a scholar and went on to write a Code of Justice embraced by the realm. Ironically, it was a thief who developed the code of ethics that governed the laws of the land and protected the people.
+1
+The histories recorded $ as the embodiment of justice.
+1
+^ worked his way through the ranks of the Warriors' Guild, becoming Lord Knight by the age of 50. When King Matthias died without heir, nobles raised his banner in contention for the throne. ^ humbly declined and instead raised Isharia to lead. He served under her until his death 12 years later.
+1
+The histories recorded ^ a champion of valor and hero of unselfish mind and heart.
+1
+And then there is @.
+1
+@ disappeared and was never seen again.
+1
+The histories just say he lived happily ever after...
+12
+13
+!
+*
+20
+14
+1
+0
+479
+9
+1312,1280
+3
+0,1,1341,1230
+6
+0,8
+3
+1,17,1360,1250
+6
+1,8
+3
+2,33,1320,1250
+6
+2,8
+3
+3,353,1280,800
+6
+3,8
+3
+4,369,1312,768
+3
+5,385,1344,800
+6
+5,8
+10
+7
+1
+$: Why isn't it working?
+1
+@: It's not so simple as attaching the stone. I need to release the magic, but in a way that I can control the golem when he animates.
+1
+$: Yeah, but we've been standing here almost an hour.
+1
+@: I think it's ready.
+1
+^: Ack! It's looking at ME!
+1
+$: Oh, @, I hope you have it under control...
+2
+1312,832,2
+10
+0
+478
+3
+0,1,1341,1230
+6
+0,8
+3
+1,17,1360,1250
+6
+1,8
+3
+2,33,1320,1250
+6
+2,8
+3
+3,353,1280,800
+6
+3,8
+3
+4,369,1312,768
+3
+5,385,1344,800
+6
+5,8
+10
+7
+1
+Virol: It's been quiet for a long time now. I think they're gone.
+1
+Stite: Oh, you think so? Why don't you go look then?
+1
+Virol: No! You look!
+1
+Stite: We'll make Regar go look.
+6
+3,6
+1
+Virol: Yeah, Regar, you go check.
+6
+5,4
+1
+Regar: Why is it always me? What if they're still there? They'll kill me!
+1
+Virol: They're probably gone anyway, so just go take a peek and --
+2
+1309,832,3
+10
+7
+2
+1315,832,6
+10
+7
+2
+1312,832,3
+10
+7
+1
+THUNK!
+6
+3,2
+6
+5,2
+1
+Stite: WHAT WAS THAT?!?
+2
+1309,832,3
+10
+7
+2
+1315,832,6
+10
+7
+2
+1312,832,3
+10
+7
+1
+THUNK!
+1
+Virol: They're breaking down the wall! AAAHHH!
+1
+Regar: AAAHHH!
+5
+3,4,1248,800,3
+5
+5,6,1376,800,3
+10
+5
+3,6,1280,800,3
+5
+5,4,1344,800,3
+10
+5
+3,4,1248,800,3
+5
+5,6,1376,800,3
+10
+5
+3,6,1280,800,3
+5
+5,4,1344,800,3
+10
+2
+1309,832,3
+10
+2
+1315,832,6
+10
+2
+1312,832,3
+10
+7
+1
+THUNK!
+1
+Regar: AAAAHHHH!
+1
+Virol: AAAAHHHH!
+1
+Stite: Stop it you boobs!
+2
+1309,832,3
+10
+7
+2
+1315,832,6
+10
+7
+2
+1312,832,3
+10
+7
+1
+THUNK! CRACK!
+6
+3,8
+6
+5,8
+1
+Stite: What do we do?
+1
+Virol: We have an army of golems in here, we can handle them. Now get in position.
+5
+1,6,1312,1230,3
+5
+2,6,1280,1230,3
+5
+3,4,1216,800,1
+5
+4,2,1312,832,1
+5
+5,6,1408,800,1
+2
+1312,1280,3
+10
+7
+1
+$: What happened to it? We need it to fight the other golems.
+1
+@: The stone is out of mana. I can't reanimate it on my own.
+1
+^: I guess we will have to do this the hard way. Let's go.
+!
+*
+21
+0
+276
+9
+1824,2816
+3
+0,1,1824,2720
+3
+1,17,1792,2720
+3
+2,33,1856,2720
+3
+3,49,1824,2688
+3
+4,1073,1824,2784
+3
+5,1025,1792,2764
+3
+6,1025,1856,2764
+3
+7,1025,1760,2764
+3
+8,1025,1888,2764
+3
+9,1025,1728,2720
+3
+10,1025,1920,2720
+3
+11,1025,1728,2688
+3
+12,1025,1920,2688
+6
+4,8
+6
+5,8
+6
+6,8
+6
+7,8
+6
+8,8
+6
+9,6
+6
+10,4
+6
+11,6
+6
+12,4
+10
+7
+1
+Dex: Ah! You made it, and you brought a friend!
+5
+0,2,1824,2732,1
+10
+7
+1
+@: What are you doing, Dex?
+1
+Dex: You threaten me, nearly kill me, and I help you escape. Did you think I'd let you do it for nothing? I've come for payment, and the payment is you. Your skills will bring me a fortune in my arena.
+1
+@: We don't have time for this, we need to be elsewhere. Can't we offer you some other form of compensation.
+1
+Dex: I don't think so. And don't think you can just smash your way out of this one. I brought my best guards, and lots of them. Now get moving, we have a long way to march.
+!
+*
+22
+0
+480
+9
+480,512
+3
+3,1073,512,480
+6
+3,4
+3
+4,193,448,480
+6
+4,6
+10
+7
+1
+Acolyte: Where are they?
+1
+Dex: They're in the pit. Look, they might be dead already.
+1
+Acolyte: I'll have to check that myself, but not before I take care of you. You were told those thieves were to be left to us.
+1
+Dex: They didn't leave me much choice!
+1
+Acolyte: Excuses aren't going to save you...
+2
+477,512,3
+10
+2
+483,512,6
+10
+2
+480,512,3
+10
+7
+1
+SMASH!
+6
+3,2
+6
+4,2
+10
+7
+1
+Acolyte: What was that?
+3
+0,1,480,544
+3
+1,17,448,544
+3
+2,33,512,544
+6
+0,8
+6
+1,8
+6
+2,8
+2
+480,576,2
+10
+7
+1
+@: Dex, we've come for you.
+1
+Dex: The Rein is here. They're going to kill us all. Stop them and I'll let you go free! I swear!
+5
+1,6,480,544,1
+5
+2,4,480,544,1
+10
+7
+!

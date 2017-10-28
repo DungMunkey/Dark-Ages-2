@@ -70,7 +70,7 @@ bool cDA2Game::Init(CDisplay* d, cDA2Gfx *gfx, cDA2Input *inp, cItemController *
 
 	//PlayerCounter=0;
 
-	PlayerTimer=0;
+	//PlayerTimer=0;
 	xSpeed=0;
 	ySpeed=0;
 	xProgress=0;
@@ -85,6 +85,7 @@ bool cDA2Game::Init(CDisplay* d, cDA2Gfx *gfx, cDA2Input *inp, cItemController *
   tickY=0;
 
 
+  /* Performance counter not used anymore
 	LARGE_INTEGER li;
 	DWORD_PTR threadAffMask = SetThreadAffinityMask(GetCurrentThread(), 1);
  	QueryPerformanceFrequency(&li);
@@ -92,6 +93,7 @@ bool cDA2Game::Init(CDisplay* d, cDA2Gfx *gfx, cDA2Input *inp, cItemController *
 	QueryPerformanceCounter(&li);
  	SetThreadAffinityMask(GetCurrentThread(),threadAffMask );
 	fps64=li.QuadPart;
+  */
 
   canvas = SDL_CreateTexture(display->renderer, SDL_PIXELFORMAT_RGBA8888, SDL_TEXTUREACCESS_TARGET, 640, 480);
   collide = SDL_CreateRGBSurface(0, 640, 480, 32, 0, 0, 0, 0);

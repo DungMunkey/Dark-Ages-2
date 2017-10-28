@@ -170,8 +170,8 @@ public:
   unsigned int tickX;
   unsigned int tickY;
 
-	__int64 fps64;
-	__int64 freq;
+	//__int64 fps64;
+	//__int64 freq;
 
 	//For script handling
 	long NPCFileIndex[500];
@@ -197,7 +197,7 @@ private:
 	int randBattleCounter;
 	
 	//int PlayerCounter;
-	DWORD PlayerTimer;
+	//DWORD PlayerTimer;
 
   SDL_Texture* canvas;
   SDL_Surface* collide;
@@ -207,7 +207,7 @@ private:
 	int xSpeed;
 	int ySpeed;
 
-	DWORD msTime;
+	//DWORD msTime;
 
 	DeadScript killMe;
 	MapChanger newMap;

@@ -354,7 +354,7 @@ bool DA2Cutscene::LoadScene(int index, char *p1, char *p2, char *p3){
 	sceneIndex=0;
 	bool bDone=false;
 
-	f=fopen("data/cutscr.dat","rt");
+	f=fopen("Data/cutscr.dat","rt");
 
 	while(!feof(f) && !bDone){
 

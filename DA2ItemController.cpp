@@ -5,7 +5,7 @@ bool cItemController::LoadItems(){
 	int i;
 	short count;
 
-	f=fopen("data/pitems.itm","rb");
+	f=fopen("Data/pitems.itm","rb");
 	fread(&count,2,1,f);
 	for(i=0;i<=count;i++){
 		fread(&Items[i].Item,2,1,f);

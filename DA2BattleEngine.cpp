@@ -96,7 +96,7 @@ bool cDA2BattleEngine::MonsterLoad(){
 	char str[128];
 	char *tok;
 
-	f=fopen("data/mstats.txt","rt");
+	f=fopen("Data/mstats.txt","rt");
 	while(!feof(f)){
 		fgets(str,128,f);
 		tok=strtok(str,",\"\n");
@@ -123,7 +123,7 @@ bool cDA2BattleEngine::MonsterLoad(){
 	fclose(f);
 
 	i=1;
-	f=fopen("data/monscrip.dat","rt");
+	f=fopen("Data/monscrip.dat","rt");
 	while(!feof(f)){
 		fscanf(f,"%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d\n",&Scripts[i].ArenaPrice,&Scripts[i].IsRandom,&Scripts[i].Variable,
 			&Scripts[i].Fixed,&Scripts[i].MonsterID[0],&Scripts[i].MonsterID[1],&Scripts[i].MonsterID[2],

@@ -6,7 +6,7 @@
 
 #if _MSC_VER > 1020	      // if VC++ version is > 4.2					 
 	using namespace std;    // std c++ libs implemented in std	 
-#endif;
+#endif
 
 typedef struct TileType {
 	SDL_Rect r;

@@ -41,7 +41,7 @@ enum EventTag{
 	BattleNow,
 	Inn,
 	Train,
-	Spell
+	SpellEvent
 };
 
 typedef struct DeadScript{

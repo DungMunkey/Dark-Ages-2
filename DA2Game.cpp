@@ -1346,7 +1346,7 @@ bool cDA2Game::Logic() {
 						mainStack.Push(TextWindow);
 					}
 					break;
-				case Spell:
+				case SpellEvent:
 					mainStack.Push(SpellDialog);
 					break;
 				case BattleNow:
@@ -3041,7 +3041,7 @@ EventTag cDA2Game::ObjScript(int map, int obj){
 	fclose(f);
 	if(bChangeMap) mainStack.Push(ChangeTheMap);
 	if(bBattle) return BattleNow;
-	if(bSpell) return Spell;
+	if(bSpell) return SpellEvent;
 	return Normal;
 
 }

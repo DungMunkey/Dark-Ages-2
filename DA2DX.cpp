@@ -1,4 +1,5 @@
 #include "DA2DX.h"
+#include <iostream>
 
 CDisplay::CDisplay(){
 
@@ -6,7 +7,6 @@ CDisplay::CDisplay(){
   screenWidth =  640; // 1680;
   currentScreenMode=0;
   renderer=NULL;
-  screenSurface = NULL;
   window = NULL;
 
   txtColors[0].r=255;
@@ -26,8 +26,6 @@ CDisplay::CDisplay(){
 CDisplay::~CDisplay(){
   if(renderer != NULL) SDL_DestroyRenderer(renderer);
   renderer=NULL;
-  if(screenSurface != NULL) SDL_FreeSurface(screenSurface);
-  screenSurface = NULL;
   if(window != NULL) SDL_DestroyWindow(window);
   window = NULL;
   SDL_Quit();
@@ -95,7 +93,8 @@ bool CDisplay::init(sConf& conf) {
       success = false;
     } else	{
       //Get window surface
-      screenSurface = SDL_GetWindowSurface(window);
+      SDL_Surface* screenSurface = SDL_GetWindowSurface(window); //do not free this surface, cleaned up when window destroyed.
+      pixelFormat = *screenSurface->format;
 
       renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED /*| SDL_RENDERER_PRESENTVSYNC*/);
       if(renderer == NULL) {

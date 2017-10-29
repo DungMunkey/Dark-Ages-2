@@ -27,9 +27,10 @@ public:
   CDisplay();
   ~CDisplay();
 
-  SDL_Surface*  screenSurface;
+  //SDL_Surface*  screenSurface;
   SDL_Renderer* renderer;
   SDL_Window*   window;
+  SDL_PixelFormat pixelFormat;
 
   bool init(sConf& conf);
   void resize(size_t screenMode);

@@ -1,4 +1,5 @@
 #include "DA2Graphic.h"
+#include <iostream>
 
 CGraphic::CGraphic(){
   texture = NULL;
@@ -41,7 +42,7 @@ bool CGraphic::loadTexture(char* fn, CDisplay* display, bool surf, bool alpha, U
     printf("Unable to load image %s! SDL_image Error: %s\n", fn, SDL_GetError());
     return false;
   } else {
-    surface = SDL_ConvertSurface(tmpSurface, display->screenSurface->format, NULL);
+    surface = SDL_ConvertSurface(tmpSurface, &display->pixelFormat, NULL);
     if(alpha) SDL_SetColorKey(surface, SDL_TRUE, SDL_MapRGB(surface->format, r, g, b));
     //Create texture from surface pixels 
     texture = SDL_CreateTextureFromSurface(display->renderer, surface);

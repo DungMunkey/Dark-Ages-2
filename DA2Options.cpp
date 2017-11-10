@@ -5,7 +5,7 @@ cDA2Options::cDA2Options(){
 	Options.Border=true;
 	Options.Diagnostics=false;
   Options.Fullscreen=false;
-	Options.GameSpeed=4;
+	Options.GameSpeed=2;
 	Options.MusicVolume=5;
   Options.ScreenRes=0;
 
@@ -58,10 +58,10 @@ bool cDA2Options::Logic(){
 					if(Options.MusicVolume<10) Options.MusicVolume++;
 					break;
 				case 4:
-					if(Options.GameSpeed>4) Options.GameSpeed--;
+          if(Options.GameSpeed<4) Options.GameSpeed++;
 					break;
 				case 5:
-					if(Options.GameSpeed<16) Options.GameSpeed++;
+					if(Options.GameSpeed>1) Options.GameSpeed--;
 					break;
 				case 6:
 				case 7:
@@ -145,7 +145,7 @@ bool cDA2Options::Render(){
 	else text.drawText(display->renderer,324,80,0,"Off");
 	sprintf(str,"%d",Options.MusicVolume);
 	text.drawText(display->renderer,324,110,0,str);
-	sprintf(str,"%d",Options.GameSpeed-3);
+	sprintf(str,"%d",5-Options.GameSpeed);
 	text.drawText(display->renderer,324,140,0,str);
 	if(Options.Diagnostics) text.drawText(display->renderer,324,170,0,"On");
 	else text.drawText(display->renderer,324,170,0,"Off");

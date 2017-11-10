@@ -17,7 +17,7 @@ bool cDA2Game::Init(CDisplay* d, cDA2Gfx *gfx, cDA2Input *inp, cItemController *
 	Player.imageOffset=0;
 	Player.dir=0;
 	Player.frame=0;
-	renderSpeed=8;
+	renderSpeed=2;
 	renderCounter=1;
 	RoofOff=false;
 	bBorder=true;
@@ -786,7 +786,7 @@ void cDA2Game::NewGame(){
 	ChangeMap(Player.Map,Player.X,Player.Y);
 	SetRoofMask();
 
-	options.Options.GameSpeed=8;
+	options.Options.GameSpeed=2;
 	renderSpeed=options.Options.GameSpeed;
 
 	intro.SetDefault();
@@ -1544,14 +1544,14 @@ bool cDA2Game::Logic() {
 
 	if(diObj->KeyPress(KEY_ADD)==true && !diObj->CheckLock(KEY_ADD)) {
 		diObj->LockKey(KEY_ADD);
-		renderSpeed++;
-		if(renderSpeed>4) renderSpeed=4;
+		renderSpeed--;
+		if(renderSpeed<1) renderSpeed=1;
 		options.Options.GameSpeed=renderSpeed;
 	}
 	if(diObj->KeyPress(KEY_SUBTRACT)==true && !diObj->CheckLock(KEY_SUBTRACT)) {
 		diObj->LockKey(KEY_SUBTRACT);
-		renderSpeed--;
-		if(renderSpeed<1) renderSpeed=1;
+		renderSpeed++;
+		if(renderSpeed>4) renderSpeed=4;
 		options.Options.GameSpeed=renderSpeed;
 	}
 	if(diObj->KeyPress(KEY_RIGHT)==true) {

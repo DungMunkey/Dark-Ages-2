@@ -26,6 +26,7 @@ bool DA2Cutscene::Init(CDisplay *d, cDA2Gfx *gfx, cDA2Input *inp, cMap *maps, cD
   if((music=mus)==NULL) return false;
 	if((animCounter=anim)==NULL) return false;
 	text.Init(display,ddGfx,diObj);
+  lastTicks=0;
 	return true;
 }
 
@@ -177,8 +178,13 @@ bool DA2Cutscene::Logic(){
 
   music->CheckState();
 
+  unsigned int curTicks=SDL_GetTicks();
+
 	//If scene is running, keep going until all movement stops
 	if(bAction){
+
+    if(curTicks-lastTicks>10) lastTicks=curTicks;
+    else return true;
 
 		//Try to stop the action
 		bAction=false;

@@ -77,6 +77,8 @@ private:
 	vector<Act> scene;
 	Actor npc[20];
 
+  unsigned int lastTicks;
+
 };
 
 

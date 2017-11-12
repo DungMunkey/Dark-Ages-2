@@ -3,11 +3,15 @@
 
 
 cDA2Gfx::cDA2Gfx(){
-	int i;
+	int i,j;
 	for(i=0;i<8;i++) Tiles[i]=NULL;
 	for(i=0;i<4;i++) Chars[i]=NULL;
 	for(i=0;i<4;i++) Monsters[i]=NULL;
-	for(i=0;i<2;i++) Objects[i]=NULL;
+  for(i=0; i < 2; i++) {
+    for(j=0; j < 8; j++){
+      Objects[i][j]=NULL;
+    }
+  }
 	for(i=0;i<3;i++) Stats[i]=NULL;
 	for(i=0;i<7;i++) Battle[i]=NULL;
 	Font=NULL;
@@ -24,14 +28,19 @@ cDA2Gfx::cDA2Gfx(){
 	vNPC = new vector<TileType>;
 	vObj = new vector<TileType>;
 	vMonster = new vector<TileType>;
+
 }
 
 cDA2Gfx::~cDA2Gfx(){
-	int i;
+	int i,j;
   for(i=0; i<8; i++) delete Tiles[i];
   for(i=0; i<4; i++) delete Chars[i];
   for(i=0; i<4; i++) delete Monsters[i];
-  for(i=0; i<2; i++) delete Objects[i];
+  for(i=0; i < 2; i++) {
+    for(j=0; j < 8; j++){
+      delete Objects[i][j];
+    }
+  }
   for(i=0; i<3; i++) delete Stats[i];
   for(i=0; i<7; i++) delete Battle[i];
   delete Font;
@@ -166,8 +175,7 @@ void cDA2Gfx::CutTiles(){
 				t.index = z;
 				vTile->push_back(t);
 				if(i<1184) vNPC->push_back(t);
-        if(i<600)	vObj->push_back(t);
-    
+        if(i<600)	vObj->push_back(t);    
         i++;
 			}
 		}
@@ -369,8 +377,22 @@ bool cDA2Gfx::LoadGfx(CDisplay* display){
   Monsters[2]= new CGraphic("Gfx/mon3.bmp", display, true, 0, 0, 0);
   Monsters[3]= new CGraphic("Gfx/mon4.bmp", display, true, 0, 0, 0);
 
-  Objects[0]= new CGraphic("Gfx/Obj1.bmp", display, true, 0, 0, 0);
-  Objects[1]= new CGraphic("Gfx/Obj2.bmp", display, true, 0, 0, 0);
+  Objects[0][0]= new CGraphic("Gfx/Obj1h.bmp", display, true, 0, 0, 0);
+  Objects[0][1]= new CGraphic("Gfx/Obj1g.bmp", display, true, 0, 0, 0);
+  Objects[0][2]= new CGraphic("Gfx/Obj1f.bmp", display, true, 0, 0, 0);
+  Objects[0][3]= new CGraphic("Gfx/Obj1e.bmp", display, true, 0, 0, 0);
+  Objects[0][4]= new CGraphic("Gfx/Obj1d.bmp", display, true, 0, 0, 0);
+  Objects[0][5]= new CGraphic("Gfx/Obj1c.bmp", display, true, 0, 0, 0);
+  Objects[0][6]= new CGraphic("Gfx/Obj1b.bmp", display, true, 0, 0, 0);
+  Objects[0][7]= new CGraphic("Gfx/Obj1.bmp", display, true, 0, 0, 0);
+  Objects[1][0]= new CGraphic("Gfx/Obj2h.bmp", display, true, 0, 0, 0);
+  Objects[1][1]= new CGraphic("Gfx/Obj2g.bmp", display, true, 0, 0, 0);
+  Objects[1][2]= new CGraphic("Gfx/Obj2f.bmp", display, true, 0, 0, 0);
+  Objects[1][3]= new CGraphic("Gfx/Obj2e.bmp", display, true, 0, 0, 0);
+  Objects[1][4]= new CGraphic("Gfx/Obj2d.bmp", display, true, 0, 0, 0);
+  Objects[1][5]= new CGraphic("Gfx/Obj2c.bmp", display, true, 0, 0, 0);
+  Objects[1][6]= new CGraphic("Gfx/Obj2b.bmp", display, true, 0, 0, 0);
+  Objects[1][7]= new CGraphic("Gfx/Obj2.bmp", display, true, 0, 0, 0);
 
   Stats[0]= new CGraphic("Gfx/stat1.bmp", display, true, 0, 0, 0);
   Stats[1]= new CGraphic("Gfx/stat2.bmp", display, true, 0, 0, 0);

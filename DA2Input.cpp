@@ -160,6 +160,8 @@ void cDA2Input::setKey(SDL_Keycode k, bool b){
   case SDLK_DOWN:   x=KEY_DOWN; break;
   case SDLK_LEFT:   x=KEY_LEFT; break;
   case SDLK_RIGHT:  x=KEY_RIGHT; break;
+  case SDLK_LSHIFT:  x=KEY_LSHIFT; break;
+  case SDLK_RSHIFT:  x=KEY_RSHIFT; break;
   case SDLK_KP_PLUS:  x=KEY_ADD; break;
   case SDLK_KP_MINUS:  x=KEY_SUBTRACT; break;
   case SDLK_0:      x=KEY_0; break;

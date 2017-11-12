@@ -6,6 +6,7 @@ cDA2Shop::cDA2Shop(){
 	diObj=NULL;
 	Party=NULL;
 	ItemList=NULL;
+  colorCounter=NULL;
 	Selection=0;
 	ShopType=0;
 	BuyOffset=0;
@@ -58,9 +59,10 @@ cDA2Shop::~cDA2Shop(){
 	diObj=NULL;
 	Party=NULL;
 	ItemList=NULL;
+  colorCounter=NULL;
 }
 
-bool cDA2Shop::Init(CDisplay *d, cDA2Gfx *gfx, cDA2Input *inp, cDA2Party *par, cItemController *itm){
+bool cDA2Shop::Init(CDisplay *d, cDA2Gfx *gfx, cDA2Input *inp, cDA2Party *par, cItemController *itm, int *col){
 	if((display=d)==NULL) return false;
 	if((ddGfx=gfx)==NULL) return false;
 	if((diObj=inp)==NULL) return false;
@@ -69,6 +71,7 @@ bool cDA2Shop::Init(CDisplay *d, cDA2Gfx *gfx, cDA2Input *inp, cDA2Party *par, c
 	if(!text.Init(ddGfx)) return false;
 	if(!box.Init(display,ddGfx)) return false;
 	if(!statsWin.Init(display,ddGfx)) return false;
+  if((colorCounter=col) == NULL) return false;
 	Selection=-1;
 	statsWin.SetSize(190,106,260,268);
 	return true;
@@ -180,7 +183,7 @@ bool cDA2Shop::Render(){
 		
 		r.x=x;
 		r.y=y;
-    SDL_RenderCopy(display->renderer, ddGfx->Objects[ddGfx->vObj->at(Buy[i]).index]->texture, &ddGfx->vObj->at(Buy[i]).r, &r);
+    SDL_RenderCopy(display->renderer, ddGfx->Objects[ddGfx->vObj->at(Buy[i]).index][*colorCounter]->texture, &ddGfx->vObj->at(Buy[i]).r, &r);
 		//ddObj->ddsb->Blt(&r, ddGfx->Objects[ddGfx->vObj->at(Buy[i]).index], &ddGfx->vObj->at(Buy[i]).r, DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 	
 		text.drawText(display->renderer,x+35,y,0,ItemList->Items[Buy[i]].ItemName);
@@ -202,7 +205,7 @@ bool cDA2Shop::Render(){
 		
 		r.x=x;
 		r.y=y;
-    SDL_RenderCopy(display->renderer, ddGfx->Objects[ddGfx->vObj->at(Party->PartyItems[Sell[i]]).index]->texture, &ddGfx->vObj->at(Party->PartyItems[Sell[i]]).r, &r);
+    SDL_RenderCopy(display->renderer, ddGfx->Objects[ddGfx->vObj->at(Party->PartyItems[Sell[i]]).index][*colorCounter]->texture, &ddGfx->vObj->at(Party->PartyItems[Sell[i]]).r, &r);
 		//ddObj->ddsb->Blt(&r, ddGfx->Objects[ddGfx->vObj->at(Party->PartyItems[Sell[i]]).index], &ddGfx->vObj->at(Party->PartyItems[Sell[i]]).r, DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 	
 		text.drawText(display->renderer,x+35,y,0,ItemList->Items[Party->PartyItems[Sell[i]]].ItemName);

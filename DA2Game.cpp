@@ -33,7 +33,7 @@ bool cDA2Game::Init(CDisplay* d, cDA2Gfx *gfx, cDA2Input *inp, cItemController *
 	trainDialog.Init(d,gfx,inp);
 	castDialog.Init(d,gfx,inp);
 	Party.Init(d,gfx,inp,itm,&colorCounter);
-	shop.Init(d,gfx,inp,&Party,itm);
+	shop.Init(d,gfx,inp,&Party,itm,&colorCounter);
 	journal.Init(d,gfx,inp,&Flags[0]);
 	options.Init(d,gfx,inp);
   options.SetConf(con);
@@ -42,7 +42,8 @@ bool cDA2Game::Init(CDisplay* d, cDA2Gfx *gfx, cDA2Input *inp, cItemController *
 	intro.Init(d,gfx,inp,&Party,&animCounter);
 	battleEngine.Init(d,gfx,inp,&Party,itm);
   conf=con;
-	
+  
+  MusicObj->SetVolume(options.Options.MusicVolume);
 
 	mainStack.Push(GameRender);
 
@@ -526,7 +527,7 @@ int cDA2Game::GoGame(){
 			}
 			break;
 		case BattleMain:
-			//1 MusicObj->ChangeSong(-1);
+			MusicObj->ChangeSong(-1);
 			switch(battleEngine.GoBattle()){
 			case 0:
 			case 3:
@@ -715,7 +716,7 @@ void cDA2Game::LoadMaps(){
 	fclose(f);
 
 	//Set cutscene here because it needs map info
-	cutScene.Init(display,ddGfx,diObj,&Maps[0],MusicObj,&animCounter);
+	cutScene.Init(display,ddGfx,diObj,&Maps[0],MusicObj,&animCounter,&colorCounter);
 
 }
 
@@ -1142,7 +1143,7 @@ void cDA2Game::ObjRender(SDL_Renderer *surf, bool bSolid){
            y - (PlayerCam.TilePosY - 8) >= 0 && y - (PlayerCam.TilePosY - 8) <= 16) {
           r.x=(x - (PlayerCam.TilePosX - 10)) * 32 - PlayerCam.OffsetX;
           r.y=(y - (PlayerCam.TilePosY - 8)) * 32 - PlayerCam.OffsetY;
-          if(Tile>0) SDL_RenderCopy(surf, ddGfx->Objects[ddGfx->vObj->at(Tile).index]->texture, &ddGfx->vObj->at(Tile).r, &r);
+          if(Tile>0) SDL_RenderCopy(surf, ddGfx->Objects[ddGfx->vObj->at(Tile).index][colorCounter]->texture, &ddGfx->vObj->at(Tile).r, &r);
           //if(Tile>0) surf->Blt(&r, ddGfx->Objects[ddGfx->vObj->at(Tile).index], &ddGfx->vObj->at(Tile).r, DDBLT_WAIT|DDBLT_KEYSRC,NULL);
           if(bHighlightObject && !Maps[TrueMap].ObjArray->at(i).HideTab) box.DrawBox(r.x, r.y, r.x + 32, r.y + 32, 88, false, colorCounter);
         }
@@ -1174,7 +1175,7 @@ void cDA2Game::ObjRender(SDL_Surface *surf, bool bSolid){
            y - (PlayerCam.TilePosY - 8) >= 0 && y - (PlayerCam.TilePosY - 8) <= 16) {
           r.x=(x - (PlayerCam.TilePosX - 10)) * 32 - PlayerCam.OffsetX;
           r.y=(y - (PlayerCam.TilePosY - 8)) * 32 - PlayerCam.OffsetY;
-          if(Tile>0) SDL_BlitSurface(ddGfx->Objects[ddGfx->vObj->at(Tile).index]->surface, &ddGfx->vObj->at(Tile).r, surf, &r);
+          if(Tile>0) SDL_BlitSurface(ddGfx->Objects[ddGfx->vObj->at(Tile).index][colorCounter]->surface, &ddGfx->vObj->at(Tile).r, surf, &r);
         }
       }
     }
@@ -1472,6 +1473,8 @@ bool cDA2Game::Logic() {
 				Player.Moving=true;
 			}
 		}
+
+    if(bX || bY) randomCounter=1;
 
     if(xSpeed>0) Player.dir=1;
     else if(xSpeed<0) Player.dir=3;

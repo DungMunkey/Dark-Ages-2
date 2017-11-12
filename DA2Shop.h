@@ -18,7 +18,7 @@ public:
 	cDA2Shop();
 	~cDA2Shop();
 
-	bool Init(CDisplay *d, cDA2Gfx *gfx, cDA2Input *inp, cDA2Party *par, cItemController *itm);
+	bool Init(CDisplay *d, cDA2Gfx *gfx, cDA2Input *inp, cDA2Party *par, cItemController *itm, int *col);
 	void Clear();
 	void SetType(int type);
 	void SetItem(int item);
@@ -50,6 +50,8 @@ private:
 	int BuyOffset;
 	int SellOffset;
 	vector<int> Sell;
+
+  int* colorCounter;
 
 	int SellCount;
 	int BuyCount;

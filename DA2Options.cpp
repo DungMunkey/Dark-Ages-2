@@ -192,4 +192,5 @@ void cDA2Options::Update(){
   Options.ScreenRes=display->currentScreenMode;
   tmpScreen=Options.ScreenRes;
   tmpFullscreen=false;
+  Options.MusicVolume=conf->vol;
 }

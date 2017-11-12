@@ -39,7 +39,7 @@ public:
 	DA2Cutscene();
 	~DA2Cutscene();
 
-	bool Init(CDisplay *d, cDA2Gfx *gfx, cDA2Input *inp, cMap *maps, cDA2Music *mus, int* anim);
+	bool Init(CDisplay *d, cDA2Gfx *gfx, cDA2Input *inp, cMap *maps, cDA2Music *mus, int* anim, int* col);
 	bool LoadScene(int index, char *p1, char *p2, char *p3);
 
 	bool Render();
@@ -61,6 +61,7 @@ private:
 	bool bText;
 
 	int* animCounter;
+  int* colorCounter;
 
 	int CamX;
 	int CamY;

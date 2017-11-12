@@ -6,6 +6,7 @@ DA2Cutscene::DA2Cutscene(){
 	diObj=NULL;
 	Maps=NULL;
 	animCounter=NULL;
+  colorCounter=NULL;
   music=NULL;
 }
 
@@ -15,16 +16,18 @@ DA2Cutscene::~DA2Cutscene(){
 	diObj=NULL;
 	Maps=NULL;
 	animCounter=NULL;
+  colorCounter=NULL;
   music=NULL;
 }
 
-bool DA2Cutscene::Init(CDisplay *d, cDA2Gfx *gfx, cDA2Input *inp, cMap *maps, cDA2Music *mus, int *anim){
+bool DA2Cutscene::Init(CDisplay *d, cDA2Gfx *gfx, cDA2Input *inp, cMap *maps, cDA2Music *mus, int *anim, int *col){
 	if((display=d)==NULL) return false;
 	if((ddGfx=gfx)==NULL) return false;
 	if((diObj=inp)==NULL) return false;
 	if((Maps=maps)==NULL) return false;
   if((music=mus)==NULL) return false;
 	if((animCounter=anim)==NULL) return false;
+  if((colorCounter=col) == NULL) return false;
 	text.Init(display,ddGfx,diObj);
   lastTicks=0;
 	return true;
@@ -137,7 +140,7 @@ void DA2Cutscene::ObjRender(){
 					r.x=(x-(SceneCam.TilePosX-10))*32-SceneCam.OffsetX;
 					r.y=(y-(SceneCam.TilePosY-8))*32-SceneCam.OffsetY;
 					//if(Tile>0) ddObj->ddsb->Blt(&r, ddGfx->Objects[ddGfx->vObj->at(Tile).index], &ddGfx->vObj->at(Tile).r, DDBLT_WAIT|DDBLT_KEYSRC,NULL);
-          if(Tile>0) SDL_RenderCopy(display->renderer, ddGfx->Objects[ddGfx->vObj->at(Tile).index]->texture, &ddGfx->vObj->at(Tile).r, &r);
+          if(Tile>0) SDL_RenderCopy(display->renderer, ddGfx->Objects[ddGfx->vObj->at(Tile).index][*colorCounter]->texture, &ddGfx->vObj->at(Tile).r, &r);
 				}
 			}
 		}

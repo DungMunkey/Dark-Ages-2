@@ -699,15 +699,13 @@ bool cDA2BattleEngine::Render(bool mouse){
 
 
 	//display mouse cursor
-  /*1
 	if(mouse){
-		r.top=diObj->MouseY() - ddGfx->CursorY[7];
-		r.left=diObj->MouseX() - ddGfx->CursorX[7];
-		r.bottom=r.top+24;
-		r.right=r.left+16;
-		ddObj->ddsb->Blt(&r, ddGfx->Cursor,&ddGfx->aCursor[7],DDBLT_WAIT|DDBLT_KEYSRC,NULL);
+		r.y=diObj->MouseY() - ddGfx->CursorY[7];
+		r.x=diObj->MouseX() - ddGfx->CursorX[7];
+		r.h=24;
+		r.w=16;
+    SDL_RenderCopy(display->renderer, ddGfx->Cursor->texture, &ddGfx->aCursor[7], &r);
 	}
-  */
 
 	return true;
 }

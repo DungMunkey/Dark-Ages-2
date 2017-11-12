@@ -22,7 +22,7 @@ public:
   CGraphic* Tiles[8];
   CGraphic* Chars[4];
   CGraphic* Monsters[4];
-  CGraphic* Objects[2];
+  CGraphic* Objects[2][8];
   CGraphic* Stats[3];
   CGraphic* Battle[7];
   CGraphic* Windows;
@@ -45,6 +45,7 @@ public:
 	vector<TileType> *vNPC;
 	vector<TileType> *vObj;
 	vector<TileType> *vMonster;
+
 	SDL_Rect aWindows[33];
 	SDL_Rect aFont[8][128];
 	SDL_Rect aCursor[9];

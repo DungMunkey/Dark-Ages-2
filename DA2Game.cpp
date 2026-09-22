@@ -904,7 +904,7 @@ bool cDA2Game::Render() {
   r.x=diObj->mouseX - ddGfx->CursorX[Cursor[x][y]];
   r.h=24;
   r.w=16;
-  SDL_RenderCopy(display->renderer, ddGfx->Cursor->texture, &ddGfx->aCursor[Cursor[x][y]], &r);
+  //SDL_RenderCopy(display->renderer, ddGfx->Cursor->texture, &ddGfx->aCursor[Cursor[x][y]], &r);
   //ddObj->ddsb->Blt(&r, ddGfx->Cursor,&ddGfx->aCursor[Cursor[x][y]],DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 	//sprintf(txt,"MouseX: %d  MouseY: %d  Cursor: %d",diObj->MouseX(),diObj->MouseY(),Cursor[x][y]);
 	//text.drawText(display->renderer,50,35,0,txt);
@@ -1291,6 +1291,7 @@ bool cDA2Game::Logic() {
 	int map, npc, obj;
 	char str[1024];
 	int randomCounter=0;
+  bool keyMove =false;
 
   tickX+=ticks;
   tickY+=ticks;
@@ -1558,45 +1559,68 @@ bool cDA2Game::Logic() {
 		options.Options.GameSpeed=renderSpeed;
 	}
 	if(diObj->KeyPress(KEY_RIGHT)==true) {
-		PlayerCam.BumpCamera(1,0);
-		Player.X+=1;
-		if(!CheckCollide(1)){
-			PlayerCam.BumpCamera(-1,0);
-			Player.X--;
-		}
-		Player.dir=1;
-		Player.Moving=true;
+    if(tickX >= 2 * renderSpeed){
+		  PlayerCam.BumpCamera(1,0);
+		  Player.X+=1;
+		  if(!CheckCollide(1)){
+			  PlayerCam.BumpCamera(-1,0);
+			  Player.X--;
+		  }
+		  Player.dir=1;
+		  Player.Moving=true;
+      tickX=0;
+      keyMove=true;
+    }
 	}
 	if(diObj->KeyPress(KEY_LEFT)==true) {
-		PlayerCam.BumpCamera(-1,0);
-		Player.X-=1;
-		if(!CheckCollide(3)){
-			PlayerCam.BumpCamera(1,0);
-			Player.X++;
-		}
-		Player.dir=3;
-		Player.Moving=true;
+    if(tickX >= 2 * renderSpeed){
+      PlayerCam.BumpCamera(-1, 0);
+      Player.X-=1;
+      if(!CheckCollide(3)){
+        PlayerCam.BumpCamera(1, 0);
+        Player.X++;
+      }
+      Player.dir=3;
+      Player.Moving=true;
+      tickX=0;
+      keyMove=true;
+    }
 	}
 	if(diObj->KeyPress(KEY_UP)==true) {
-		PlayerCam.BumpCamera(0,-1);
-		Player.Y-=1;
-		if(!CheckCollide(2)){
-			PlayerCam.BumpCamera(0,1);
-			Player.Y++;
-		}
-		Player.dir=2;
-		Player.Moving=true;
+    if(tickY >= 2 * renderSpeed){
+      PlayerCam.BumpCamera(0, -1);
+      Player.Y-=1;
+      if(!CheckCollide(2)){
+        PlayerCam.BumpCamera(0, 1);
+        Player.Y++;
+      }
+      Player.dir=2;
+      Player.Moving=true;
+      tickY=0;
+      keyMove=true;
+    }
 	}
 	if(diObj->KeyPress(KEY_DOWN)==true) {
-		PlayerCam.BumpCamera(0,1);
-		Player.Y+=1;
-		if(!CheckCollide(0)){
-			PlayerCam.BumpCamera(0,-1);
-			Player.Y--;
-		}
-		Player.dir=0;
-		Player.Moving=true;
+    if(tickY >= 2 * renderSpeed){
+      PlayerCam.BumpCamera(0, 1);
+      Player.Y+=1;
+      if(!CheckCollide(0)){
+        PlayerCam.BumpCamera(0, -1);
+        Player.Y--;
+      }
+      Player.dir=0;
+      Player.Moving=true;
+      tickY=0;
+      keyMove=true;
+    }
 	}
+
+  if(Player.Moving && keyMove) xProgress++;
+  if(xProgress > 11) {
+    Player.frame++;
+    if(Player.frame > 3) Player.frame=0;
+    xProgress=0;
+  }
 
 	if(PlayerCam.CameraX<0) ChangeMapWalking(-1,0);
 	if(PlayerCam.CameraX>3071) ChangeMapWalking(1,0);

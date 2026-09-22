@@ -621,12 +621,12 @@ bool cDA2LoadSave::LoadGame(int index){
 	//for(i=0;i<300;i++) fread(&flags[i],2,1,f);
 	fread(&flags[0],2,300,f);
 
-	FILE* f2=fopen("flaggers.txt","wt");
-	for(i=0;i<300;i++) {
+	//FILE* f2=fopen("flaggers.txt","wt");
+	//for(i=0;i<300;i++) {
 	//	if(flags[i]>10) flags[i]=0;
-		fprintf(f2,"%d: %d\n",i,flags[i]);
-	}
-	fclose(f2);
+	//	fprintf(f2,"%d: %d\n",i,flags[i]);
+	//}
+	//fclose(f2);
 
 	//f2=fopen("load.txt","at");
 	//for(i=0;i<300;i++) fprintf(f2,"%d\n",flags[i]);

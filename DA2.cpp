@@ -60,7 +60,7 @@ int main(int argc, char* args[]) {
   }
   SDL_RenderSetLogicalSize(display.renderer, 640, 480);
   MyGfx.LoadGfx(&display);
-  SDL_ShowCursor(SDL_DISABLE);
+  //SDL_ShowCursor(SDL_DISABLE);
 
   cDA2Input input;
   float sx, sy;

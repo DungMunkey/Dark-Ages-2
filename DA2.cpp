@@ -34,12 +34,18 @@ cDA2Game MyGame;
 //cDA2Input MyInput;
 //cDA2Party MyParty;
 cDA2Title MyTitle;
-cDA2Music MyMusic;
+// MyMusic is a pointer, allocated at the top of main() rather than declared as a plain global: it holds
+// sf::Music members, and SFML's audio device initializes as a library-internal static whose construction
+// order relative to a plain global here is unspecified across translation units (a well-known SFML gotcha).
+// That made the game crash intermittently before any game code ran, most reliably in Release builds.
+cDA2Music* MyMusic;
 cItemController ItemList;
 
 GameState gstate;
 
 int main(int argc, char* args[]) {
+
+  MyMusic = new cDA2Music();
 
   srand(time(NULL));
 
@@ -69,11 +75,11 @@ int main(int argc, char* args[]) {
   input.setMouseOffsets(sx, (display.screenWidth/sx-640)/2, sy, (display.screenHeight/sy-480)/2);
 
   //Process title screen until player chooses to quit
-  MyMusic.PlayTheme();
+  MyMusic->PlayTheme();
   if(MyTitle.Init(&display,&input) == false) return 0;
 
   if(!ItemList.LoadItems()) return false;
-  if(!MyGame.Init(&display, &MyGfx, &input, &ItemList, &MyMusic, &conf)) return false;
+  if(!MyGame.Init(&display, &MyGfx, &input, &ItemList, MyMusic, &conf)) return false;
 
   bool bQuit=false;
 
@@ -85,14 +91,14 @@ int main(int argc, char* args[]) {
       switch(MyTitle.Logic()){
       case 1:
         //if(!GamePrep()) return false;
-        MyMusic.KillTheme();
+        MyMusic->KillTheme();
         MyGame.LoadMaps();
         MyGame.NewGame();
         gstate=MainGame;
         break;
       case 2:
         //if(!GamePrep()) return false;
-        MyMusic.KillTheme();
+        MyMusic->KillTheme();
         MyGame.LoadMaps();
         //MyGame.NewGame();
         MyGame.mainStack.Push(LoadDialog);
@@ -125,7 +131,7 @@ int main(int argc, char* args[]) {
         //reset title screen here
         //if(!MyDX.ChangeDisplayMode(32)) return false;
         //if(MyTitle.Init(&MyDX, &MyInput) == false) return 0;
-        MyMusic.PlayTheme();
+        MyMusic->PlayTheme();
         gstate=Title;
         break;
       default:

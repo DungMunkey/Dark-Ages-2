@@ -11,14 +11,14 @@ cDA2Music::cDA2Music(){
   song[3].MaxTrack = 3;
   song[4].MaxTrack = 2;
   song[5].MaxTrack = 1;
-  
+
   strcpy(song[0].FileName,"Battle");
   strcpy(song[1].FileName,"TownA");
   strcpy(song[2].FileName,"TownB");
   strcpy(song[3].FileName,"Travel");
   strcpy(song[4].FileName,"Dungeon");
   strcpy(song[5].FileName,"Cutscene");
-  
+
   for(i=0;i<6;i++){
     song[i].Track = 1;
     song[i].position = sf::Time::Zero;
@@ -45,13 +45,13 @@ cDA2Music::~cDA2Music(){
 void cDA2Music::ChangeSong(int map){
   char strSong[256];
 	int i;
-	
+
 	if(map<0) i=snBattle;
   else if (map==99999) i=snCutScene;
 	else i=Music[map];
 
   if(i == NowPlaying) return;
-  
+
   //If song is not loaded, load it at last position
   if(song[i].song.getStatus() == sf::Music::Stopped) {
 		sprintf(strSong,"music/%s%d.ogg",song[i].FileName,song[i].Track);
@@ -59,7 +59,7 @@ void cDA2Music::ChangeSong(int map){
   } else if(song[i].song.getStatus() == sf::Music::Paused){
     song[i].song.play();
 	}
-  
+
   LastPlayed = NowPlaying;
   NowPlaying = i;
   bChangeSong = true;
@@ -74,10 +74,10 @@ void cDA2Music::CheckState() {
 	float vol;
 	int pan;
   int i;
-	
+
   //Handle songs changing due to map change
   if(bChangeSong){
-  
+
     //Check if songs are playing, if not load the new one
     if(LastPlayed > -1) {
 			if(song[LastPlayed].song.getStatus()==sf::Music::Stopped) {
@@ -88,7 +88,7 @@ void cDA2Music::CheckState() {
         LoadSong(LastPlayed, strSong, sf::Time::Zero, false);
 			}
 		}
-    
+
     if(song[NowPlaying].song.getStatus() == sf::Music::Stopped){
       song[NowPlaying].Track++;
       if(song[NowPlaying].Track > song[NowPlaying].MaxTrack) song[NowPlaying].Track = 1;
@@ -96,7 +96,7 @@ void cDA2Music::CheckState() {
 			sprintf(strSong,"music/%s%d.ogg",song[NowPlaying].FileName,song[NowPlaying].Track);
       LoadSong(NowPlaying, strSong, sf::Time::Zero, false);
     }
-    
+
 
     //Fade out old song
     Uint32 timeNow=SDL_GetTicks();
@@ -120,7 +120,7 @@ void cDA2Music::CheckState() {
         vol = 0;
 			}
 		}
-    
+
     //Fade in new song
     vol = song[NowPlaying].song.getVolume();
     if(bFade) vol = vol+1;
@@ -137,10 +137,10 @@ void cDA2Music::CheckState() {
       bChangeSong = false;
     }
     song[NowPlaying].song.setVolume(vol);
-    
+
     return;
   }
-  
+
   //Check if song needs changing
   if(song[NowPlaying].song.getStatus() == sf::Music::Stopped){
     song[NowPlaying].Track++;
@@ -165,12 +165,12 @@ void cDA2Music::KillTheme(){
 	DA2ThemeStream.stop();
 }
 
-void cDA2Music::LoadSong(int i, char* fn, sf::Time offset, bool silent){  
+void cDA2Music::LoadSong(int i, char* fn, sf::Time offset, bool silent){
   song[i].song.openFromFile(fn);
   song[i].song.setPlayingOffset(offset);
   //song[i].song.setVolume(0);
 	song[i].song.setVolume(Volume*10);
-  song[i].song.play(); 
+  song[i].song.play();
 }
 
 void cDA2Music::PlayTheme(){

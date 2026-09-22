@@ -33,6 +33,7 @@ target_include_directories(DarkAgesII PRIVATE
 if(MSVC)
   target_compile_definitions(DarkAgesII PRIVATE _CRT_SECURE_NO_WARNINGS)
 endif()
+set_target_properties(DarkAgesII PROPERTIES DEBUG_POSTFIX "_d")   # DarkAgesII_d.exe for Debug, so it doesn't clobber Release
 
 # The executable goes next to the game's assets (Data/, Gfx/, music/ live in the repo root), whatever the
 # generator or configuration, since the code loads them via relative paths.

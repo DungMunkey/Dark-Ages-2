@@ -125,7 +125,6 @@ public:
 
 	int GoGame();
 	bool CheckCollide(int dir);
-	bool CheckRender();
   void GShot();
 	bool Init(CDisplay *d, cDA2Gfx *gfx, cDA2Input *inp, cItemController *itm, cDA2Music *mus, sConf *con);
 	bool NPCClick(int atX, int atY, int &MapNum, int &NPCNum);

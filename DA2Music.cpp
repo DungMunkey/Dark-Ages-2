@@ -27,7 +27,7 @@ cDA2Music::cDA2Music(){
 	f=fopen("music/SCORE.DAT","rt");
 	for(i=0;i<500;i++) fscanf(f,"%d\n",&Music[i]);
 	fclose(f);
-  
+
   LastPlayed = -1;
   NowPlaying = -1;
 	Volume = 5;
@@ -152,11 +152,8 @@ void cDA2Music::CheckState() {
 }
 
 bool cDA2Music::Init(){
-  /*1
-	BASS_Init(1, 44100, 0, 0, 0);
-	PlayTheme();
-	return true;
-  */
+  //BASS_Init(1, 44100, 0, 0, 0); //old BASS-era init call; SFML needs no explicit subsystem init
+  return true;
 }
 
 void cDA2Music::KillSong(int map){

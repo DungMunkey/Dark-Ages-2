@@ -1183,30 +1183,6 @@ void cDA2Game::ObjRender(SDL_Surface *surf, bool bSolid){
 
 }
 
-bool cDA2Game::CheckRender(){
-  /*1 probably safe to delete
-	renderCounter++;
-	if(renderCounter>=renderSpeed){
-		playerRender++;
-		if(playerRender>=((8-renderSpeed)/2+2) ){
-			if(Player.Moving) Player.frame++;
-			if(Player.frame>3)Player.frame=0;
-			playerRender=0;
-		}
-		if(bAnimateNow){
-      colorCounter++;
-      if(colorCounter > 7) colorCounter=0;
-			animCounter++;
-			if(animCounter>3) animCounter=0;
-			bAnimateNow=false;
-		};
-		renderCounter=0;
-		return true;
-	}
-	return false;
-  */
-}
-
 //==============
 // Check mouse vs. game element
 //==============

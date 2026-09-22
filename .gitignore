@@ -1,0 +1,20 @@
+# Vendored build dependencies (fetched locally, not committed - see CMakeLists.txt)
+third_party/
+
+# CMake build tree
+build/
+build-*/
+
+# Visual Studio
+.vs/
+*.vcxproj.user
+
+# Build output that lands in the repo root next to the game assets
+/DarkAgesII.exe
+/DarkAgesII_d.exe
+/*.dll
+/*.pdb
+/*.ilk
+
+# Runtime-generated local config (screen resolution/volume), not source
+/da2.cfg

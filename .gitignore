@@ -10,8 +10,8 @@ build-*/
 *.vcxproj.user
 
 # Build output that lands in the repo root next to the game assets
-/DarkAgesII.exe
-/DarkAgesII_d.exe
+/DarkAges2.exe
+/DarkAges2_d.exe
 /*.dll
 /*.pdb
 /*.ilk

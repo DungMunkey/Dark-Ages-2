@@ -137,6 +137,7 @@ public:
 	bool Logic();
 	void LoadMaps();
 	void NewGame();
+	void ResetTicks(); //call right before entering MainGame (new game or loaded game) - see cpp for why
 
 	void ChangeMapWalking(int xdir, int ydir);
 	void ChangeMap(int map, int xpos, int ypos);

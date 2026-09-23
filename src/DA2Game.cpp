@@ -719,6 +719,20 @@ void cDA2Game::LoadMaps(){
 
 }
 
+void cDA2Game::ResetTicks(){
+  //lastTicks (and the tickAnim/tickFPS/tickNPC accumulators it feeds) is only ever advanced inside
+  //GoGame(), which doesn't run at all while the title screen is up - so lastTicks sits frozen at
+  //whatever Init() set it to (program launch) for however long the player lingers on the title screen.
+  //The first GoGame() call after entering MainGame would then see a huge elapsed-time delta and burn
+  //through it over the next several frames (tickAnim/animCounter advancing every frame instead of
+  //every ~125ms), which looked like the mage sprite and cursor briefly animating in fast-forward.
+  //Calling this right before entering MainGame (new game or loaded game) gives it a fresh baseline.
+  lastTicks=SDL_GetTicks();
+  tickAnim=0;
+  tickFPS=0;
+  tickNPC=0;
+}
+
 void cDA2Game::NewGame(){
 	FILE *f;
 	char line[256];

@@ -93,6 +93,7 @@ int main(int argc, char* args[]) {
         MyMusic->KillTheme();
         MyGame.LoadMaps();
         MyGame.NewGame();
+        MyGame.ResetTicks();
         gstate=MainGame;
         break;
       case 2:
@@ -101,6 +102,7 @@ int main(int argc, char* args[]) {
         MyGame.LoadMaps();
         //MyGame.NewGame();
         MyGame.mainStack.Push(LoadDialog);
+        MyGame.ResetTicks();
         gstate=MainGame;
         break;
       case 3:

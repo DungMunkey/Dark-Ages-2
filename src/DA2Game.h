@@ -166,7 +166,7 @@ public:
   unsigned int tickAnim;
   unsigned int tickFPS;
   unsigned int tickNPC;
-  unsigned int walkAnimTimer; //ms accumulated toward the next walk-cycle frame advance, only while Player.Moving
+  int walkAnimDist; //pixels of actual movement accumulated toward the next walk-cycle frame advance (distance-based, so faster movement animates faster)
 
 	//__int64 fps64;
 	//__int64 freq;

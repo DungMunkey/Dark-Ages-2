@@ -82,7 +82,7 @@ bool cDA2Game::Init(CDisplay* d, cDA2Gfx *gfx, cDA2Input *inp, cItemController *
   lastTicks=SDL_GetTicks();
   tickFPS=0;
   tickNPC=0;
-  walkAnimTimer=0;
+  walkAnimDist=0;
 
 
   /* Performance counter not used anymore
@@ -1355,29 +1355,20 @@ bool cDA2Game::Logic() {
 		ySpeed=0;
     bool bX=false;
 		if(diObj->MouseX() > (diObj->MouseY()+480)/2.25) {
-			if(diObj->MouseX()>500) {
-        xSpeed+=3;
-        xProgress += (1000.0/(1*renderSpeed)) * (ticks/1000.0);
-			}	else if(diObj->MouseX()>410) {
-				xSpeed+=2;
-        xProgress += (1000.0/(2*renderSpeed)) * (ticks/1000.0);
-			}	else {
-				xSpeed+=1;
-        xProgress += (1000.0/(3*renderSpeed)) * (ticks/1000.0);
-			}
+			if(diObj->MouseX()>500) xSpeed+=3;
+			else if(diObj->MouseX()>410) xSpeed+=2;
+			else xSpeed+=1;
 		}
 		if(diObj->MouseX() < (diObj->MouseY()-1040)/-2.5) {
-			if(diObj->MouseX()<140) {
-				xSpeed-=3;
-        xProgress += (1000.0/(1*renderSpeed)) * (ticks/1000.0);
-			}	else if(diObj->MouseX()<230) {
-				xSpeed-=2;
-        xProgress += (1000.0/(2*renderSpeed)) * (ticks/1000.0);
-			}	else {
-				xSpeed-=1;
-        xProgress += (1000.0/(3*renderSpeed)) * (ticks/1000.0);
-			}
+			if(diObj->MouseX()<140) xSpeed-=3;
+			else if(diObj->MouseX()<230) xSpeed-=2;
+			else xSpeed-=1;
 		}
+    //The two zones above can both be true for the same mouse position near a diagonal, so xSpeed's
+    //final value (after both had a chance to contribute) is what actually determines direction and
+    //tier - accumulating progress inside each zone individually would double-count on that overlap
+    //and cause a sudden burst of extra steps once the position settles into a single zone.
+    if(xSpeed != 0) xProgress += (1000.0/((4-abs(xSpeed))*renderSpeed)) * (ticks/1000.0);
 
 		for(int xSteps=0; xProgress>=1.0 && xSteps<32; xSteps++){
 			xProgress-=1.0;
@@ -1392,6 +1383,7 @@ bool cDA2Game::Logic() {
 				}
 				Player.Moving=true;
 				bX=true;
+				walkAnimDist++;
 			} else if(xSpeed<0){
 				PlayerCam.BumpCamera(-1,0);
 				Player.X-=1;
@@ -1403,34 +1395,22 @@ bool cDA2Game::Logic() {
 				}
 				Player.Moving=true;
 				bX=true;
+				walkAnimDist++;
 			} else break; //no active direction this frame - nothing to step
 		}
 
     bool bY=false;
 		if(diObj->MouseY() > (diObj->MouseX()*0.25)+160) {
-			if(diObj->MouseY()>380) {
-				ySpeed+=3;
-        yProgress += (1000.0/(1*renderSpeed)) * (ticks/1000.0);
-			}	else if(diObj->MouseY()>310) {
-				ySpeed+=2;
-        yProgress += (1000.0/(2*renderSpeed)) * (ticks/1000.0);
-			}	else {
-				ySpeed+=1;
-        yProgress += (1000.0/(3*renderSpeed)) * (ticks/1000.0);
-			}
+			if(diObj->MouseY()>380) ySpeed+=3;
+			else if(diObj->MouseY()>310) ySpeed+=2;
+			else ySpeed+=1;
 		}
 		if(diObj->MouseY() < (diObj->MouseX()*-0.25)+320) {
-			if(diObj->MouseY()<100) {
-				ySpeed-=3;
-        yProgress += (1000.0/(1*renderSpeed)) * (ticks/1000.0);
-			} else if(diObj->MouseY()<170) {
-				ySpeed-=2;
-        yProgress += (1000.0/(2*renderSpeed)) * (ticks/1000.0);
-			} else {
-				ySpeed-=1;
-        yProgress += (1000.0/(3*renderSpeed)) * (ticks/1000.0);
-			}
+			if(diObj->MouseY()<100) ySpeed-=3;
+			else if(diObj->MouseY()<170) ySpeed-=2;
+			else ySpeed-=1;
 		}
+    if(ySpeed != 0) yProgress += (1000.0/((4-abs(ySpeed))*renderSpeed)) * (ticks/1000.0);
 
 		for(int ySteps=0; yProgress>=1.0 && ySteps<32; ySteps++){
 			yProgress-=1.0;
@@ -1445,6 +1425,7 @@ bool cDA2Game::Logic() {
 				}
 				Player.Moving=true;
 				bY=true;
+				walkAnimDist++;
 			} else if(ySpeed<0){
 				PlayerCam.BumpCamera(0,-1);
 				Player.Y-=1;
@@ -1456,6 +1437,7 @@ bool cDA2Game::Logic() {
 				}
 				Player.Moving=true;
 				bY=true;
+				walkAnimDist++;
 			} else break;
 		}
 
@@ -1534,26 +1516,27 @@ bool cDA2Game::Logic() {
 		if(renderSpeed>4) renderSpeed=4;
 		options.Options.GameSpeed=renderSpeed;
 	}
-	if(diObj->KeyPress(KEY_RIGHT)==true) {
-    xProgress += (1000.0/(2*renderSpeed)) * (ticks/1000.0);
-    for(int s=0; xProgress>=1.0 && s<32; s++){
-      xProgress-=1.0;
-		  PlayerCam.BumpCamera(1,0);
-		  Player.X+=1;
-		  if(!CheckCollide(1)){
-			  PlayerCam.BumpCamera(-1,0);
-			  Player.X--;
+  //Net key direction first, same reason as the mouse blocks above: if both keys of a pair were ever
+  //held at once, accumulating progress from each independently would double up before either drains it.
+  int xKeyDir=0;
+  if(diObj->KeyPress(KEY_RIGHT)==true) xKeyDir+=1;
+  if(diObj->KeyPress(KEY_LEFT)==true) xKeyDir-=1;
+  if(xKeyDir != 0) xProgress += (1000.0/(2*renderSpeed)) * (ticks/1000.0);
+  for(int s=0; xProgress>=1.0 && s<32; s++){
+    xProgress-=1.0;
+    if(xKeyDir>0){
+      PlayerCam.BumpCamera(1,0);
+      Player.X+=1;
+      if(!CheckCollide(1)){
+        PlayerCam.BumpCamera(-1,0);
+        Player.X--;
         xProgress=0;
         break;
-		  }
-		  Player.dir=1;
-		  Player.Moving=true;
-    }
-	}
-	if(diObj->KeyPress(KEY_LEFT)==true) {
-    xProgress += (1000.0/(2*renderSpeed)) * (ticks/1000.0);
-    for(int s=0; xProgress>=1.0 && s<32; s++){
-      xProgress-=1.0;
+      }
+      Player.dir=1;
+      Player.Moving=true;
+      walkAnimDist++;
+    } else if(xKeyDir<0){
       PlayerCam.BumpCamera(-1, 0);
       Player.X-=1;
       if(!CheckCollide(3)){
@@ -1564,28 +1547,17 @@ bool cDA2Game::Logic() {
       }
       Player.dir=3;
       Player.Moving=true;
-    }
-	}
-	if(diObj->KeyPress(KEY_UP)==true) {
-    yProgress += (1000.0/(2*renderSpeed)) * (ticks/1000.0);
-    for(int s=0; yProgress>=1.0 && s<32; s++){
-      yProgress-=1.0;
-      PlayerCam.BumpCamera(0, -1);
-      Player.Y-=1;
-      if(!CheckCollide(2)){
-        PlayerCam.BumpCamera(0, 1);
-        Player.Y++;
-        yProgress=0;
-        break;
-      }
-      Player.dir=2;
-      Player.Moving=true;
-    }
-	}
-	if(diObj->KeyPress(KEY_DOWN)==true) {
-    yProgress += (1000.0/(2*renderSpeed)) * (ticks/1000.0);
-    for(int s=0; yProgress>=1.0 && s<32; s++){
-      yProgress-=1.0;
+      walkAnimDist++;
+    } else break;
+  }
+
+  int yKeyDir=0;
+  if(diObj->KeyPress(KEY_DOWN)==true) yKeyDir+=1;
+  if(diObj->KeyPress(KEY_UP)==true) yKeyDir-=1;
+  if(yKeyDir != 0) yProgress += (1000.0/(2*renderSpeed)) * (ticks/1000.0);
+  for(int s=0; yProgress>=1.0 && s<32; s++){
+    yProgress-=1.0;
+    if(yKeyDir>0){
       PlayerCam.BumpCamera(0, 1);
       Player.Y+=1;
       if(!CheckCollide(0)){
@@ -1596,19 +1568,29 @@ bool cDA2Game::Logic() {
       }
       Player.dir=0;
       Player.Moving=true;
-    }
-	}
+      walkAnimDist++;
+    } else if(yKeyDir<0){
+      PlayerCam.BumpCamera(0, -1);
+      Player.Y-=1;
+      if(!CheckCollide(2)){
+        PlayerCam.BumpCamera(0, 1);
+        Player.Y++;
+        yProgress=0;
+        break;
+      }
+      Player.dir=2;
+      Player.Moving=true;
+      walkAnimDist++;
+    } else break;
+  }
 
-  //walk-cycle animation frame: advances at a fixed real-time pace while the player is moving,
-  //regardless of whether mouse-drag or keyboard input is driving it (previously these had separate,
-  //inconsistent counters - keyboard movement advanced this twice as fast as mouse movement).
-  if(Player.Moving){
-    walkAnimTimer+=ticks;
-    if(walkAnimTimer > 180) {
-      walkAnimTimer-=180;
-      Player.frame++;
-      if(Player.frame > 3) Player.frame=0;
-    }
+  //Walk-cycle animation frame: advances once per fixed distance traveled rather than a fixed amount of
+  //time, so it naturally runs faster when the player is moving faster (mouse-drag or keyboard, either
+  //one - walkAnimDist is fed by every stepping loop above).
+  if(walkAnimDist >= 8) {
+    walkAnimDist-=8;
+    Player.frame++;
+    if(Player.frame > 3) Player.frame=0;
   }
 
 	if(PlayerCam.CameraX<0) ChangeMapWalking(-1,0);

@@ -252,7 +252,7 @@ bool cDA2Party::Render(){
 
 	//display the stat screen
   SDL_RenderClear(display->renderer);
-  SDL_RenderCopy(display->renderer, ddGfx->Stats[ActivePlayer]->texture, NULL, NULL);
+  DA2_RenderCopy(display->renderer, ddGfx->Stats[ActivePlayer]->texture, NULL, NULL);
 	//ddObj->ddsb->Blt(&r, ddGfx->Stats[ActivePlayer], &r, DDBLT_WAIT,NULL);
 
 	//display character name
@@ -299,49 +299,49 @@ bool cDA2Party::Render(){
 	//armor
 	r.y=182;	r.x=74;	
 	tile=Players[ActivePlayer].Gear.Armor;
-  if(tile>0 && TakeOffItem != 3) SDL_RenderCopy(display->renderer, ddGfx->Objects[ddGfx->vObj->at(tile).index][*colorCounter]->texture, &ddGfx->vObj->at(tile).r, &r);
+  if(tile>0 && TakeOffItem != 3) DA2_RenderCopy(display->renderer, ddGfx->Objects[ddGfx->vObj->at(tile).index][*colorCounter]->texture, &ddGfx->vObj->at(tile).r, &r);
   //ddObj->ddsb->Blt(&r, ddGfx->Objects[ddGfx->vObj->at(tile).index],&ddGfx->vObj->at(tile).r,DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 
 	//weapon
 	r.y=275;	r.x=41;	
 	tile=Players[ActivePlayer].Gear.Weapon;
-  if(tile>0 && TakeOffItem != 1) SDL_RenderCopy(display->renderer, ddGfx->Objects[ddGfx->vObj->at(tile).index][*colorCounter]->texture, &ddGfx->vObj->at(tile).r, &r);
+  if(tile>0 && TakeOffItem != 1) DA2_RenderCopy(display->renderer, ddGfx->Objects[ddGfx->vObj->at(tile).index][*colorCounter]->texture, &ddGfx->vObj->at(tile).r, &r);
   //ddObj->ddsb->Blt(&r, ddGfx->Objects[ddGfx->vObj->at(tile).index], &ddGfx->vObj->at(tile).r, DDBLT_WAIT | DDBLT_KEYSRC, NULL);
 
 	//helmet
 	r.y=149;	r.x=166;	
 	tile=Players[ActivePlayer].Gear.Helmet;
-  if(tile>0 && TakeOffItem != 4) SDL_RenderCopy(display->renderer, ddGfx->Objects[ddGfx->vObj->at(tile).index][*colorCounter]->texture, &ddGfx->vObj->at(tile).r, &r);
+  if(tile>0 && TakeOffItem != 4) DA2_RenderCopy(display->renderer, ddGfx->Objects[ddGfx->vObj->at(tile).index][*colorCounter]->texture, &ddGfx->vObj->at(tile).r, &r);
   //ddObj->ddsb->Blt(&r, ddGfx->Objects[ddGfx->vObj->at(tile).index], &ddGfx->vObj->at(tile).r, DDBLT_WAIT | DDBLT_KEYSRC, NULL);
 
 	//hands
 	r.y=182;	r.x=258;	
 	tile=Players[ActivePlayer].Gear.Hands;
-  if(tile>0 && TakeOffItem != 6) SDL_RenderCopy(display->renderer, ddGfx->Objects[ddGfx->vObj->at(tile).index][*colorCounter]->texture, &ddGfx->vObj->at(tile).r, &r);
+  if(tile>0 && TakeOffItem != 6) DA2_RenderCopy(display->renderer, ddGfx->Objects[ddGfx->vObj->at(tile).index][*colorCounter]->texture, &ddGfx->vObj->at(tile).r, &r);
   //ddObj->ddsb->Blt(&r, ddGfx->Objects[ddGfx->vObj->at(tile).index], &ddGfx->vObj->at(tile).r, DDBLT_WAIT | DDBLT_KEYSRC, NULL);
 
 	//shield
 	r.y=274;	r.x=291;	
 	tile=Players[ActivePlayer].Gear.Shield;
-  if(tile>0 && TakeOffItem != 2) SDL_RenderCopy(display->renderer, ddGfx->Objects[ddGfx->vObj->at(tile).index][*colorCounter]->texture, &ddGfx->vObj->at(tile).r, &r);
+  if(tile>0 && TakeOffItem != 2) DA2_RenderCopy(display->renderer, ddGfx->Objects[ddGfx->vObj->at(tile).index][*colorCounter]->texture, &ddGfx->vObj->at(tile).r, &r);
   //ddObj->ddsb->Blt(&r, ddGfx->Objects[ddGfx->vObj->at(tile).index], &ddGfx->vObj->at(tile).r, DDBLT_WAIT | DDBLT_KEYSRC, NULL);
 
 	//ring
 	r.y=366;	r.x=258;	
 	tile=Players[ActivePlayer].Gear.Ring;
-  if(tile>0 && TakeOffItem != 8) SDL_RenderCopy(display->renderer, ddGfx->Objects[ddGfx->vObj->at(tile).index][*colorCounter]->texture, &ddGfx->vObj->at(tile).r, &r);
+  if(tile>0 && TakeOffItem != 8) DA2_RenderCopy(display->renderer, ddGfx->Objects[ddGfx->vObj->at(tile).index][*colorCounter]->texture, &ddGfx->vObj->at(tile).r, &r);
   //ddObj->ddsb->Blt(&r, ddGfx->Objects[ddGfx->vObj->at(tile).index], &ddGfx->vObj->at(tile).r, DDBLT_WAIT | DDBLT_KEYSRC, NULL);
 
 	//boots
 	r.y=399;	r.x=166;	
 	tile=Players[ActivePlayer].Gear.Boots;
-  if(tile>0 && TakeOffItem != 5) SDL_RenderCopy(display->renderer, ddGfx->Objects[ddGfx->vObj->at(tile).index][*colorCounter]->texture, &ddGfx->vObj->at(tile).r, &r);
+  if(tile>0 && TakeOffItem != 5) DA2_RenderCopy(display->renderer, ddGfx->Objects[ddGfx->vObj->at(tile).index][*colorCounter]->texture, &ddGfx->vObj->at(tile).r, &r);
   //ddObj->ddsb->Blt(&r, ddGfx->Objects[ddGfx->vObj->at(tile).index], &ddGfx->vObj->at(tile).r, DDBLT_WAIT | DDBLT_KEYSRC, NULL);
 
 	//legs
 	r.y=366;	r.x=74;
 	tile=Players[ActivePlayer].Gear.Legs;
-  if(tile>0 && TakeOffItem != 7) SDL_RenderCopy(display->renderer, ddGfx->Objects[ddGfx->vObj->at(tile).index][*colorCounter]->texture, &ddGfx->vObj->at(tile).r, &r);
+  if(tile>0 && TakeOffItem != 7) DA2_RenderCopy(display->renderer, ddGfx->Objects[ddGfx->vObj->at(tile).index][*colorCounter]->texture, &ddGfx->vObj->at(tile).r, &r);
   //ddObj->ddsb->Blt(&r, ddGfx->Objects[ddGfx->vObj->at(tile).index], &ddGfx->vObj->at(tile).r, DDBLT_WAIT | DDBLT_KEYSRC, NULL);
 
 	//Display the Party Items
@@ -352,9 +352,9 @@ bool cDA2Party::Render(){
 			r.y=y*40+231+4;
 			if(x+y*6+packOffset==40) break;
 			tile=PartyItems[x+y*6+packOffset];
-      if(tile>0 && x + y * 6 + packOffset != Selection) SDL_RenderCopy(display->renderer, ddGfx->Objects[ddGfx->vObj->at(tile).index][*colorCounter]->texture, &ddGfx->vObj->at(tile).r, &r);
+      if(tile>0 && x + y * 6 + packOffset != Selection) DA2_RenderCopy(display->renderer, ddGfx->Objects[ddGfx->vObj->at(tile).index][*colorCounter]->texture, &ddGfx->vObj->at(tile).r, &r);
       //ddObj->ddsb->Blt(&r, ddGfx->Objects[ddGfx->vObj->at(tile).index], &ddGfx->vObj->at(tile).r, DDBLT_WAIT | DDBLT_KEYSRC, NULL);
-      else SDL_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[16], &r);
+      else DA2_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[16], &r);
       //ddObj->ddsb->Blt(&r, ddGfx->Windows,&ddGfx->aWindows[16],DDBLT_WAIT,NULL);
 		}
 	}
@@ -432,16 +432,16 @@ bool cDA2Party::Render(){
 			text.drawText(display->renderer,200,120+(j-listOffset)*16,0,Spells[SpellList[j]].SpellName);
 		}
 		if(Selection >-1){
-      if(listOffset + Selection>0) SDL_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[11], &clickSpell[15]);
+      if(listOffset + Selection>0) DA2_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[11], &clickSpell[15]);
       //ddObj->ddsb->Blt(&clickSpell[15], ddGfx->Windows, &ddGfx->aWindows[11], DDBLT_WAIT, NULL);
-      if(listOffset + Selection<SpellCount - 1) SDL_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[12], &clickSpell[16]);
+      if(listOffset + Selection<SpellCount - 1) DA2_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[12], &clickSpell[16]);
       //ddObj->ddsb->Blt(&clickSpell[16], ddGfx->Windows, &ddGfx->aWindows[12], DDBLT_WAIT, NULL);
 		}
-    if(SpellCount - listOffset>15) SDL_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[12], &clickSpell[19]);
+    if(SpellCount - listOffset>15) DA2_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[12], &clickSpell[19]);
     //ddObj->ddsb->Blt(&clickSpell[19],ddGfx->Windows,&ddGfx->aWindows[12],DDBLT_WAIT,NULL);
-    if(listOffset>0) SDL_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[11], &clickSpell[17]); 
+    if(listOffset>0) DA2_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[11], &clickSpell[17]); 
     //ddObj->ddsb->Blt(&clickSpell[18], ddGfx->Windows, &ddGfx->aWindows[11], DDBLT_WAIT, NULL);
-    SDL_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[15], &clickSpell[17]); 
+    DA2_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[15], &clickSpell[17]); 
     //ddObj->ddsb->Blt(&clickSpell[17], ddGfx->Windows, &ddGfx->aWindows[15], DDBLT_WAIT, NULL);
 
 	}
@@ -452,7 +452,7 @@ bool cDA2Party::Render(){
 	r.h=32;
 	r.w=32;
 	if(Selection>-1 && !bShowSpellList) {
-    SDL_RenderCopy(display->renderer, ddGfx->Objects[ddGfx->vObj->at(PartyItems[Selection]).index][*colorCounter]->texture, &ddGfx->vObj->at(PartyItems[Selection]).r, &r);
+    DA2_RenderCopy(display->renderer, ddGfx->Objects[ddGfx->vObj->at(PartyItems[Selection]).index][*colorCounter]->texture, &ddGfx->vObj->at(PartyItems[Selection]).r, &r);
 		//ddObj->ddsb->Blt(&r,ddGfx->Objects[ddGfx->vObj->at(PartyItems[Selection]).index],&ddGfx->vObj->at(PartyItems[Selection]).r,DDBLT_WAIT|DDBLT_KEYSRC,NULL);
     r.x=clickList[15].x - 1;
     r.y=clickList[15].y - 1;
@@ -475,8 +475,8 @@ bool cDA2Party::Render(){
   r.x=diObj->MouseX() - 16;
   r.h=32;
   r.w=32;
-  if(i>-1) SDL_RenderCopy(display->renderer, ddGfx->Objects[ddGfx->vObj->at(i).index][*colorCounter]->texture, &ddGfx->vObj->at(i).r, &r);
-  SDL_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->vTile->at(20).r, &r);
+  if(i>-1) DA2_RenderCopy(display->renderer, ddGfx->Objects[ddGfx->vObj->at(i).index][*colorCounter]->texture, &ddGfx->vObj->at(i).r, &r);
+  DA2_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->vTile->at(20).r, &r);
 	//ddObj->ddsb->Blt(&r, ddGfx->Tiles[0],&ddGfx->vTile->at(20).r,DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 	return true;
 }
@@ -493,9 +493,9 @@ void cDA2Party::ItemWinRender(int x, int y, int item){
 	r.w=245;
   SDL_GetRenderDrawColor(display->renderer, &R, &G, &B, &A);
   SDL_SetRenderDrawColor(display->renderer, 0, 0, 0, 255);
-  SDL_RenderFillRect(display->renderer, &r);
+  DA2_RenderFillRect(display->renderer, &r);
   SDL_SetRenderDrawColor(display->renderer, R, G, B, A);
-  SDL_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[1], &r);
+  DA2_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[1], &r);
 	//ddObj->ddsb->Blt(&r, ddGfx->Windows,&ddGfx->aWindows[1],DDBLT_WAIT,NULL);
 
 	text.drawText(display->renderer,x+15,y+10,0,ItemList->Items[item].ItemName);

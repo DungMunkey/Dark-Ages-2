@@ -43,30 +43,30 @@ bool cDA2Window::DrawWindow(){
 
 	//The frame
 	r.x=xPos+14; r.y=yPos; r.w=width-28; r.h=12;
-  SDL_RenderCopy(display->renderer, ddGfx->Windows->texture, &frame[0], &r);
+  DA2_RenderCopy(display->renderer, ddGfx->Windows->texture, &frame[0], &r);
 	//ddObj->ddsb->Blt(&r, ddGfx->Windows, &frame[0], DDBLT_WAIT,NULL);
 	r.x=xPos; r.y=yPos+14; r.w=12; r.h=height-28;
-  SDL_RenderCopy(display->renderer, ddGfx->Windows->texture, &frame[1], &r);
+  DA2_RenderCopy(display->renderer, ddGfx->Windows->texture, &frame[1], &r);
 	//ddObj->ddsb->Blt(&r, ddGfx->Windows, &frame[1], DDBLT_WAIT,NULL);
 	r.x=xPos+14; r.y=yPos+height-12; r.w=width-28; r.h=12;
-  SDL_RenderCopy(display->renderer, ddGfx->Windows->texture, &frame[2], &r);
+  DA2_RenderCopy(display->renderer, ddGfx->Windows->texture, &frame[2], &r);
 	//ddObj->ddsb->Blt(&r, ddGfx->Windows, &frame[2], DDBLT_WAIT,NULL);
 	r.x=xPos+width-12; r.y=yPos+14; r.w=12; r.h=height-28;
-  SDL_RenderCopy(display->renderer, ddGfx->Windows->texture, &frame[3], &r);
+  DA2_RenderCopy(display->renderer, ddGfx->Windows->texture, &frame[3], &r);
 	//ddObj->ddsb->Blt(&r, ddGfx->Windows, &frame[3], DDBLT_WAIT,NULL);
 
 	//The corners
 	r.x=xPos; r.y=yPos; r.w=25; r.h=25;
-  SDL_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[28], &r);
+  DA2_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[28], &r);
 	//ddObj->ddsb->Blt(&r, ddGfx->Windows, &ddGfx->aWindows[28], DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 	r.x=xPos+width-25; r.y=yPos; r.w=25; r.h=25;
-  SDL_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[29], &r);
+  DA2_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[29], &r);
 	//ddObj->ddsb->Blt(&r, ddGfx->Windows, &ddGfx->aWindows[29], DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 	r.x=xPos; r.y=yPos+height-25; r.w=25; r.h=25;
-  SDL_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[30], &r);
+  DA2_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[30], &r);
 	//ddObj->ddsb->Blt(&r, ddGfx->Windows, &ddGfx->aWindows[30], DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 	r.x=xPos+width-25; r.y=yPos+height-25; r.w=25; r.h=25;
-  SDL_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[31], &r);
+  DA2_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[31], &r);
 	//ddObj->ddsb->Blt(&r, ddGfx->Windows, &ddGfx->aWindows[31], DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 
 	return true;

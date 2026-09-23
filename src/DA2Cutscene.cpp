@@ -90,7 +90,7 @@ bool DA2Cutscene::Render(){
 				r.y=(y-(SceneCam.TilePosY-8))*32-SceneCam.OffsetY;
 				if(r.x>639 || r.y>479) continue;
 				//ddObj->ddsb->Blt(&r, ddGfx->Tiles[ddGfx->vTile->at(Tile).index], &ddGfx->vTile->at(Tile).r, DDBLT_WAIT|DDBLT_KEYSRC,NULL);
-        SDL_RenderCopy(display->renderer, ddGfx->Tiles[ddGfx->vTile->at(Tile).index]->texture, &ddGfx->vTile->at(Tile).r, &r);
+        DA2_RenderCopy(display->renderer, ddGfx->Tiles[ddGfx->vTile->at(Tile).index]->texture, &ddGfx->vTile->at(Tile).r, &r);
 			}
 		
 		}
@@ -107,13 +107,13 @@ bool DA2Cutscene::Render(){
 	r.h=480;
 	r.w=640;
 	//ddObj->ddsb->Blt(&r,ddGfx->Border,&r,DDBLT_WAIT|DDBLT_KEYSRC,NULL);
-  SDL_RenderCopy(display->renderer, ddGfx->Border->texture, &r, &r);
+  DA2_RenderCopy(display->renderer, ddGfx->Border->texture, &r, &r);
 
 	//display any text
 	if(bText) text.Render();
 
   //SDL_SetRenderTarget(display->renderer, NULL);
-  //SDL_RenderCopy(display->renderer, canvas, NULL, NULL);
+  //DA2_RenderCopy(display->renderer, canvas, NULL, NULL);
 
 	return true;
 }
@@ -140,7 +140,7 @@ void DA2Cutscene::ObjRender(){
 					r.x=(x-(SceneCam.TilePosX-10))*32-SceneCam.OffsetX;
 					r.y=(y-(SceneCam.TilePosY-8))*32-SceneCam.OffsetY;
 					//if(Tile>0) ddObj->ddsb->Blt(&r, ddGfx->Objects[ddGfx->vObj->at(Tile).index], &ddGfx->vObj->at(Tile).r, DDBLT_WAIT|DDBLT_KEYSRC,NULL);
-          if(Tile>0) SDL_RenderCopy(display->renderer, ddGfx->Objects[ddGfx->vObj->at(Tile).index][*colorCounter]->texture, &ddGfx->vObj->at(Tile).r, &r);
+          if(Tile>0) DA2_RenderCopy(display->renderer, ddGfx->Objects[ddGfx->vObj->at(Tile).index][*colorCounter]->texture, &ddGfx->vObj->at(Tile).r, &r);
 				}
 			}
 		}
@@ -168,7 +168,7 @@ void DA2Cutscene::NPCRender(){
 			r.x=(x-(SceneCam.TilePosX-10))*32-SceneCam.OffsetX+npc[i].posX%32;
 			r.y=(y-(SceneCam.TilePosY-8))*32-SceneCam.OffsetY+npc[i].posY%32;
 			//ddObj->ddsb->Blt(&r, ddGfx->Chars[ddGfx->vNPC->at(Tile).index], &ddGfx->vNPC->at(Tile).r, DDBLT_WAIT|DDBLT_KEYSRC,NULL);
-      SDL_RenderCopy(display->renderer, ddGfx->Chars[ddGfx->vNPC->at(Tile).index]->texture, &ddGfx->vNPC->at(Tile).r, &r);
+      DA2_RenderCopy(display->renderer, ddGfx->Chars[ddGfx->vNPC->at(Tile).index]->texture, &ddGfx->vNPC->at(Tile).r, &r);
 		}
 	}
 

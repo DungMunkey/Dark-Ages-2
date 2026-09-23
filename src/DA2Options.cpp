@@ -81,7 +81,7 @@ bool cDA2Options::Logic(){
             float sx, sy;
             SDL_Texture* tempText =SDL_GetRenderTarget(display->renderer);
             SDL_SetRenderTarget(display->renderer, NULL);
-            SDL_RenderGetScale(display->renderer, &sx, &sy);
+            SDL_GetRenderScale(display->renderer, &sx, &sy);
             SDL_SetRenderTarget(display->renderer, tempText);
             tempText=NULL;
             diObj->setMouseOffsets(sx, (display->screenWidth / sx - 640) / 2, sy, (display->screenHeight / sy - 480) / 2);
@@ -156,18 +156,18 @@ bool cDA2Options::Render(){
 
 	//Display checkboxes/buttons
 	for(i=0;i<5;i++){
-    SDL_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[21], &buttons[i * 2]);
-    SDL_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[22], &buttons[i * 2 + 1]);
+    DA2_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[21], &buttons[i * 2]);
+    DA2_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[22], &buttons[i * 2 + 1]);
 		//ddObj->ddsb->Blt(&buttons[i*2], ddGfx->Windows, &ddGfx->aWindows[21], DDBLT_WAIT,NULL);
 		//ddObj->ddsb->Blt(&buttons[i*2+1], ddGfx->Windows, &ddGfx->aWindows[22], DDBLT_WAIT,NULL);
 	}
   if(tmpScreen!=Options.ScreenRes){
-    SDL_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[22], &buttons[10]);
+    DA2_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[22], &buttons[10]);
   }
-  SDL_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[21], &buttons[11]);
-  SDL_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[22], &buttons[12]);
+  DA2_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[21], &buttons[11]);
+  DA2_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[22], &buttons[12]);
   if(tmpFullscreen != Options.Fullscreen){
-    SDL_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[22], &buttons[13]);
+    DA2_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[22], &buttons[13]);
   }
 
 	//Done button
@@ -177,7 +177,7 @@ bool cDA2Options::Render(){
 	r.x=diObj->MouseX()-16;
 	r.h=32;
 	r.w=32;
-  SDL_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->vTile->at(20).r, &r);
+  DA2_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->vTile->at(20).r, &r);
 	//ddObj->ddsb->Blt(&r, ddGfx->Tiles[0],&ddGfx->vTile->at(20).r,DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 
 	return true;

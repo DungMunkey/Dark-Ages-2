@@ -42,10 +42,10 @@ void cDA2Input::LockKey(DA2KEYS key){
 void cDA2Input::pollEvents(){
   //printf("Polling\n");
   while(SDL_PollEvent(&e) != 0)	{
-    if(e.type == SDL_KEYDOWN) setKey(e.key.keysym.sym, true);
-    else if(e.type == SDL_KEYUP) setKey(e.key.keysym.sym, false);
-    else if(e.type == SDL_MOUSEBUTTONDOWN) setButton(e.button.button, true);
-    else if(e.type == SDL_MOUSEBUTTONUP) setButton(e.button.button, false);
+    if(e.type == SDL_EVENT_KEY_DOWN) setKey(e.key.key, true);
+    else if(e.type == SDL_EVENT_KEY_UP) setKey(e.key.key, false);
+    else if(e.type == SDL_EVENT_MOUSE_BUTTON_DOWN) setButton(e.button.button, true);
+    else if(e.type == SDL_EVENT_MOUSE_BUTTON_UP) setButton(e.button.button, false);
   }
   SDL_GetMouseState(&mousePosX, &mousePosY);
   mouseX=(int)(mousePosX / multPosX) - offsetPosX;
@@ -124,32 +124,32 @@ void cDA2Input::setButton(Uint8 k, bool b){
 void cDA2Input::setKey(SDL_Keycode k, bool b){
   DA2KEYS x;
   switch(k){
-  case SDLK_a:      x=KEY_A; break;
-  case SDLK_b:      x=KEY_B; break;
-  case SDLK_c:      x=KEY_C; break;
-  case SDLK_d:      x=KEY_D; break;
-  case SDLK_e:      x=KEY_E; break;
-  case SDLK_f:      x=KEY_F; break;
-  case SDLK_g:      x=KEY_G; break;
-  case SDLK_h:      x=KEY_H; break;
-  case SDLK_i:      x=KEY_I; break;
-  case SDLK_j:      x=KEY_J; break;
-  case SDLK_k:      x=KEY_K; break;
-  case SDLK_l:      x=KEY_L; break;
-  case SDLK_m:      x=KEY_M; break;
-  case SDLK_n:      x=KEY_N; break;
-  case SDLK_o:      x=KEY_O; break;
-  case SDLK_p:      x=KEY_P; break;
-  case SDLK_q:      x=KEY_Q; break;
-  case SDLK_r:      x=KEY_R; break;
-  case SDLK_s:      x=KEY_S; break;
-  case SDLK_t:      x=KEY_T; break;
-  case SDLK_u:      x=KEY_U; break;
-  case SDLK_v:      x=KEY_V; break;
-  case SDLK_w:      x=KEY_W; break;
-  case SDLK_x:      x=KEY_X; break;
-  case SDLK_y:      x=KEY_Y; break;
-  case SDLK_z:      x=KEY_Z; break;
+  case SDLK_A:      x=KEY_A; break;
+  case SDLK_B:      x=KEY_B; break;
+  case SDLK_C:      x=KEY_C; break;
+  case SDLK_D:      x=KEY_D; break;
+  case SDLK_E:      x=KEY_E; break;
+  case SDLK_F:      x=KEY_F; break;
+  case SDLK_G:      x=KEY_G; break;
+  case SDLK_H:      x=KEY_H; break;
+  case SDLK_I:      x=KEY_I; break;
+  case SDLK_J:      x=KEY_J; break;
+  case SDLK_K:      x=KEY_K; break;
+  case SDLK_L:      x=KEY_L; break;
+  case SDLK_M:      x=KEY_M; break;
+  case SDLK_N:      x=KEY_N; break;
+  case SDLK_O:      x=KEY_O; break;
+  case SDLK_P:      x=KEY_P; break;
+  case SDLK_Q:      x=KEY_Q; break;
+  case SDLK_R:      x=KEY_R; break;
+  case SDLK_S:      x=KEY_S; break;
+  case SDLK_T:      x=KEY_T; break;
+  case SDLK_U:      x=KEY_U; break;
+  case SDLK_V:      x=KEY_V; break;
+  case SDLK_W:      x=KEY_W; break;
+  case SDLK_X:      x=KEY_X; break;
+  case SDLK_Y:      x=KEY_Y; break;
+  case SDLK_Z:      x=KEY_Z; break;
   case SDLK_SPACE:  x=KEY_SPACE; break;
   case SDLK_BACKSPACE:      x=KEY_BACKSPACE; break;
   case SDLK_ESCAPE: x=KEY_ESCAPE; break;

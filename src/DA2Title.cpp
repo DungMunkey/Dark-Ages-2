@@ -73,9 +73,9 @@ bool cDA2Title::Render(){
 
   r.x=0; r.y=0; r.w=640; r.h=480;
   if(bCredits){
-	  SDL_RenderCopy(display->renderer,Credits->texture,&r,&r);
+	  DA2_RenderCopy(display->renderer,Credits->texture,&r,&r);
   } else {
-    SDL_RenderCopy(display->renderer, Title->texture, &r, &r);
+    DA2_RenderCopy(display->renderer, Title->texture, &r, &r);
   }
 	//ddObj->ddsb->Blt(&r, Title, &r, DDBLT_WAIT,NULL);
 
@@ -86,7 +86,7 @@ bool cDA2Title::Render(){
 	  for(i=0;i<4;i++){
 		  if(mx>=aTitle[i].x && mx<=(aTitle[i].x+aTitle[i].w) && 
 			   my>=aTitle[i].y && my<(aTitle[i].y+aTitle[i].h)){ 
-        SDL_RenderCopy(display->renderer, Title->texture, &bTitle[i], &aTitle[i]);
+        DA2_RenderCopy(display->renderer, Title->texture, &bTitle[i], &aTitle[i]);
 			  //ddObj->ddsb->BltFast(aTitle[i].left,aTitle[i].top, Title, &bTitle[i], DDBLTFAST_WAIT|DDBLTFAST_SRCCOLORKEY);
 			  //ddObj->ddsb->Blt(&aTitle[i], Title, &bTitle[i], DDBLT_WAIT,NULL);
 		  }
@@ -98,7 +98,7 @@ bool cDA2Title::Render(){
 	r.x=input->mouseX;
 	r.w=16;
 	r.h=16;
-  SDL_RenderCopy(display->renderer, Title->texture, &cursor, &r);
+  DA2_RenderCopy(display->renderer, Title->texture, &cursor, &r);
 	//ddObj->ddsb->BltFast(r.left,r.top, Title, &cursor, DDBLTFAST_WAIT|DDBLTFAST_SRCCOLORKEY);
 	//ddObj->ddsb->Blt(&r, Title,&cursor,DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 

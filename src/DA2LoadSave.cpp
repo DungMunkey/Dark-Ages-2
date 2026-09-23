@@ -117,7 +117,7 @@ bool cDA2LoadSave::Render(bool bLoad){
 	//blt the dialog
 	r.x=144;	r.y=112; r.w=352; r.h=256; 
 	r2.x=0; r2.y=0; r2.w=352; r2.h=256;
-  SDL_RenderCopy(display->renderer, ddGfx->Frame->texture, &r2, &r);
+  DA2_RenderCopy(display->renderer, ddGfx->Frame->texture, &r2, &r);
 	//ddObj->ddsb->Blt(&r, ddGfx->Frame, &r2, DDBLT_WAIT,NULL);
 
 	//Show quick save or quick load
@@ -151,21 +151,21 @@ bool cDA2LoadSave::Render(bool bLoad){
 	}
 
 	//Add scroll buttons if needed
-  if(Offset>0) SDL_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[11], &clickList[3]);
+  if(Offset>0) DA2_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[11], &clickList[3]);
   //ddObj->ddsb->Blt(&clickList[3], ddGfx->Windows, &ddGfx->aWindows[11], DDBLT_WAIT | DDBLT_KEYSRC, NULL);
-  if(i<vFiles.size()) SDL_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[12], &clickList[4]);
+  if(i<vFiles.size()) DA2_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[12], &clickList[4]);
   //ddObj->ddsb->Blt(&clickList[4], ddGfx->Windows, &ddGfx->aWindows[12], DDBLT_WAIT | DDBLT_KEYSRC, NULL);
 
 	//blt any info, if needed
 	if(Selection>-1){
 		r.x=308; r.w=32; r.y=128; r.h=32;
-    SDL_RenderCopy(display->renderer, ddGfx->Chars[0]->texture, &ddGfx->vNPC->at(*animCounter).r, &r);
+    DA2_RenderCopy(display->renderer, ddGfx->Chars[0]->texture, &ddGfx->vNPC->at(*animCounter).r, &r);
 		//ddObj->ddsb->Blt(&r, ddGfx->Chars[0],&ddGfx->vNPC->at(*animCounter).r,DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 		r.x=372; r.w=32; r.y=128; r.h=32;
-    SDL_RenderCopy(display->renderer, ddGfx->Chars[0]->texture, &ddGfx->vNPC->at(*animCounter + 16).r, &r);
+    DA2_RenderCopy(display->renderer, ddGfx->Chars[0]->texture, &ddGfx->vNPC->at(*animCounter + 16).r, &r);
 		//ddObj->ddsb->Blt(&r, ddGfx->Chars[0],&ddGfx->vNPC->at(*animCounter+16).r,DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 		r.x=436; r.w=32; r.y=128; r.h=32;
-    SDL_RenderCopy(display->renderer, ddGfx->Chars[0]->texture, &ddGfx->vNPC->at(*animCounter + 32).r, &r);
+    DA2_RenderCopy(display->renderer, ddGfx->Chars[0]->texture, &ddGfx->vNPC->at(*animCounter + 32).r, &r);
 		//ddObj->ddsb->Blt(&r, ddGfx->Chars[0],&ddGfx->vNPC->at(*animCounter+32).r,DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 
 		sprintf(str,"Save%.3d",CurrentInfo.ID);
@@ -192,20 +192,20 @@ bool cDA2LoadSave::Render(bool bLoad){
 		text.drawText(display->renderer,452-sz*4,176,0,str);
 
 		if(Cursor>-1 && (*animCounter==1 || *animCounter==2))	text.drawText(display->renderer,156+8*Cursor,192,0,"|");
-    if(Selection>0)	SDL_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[20], &clickList[1]);
+    if(Selection>0)	DA2_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[20], &clickList[1]);
     //ddObj->ddsb->Blt(&clickList[1], ddGfx->Windows, &ddGfx->aWindows[20], DDBLT_WAIT | DDBLT_KEYSRC, NULL);
 
 		if(bLoad){
-      SDL_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[17], &clickList[0]);
+      DA2_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[17], &clickList[0]);
 			//ddObj->ddsb->Blt(&clickList[0], ddGfx->Windows,&ddGfx->aWindows[17],DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 		} else {
-      SDL_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[18], &clickList[0]);
+      DA2_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[18], &clickList[0]);
 			//ddObj->ddsb->Blt(&clickList[0], ddGfx->Windows,&ddGfx->aWindows[18],DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 		}
 	}
 
 	//Always show the cancel button
-  SDL_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[19], &clickList[2]);
+  DA2_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[19], &clickList[2]);
 	//ddObj->ddsb->Blt(&clickList[2], ddGfx->Windows,&ddGfx->aWindows[19],DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 
 	//display the mouse cursor
@@ -213,7 +213,7 @@ bool cDA2LoadSave::Render(bool bLoad){
 	r.x=diObj->MouseX()-2;
 	r.h=24;
 	r.w=16;
-  SDL_RenderCopy(display->renderer, ddGfx->Cursor->texture, &ddGfx->aCursor[7], &r);
+  DA2_RenderCopy(display->renderer, ddGfx->Cursor->texture, &ddGfx->aCursor[7], &r);
   //ddObj->ddsb->Blt(&r, ddGfx->Cursor,&ddGfx->aCursor[7],DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 
 	//sprintf(str,"%d,%d,%d",player->Map,player->X,player->Y);

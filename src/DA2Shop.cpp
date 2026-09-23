@@ -160,7 +160,7 @@ bool cDA2Shop::Render(){
 
 	//display the stat screen
   SDL_RenderClear(display->renderer);
-  SDL_RenderCopy(display->renderer, ddGfx->Shop->texture, NULL, NULL);
+  DA2_RenderCopy(display->renderer, ddGfx->Shop->texture, NULL, NULL);
 
 	//display party cash
 	strcpy(str,"(Gold: ");
@@ -183,7 +183,7 @@ bool cDA2Shop::Render(){
 		
 		r.x=x;
 		r.y=y;
-    SDL_RenderCopy(display->renderer, ddGfx->Objects[ddGfx->vObj->at(Buy[i]).index][*colorCounter]->texture, &ddGfx->vObj->at(Buy[i]).r, &r);
+    DA2_RenderCopy(display->renderer, ddGfx->Objects[ddGfx->vObj->at(Buy[i]).index][*colorCounter]->texture, &ddGfx->vObj->at(Buy[i]).r, &r);
 		//ddObj->ddsb->Blt(&r, ddGfx->Objects[ddGfx->vObj->at(Buy[i]).index], &ddGfx->vObj->at(Buy[i]).r, DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 	
 		text.drawText(display->renderer,x+35,y,0,ItemList->Items[Buy[i]].ItemName);
@@ -205,7 +205,7 @@ bool cDA2Shop::Render(){
 		
 		r.x=x;
 		r.y=y;
-    SDL_RenderCopy(display->renderer, ddGfx->Objects[ddGfx->vObj->at(Party->PartyItems[Sell[i]]).index][*colorCounter]->texture, &ddGfx->vObj->at(Party->PartyItems[Sell[i]]).r, &r);
+    DA2_RenderCopy(display->renderer, ddGfx->Objects[ddGfx->vObj->at(Party->PartyItems[Sell[i]]).index][*colorCounter]->texture, &ddGfx->vObj->at(Party->PartyItems[Sell[i]]).r, &r);
 		//ddObj->ddsb->Blt(&r, ddGfx->Objects[ddGfx->vObj->at(Party->PartyItems[Sell[i]]).index], &ddGfx->vObj->at(Party->PartyItems[Sell[i]]).r, DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 	
 		text.drawText(display->renderer,x+35,y,0,ItemList->Items[Party->PartyItems[Sell[i]]].ItemName);
@@ -218,10 +218,10 @@ bool cDA2Shop::Render(){
 	}
 
 	//Draw scroll buttons if needed
-  if(BuyOffset + 3<BuyCount) SDL_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[12], &clickList[1]);
-  if(BuyOffset>0)	SDL_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[11], &clickList[0]);
-  if(SellOffset + 3<Sell.size()) SDL_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[12], &clickList[3]);
-  if(SellOffset>0) SDL_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[11], &clickList[2]);
+  if(BuyOffset + 3<BuyCount) DA2_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[12], &clickList[1]);
+  if(BuyOffset>0)	DA2_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[11], &clickList[0]);
+  if(SellOffset + 3<Sell.size()) DA2_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[12], &clickList[3]);
+  if(SellOffset>0) DA2_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[11], &clickList[2]);
 	//if(BuyOffset+3<BuyCount) ddObj->ddsb->Blt(&clickList[1], ddGfx->Windows,&ddGfx->aWindows[12],DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 	//if(BuyOffset>0)	ddObj->ddsb->Blt(&clickList[0], ddGfx->Windows,&ddGfx->aWindows[11],DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 	//if(SellOffset+3<Sell.size()) ddObj->ddsb->Blt(&clickList[3], ddGfx->Windows,&ddGfx->aWindows[12],DDBLT_WAIT|DDBLT_KEYSRC,NULL);
@@ -314,14 +314,14 @@ bool cDA2Shop::Render(){
 	}
 
 	//draw buttons
-  if(BuyOrSell && Selection>-1 && PartyItemCount<40 && Party->Gold >= ItemList->Items[Buy[Selection]].value) 	SDL_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[13], &clickList[10]); 
+  if(BuyOrSell && Selection>-1 && PartyItemCount<40 && Party->Gold >= ItemList->Items[Buy[Selection]].value) 	DA2_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[13], &clickList[10]); 
   //ddObj->ddsb->Blt(&clickList[10], ddGfx->Windows, &ddGfx->aWindows[13], DDBLT_WAIT | DDBLT_KEYSRC, NULL);
-  if(BuyOrSell && Selection>-1 && ItemList->Items[Buy[Selection]].Item<9) SDL_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[32], &clickList[13]); 
+  if(BuyOrSell && Selection>-1 && ItemList->Items[Buy[Selection]].Item<9) DA2_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[32], &clickList[13]); 
   //ddObj->ddsb->Blt(&clickList[13], ddGfx->Windows, &ddGfx->aWindows[32], DDBLT_WAIT | DDBLT_KEYSRC, NULL); //compare
 	
-  if(!BuyOrSell && Selection>-1) SDL_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[14], &clickList[11]); 
+  if(!BuyOrSell && Selection>-1) DA2_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[14], &clickList[11]); 
   //ddObj->ddsb->Blt(&clickList[11], ddGfx->Windows, &ddGfx->aWindows[14], DDBLT_WAIT | DDBLT_KEYSRC, NULL);
-  SDL_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[15], &clickList[12]);
+  DA2_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[15], &clickList[12]);
 	//ddObj->ddsb->Blt(&clickList[12], ddGfx->Windows,&ddGfx->aWindows[15],DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 
 	if(bStatsWin)	RenderStats(Buy[Selection]);
@@ -331,7 +331,7 @@ bool cDA2Shop::Render(){
 	r.x=diObj->MouseX()-16;
 	r.h=32;
 	r.w=32;
-  SDL_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->vTile->at(20).r, &r);
+  DA2_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->vTile->at(20).r, &r);
 	//ddObj->ddsb->Blt(&r, ddGfx->Tiles[0],&ddGfx->vTile->at(20).r,DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 
 	return true;
@@ -358,7 +358,7 @@ void cDA2Shop::RenderStats(int item){
 	}
 
 	statsWin.DrawWindow();
-  SDL_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[15], &clickList[14]);
+  DA2_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[15], &clickList[14]);
 	//ddObj->ddsb->Blt(&clickList[14], ddGfx->Windows,&ddGfx->aWindows[15],DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 
 	//sprintf(str,"Compare %s",ItemList->Items[item].ItemName);
@@ -386,9 +386,9 @@ void cDA2Shop::RenderStats(int item){
 
 	for(i=0;i<3;i++){
 		r.x=302+i*48; r.w=32; r.y=138; r.h=32;
-    if(Party->Players[i].HP>0) SDL_RenderCopy(display->renderer, ddGfx->Chars[0]->texture, &ddGfx->vNPC->at(i * 16).r, &r);
+    if(Party->Players[i].HP>0) DA2_RenderCopy(display->renderer, ddGfx->Chars[0]->texture, &ddGfx->vNPC->at(i * 16).r, &r);
     //ddObj->ddsb->Blt(&r, ddGfx->Chars[0], &ddGfx->vNPC->at(i * 16).r, DDBLT_WAIT | DDBLT_KEYSRC, NULL);
-    else SDL_RenderCopy(display->renderer, ddGfx->Tiles[ddGfx->vTile->at(1560 + i).index]->texture, &ddGfx->vTile->at(1560 + i).r, &r);
+    else DA2_RenderCopy(display->renderer, ddGfx->Tiles[ddGfx->vTile->at(1560 + i).index]->texture, &ddGfx->vTile->at(1560 + i).r, &r);
     //ddObj->ddsb->Blt(&r, ddGfx->Tiles[ddGfx->vTile->at(1560 + i).index], &ddGfx->vTile->at(1560 + i).r, DDBLT_WAIT | DDBLT_KEYSRC, NULL);
 
 		//text.drawText(display->renderer,96+i*176,138,0,Party->Players[i].PlayerName);

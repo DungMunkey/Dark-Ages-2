@@ -53,10 +53,10 @@ bool cListWin::Render(){
   //translucent background
   SDL_GetRenderDrawColor(display->renderer, &R, &G, &B, &A);
   SDL_SetRenderDrawColor(display->renderer, 0, 0, 0, 200);
-  SDL_RenderFillRect(display->renderer, &r);
+  DA2_RenderFillRect(display->renderer, &r);
   SDL_SetRenderDrawColor(display->renderer, R, G, B, A);
 	//ddObj->ddsb->Blt(&r, ddGfx->Windows, &ddGfx->aWindows[1], DDBLT_WAIT,NULL);
-  SDL_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[1], &r);
+  DA2_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[1], &r);
 
 	//Draw List Items
 	for(i=0;i<size;i++)	{
@@ -88,7 +88,7 @@ bool cListWin::Render(){
 	r.w=32;
 	r.h=32;
 	//ddObj->ddsb->Blt(&r, ddGfx->Tiles[0],&ddGfx->vTile->at(20).r,DDBLT_WAIT|DDBLT_KEYSRC,NULL);
-  SDL_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->vTile->at(20).r, &r);
+  DA2_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->vTile->at(20).r, &r);
 
 	return true;
 }

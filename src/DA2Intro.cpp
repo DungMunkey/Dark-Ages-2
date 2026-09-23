@@ -159,7 +159,7 @@ bool cDA2Intro::Render(){
 		//r.left=308; r.right=340; r.top=128; r.bottom=160;
 		//ddObj->ddsb->Blt(&r, ddGfx->Chars[0],&ddGfx->vNPC->at(*animCounter).r,DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 		r.x=322; r.w=32; r.y=148; r.h=32;
-    SDL_RenderCopy(display->renderer, ddGfx->Chars[0]->texture, &ddGfx->vNPC->at(*animCounter + currentPlayer * 16).r, &r);
+    DA2_RenderCopy(display->renderer, ddGfx->Chars[0]->texture, &ddGfx->vNPC->at(*animCounter + currentPlayer * 16).r, &r);
 		//ddObj->ddsb->Blt(&r, ddGfx->Chars[0],&ddGfx->vNPC->at(*animCounter+currentPlayer*16).r,DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 		//r.left=436; r.right=468; r.top=128; r.bottom=160;
 		//ddObj->ddsb->Blt(&r, ddGfx->Chars[0],&ddGfx->vNPC->at(*animCounter+32).r,DDBLT_WAIT|DDBLT_KEYSRC,NULL);
@@ -226,7 +226,7 @@ bool cDA2Intro::Render(){
 	if(mode==0){
 		text.drawText(display->renderer,222,200,0,party->Players[currentPlayer].PlayerName);
 		if(Cursor>-1 && (*animCounter==1 || *animCounter==2))	text.drawText(display->renderer,222+8*Cursor,200,0,"|");
-    SDL_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[18], &button);
+    DA2_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[18], &button);
 		//ddObj->ddsb->Blt(&button, ddGfx->Windows,&ddGfx->aWindows[18],DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 	}
 
@@ -239,7 +239,7 @@ bool cDA2Intro::Render(){
 	r.x=0;
 	r.h=480;
 	r.w=640;
-  SDL_RenderCopy(display->renderer, ddGfx->Border->texture, &r, &r);
+  DA2_RenderCopy(display->renderer, ddGfx->Border->texture, &r, &r);
 	//ddObj->ddsb->Blt(&r,ddGfx->Border,&r,DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 
 	//Mouse
@@ -247,7 +247,7 @@ bool cDA2Intro::Render(){
 	r.x=diObj->MouseX()-16;
 	r.h=32;
 	r.w=32;
-  SDL_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->vTile->at(20).r, &r);
+  DA2_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->vTile->at(20).r, &r);
 	//ddObj->ddsb->Blt(&r, ddGfx->Tiles[0],&ddGfx->vTile->at(20).r,DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 
 	return true;

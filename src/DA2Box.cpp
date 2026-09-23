@@ -37,8 +37,8 @@ void cBox::DrawBox(SDL_Rect& r, int color, bool filled, int rotation){
     SDL_SetRenderDrawColor(display->renderer, display->palette[color].r, display->palette[color].g, display->palette[color].b, 255);
     break;
   }
-  if(filled) SDL_RenderFillRect(display->renderer, &r);
-  else SDL_RenderDrawRect(display->renderer, &r);
+  if(filled) DA2_RenderFillRect(display->renderer, &r);
+  else DA2_RenderDrawRect(display->renderer, &r);
   SDL_SetRenderDrawColor(display->renderer, R, G, B, A);
 }
 

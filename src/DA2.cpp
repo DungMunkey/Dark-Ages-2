@@ -46,6 +46,7 @@ GameState gstate;
 int main(int argc, char* args[]) {
 
   MyMusic = new cDA2Music();
+  MyMusic->Init();
 
   srand(time(NULL));
 
@@ -64,13 +65,13 @@ int main(int argc, char* args[]) {
     printf("Failed to initialize!\n");
     return -1;
   }
-  SDL_RenderSetLogicalSize(display.renderer, 640, 480);
+  SDL_SetRenderLogicalPresentation(display.renderer, 640, 480, SDL_LOGICAL_PRESENTATION_LETTERBOX);
   MyGfx.LoadGfx(&display);
   //SDL_ShowCursor(SDL_DISABLE);
 
   cDA2Input input;
   float sx, sy;
-  SDL_RenderGetScale(display.renderer, &sx, &sy);
+  SDL_GetRenderScale(display.renderer, &sx, &sy);
   printf("w:%d h:%d\t%f - %f\n", display.screenWidth,display.screenHeight,sx,sy);
   input.setMouseOffsets(sx, (display.screenWidth/sx-640)/2, sy, (display.screenHeight/sy-480)/2);
 

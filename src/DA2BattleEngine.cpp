@@ -370,7 +370,7 @@ int cDA2BattleEngine::GoBattle(){
 	//ddObj->dd->WaitForVerticalBlank();
 	//ddObj->ddsp->Flip(NULL,DDFLIP_WAIT);
   SDL_SetRenderTarget(display->renderer, NULL);
-  SDL_RenderCopy(display->renderer, canvas, NULL, NULL);
+  DA2_RenderCopy(display->renderer, canvas, NULL, NULL);
   SDL_RenderPresent(display->renderer);
   SDL_SetRenderTarget(display->renderer, canvas);
 
@@ -543,7 +543,7 @@ bool cDA2BattleEngine::Render(bool mouse){
 
 	//display background
   SDL_RenderClear(display->renderer);
-  SDL_RenderCopy(display->renderer, ddGfx->Battle[BGNum]->texture, NULL,NULL);
+  DA2_RenderCopy(display->renderer, ddGfx->Battle[BGNum]->texture, NULL,NULL);
 
 	//display characters
   
@@ -554,7 +554,7 @@ bool cDA2BattleEngine::Render(bool mouse){
     r.h=96;
 		if(pawns[i].Alive) {
 			//ddObj->ddsb->Blt(&r, ddGfx->Monsters[ddGfx->vMonster->at(pawns[i].Picture).index], &ddGfx->vMonster->at(pawns[i].Picture).r, DDBLT_WAIT|DDBLT_KEYSRC,NULL);
-      SDL_RenderCopy(display->renderer, ddGfx->Monsters[ddGfx->vMonster->at(pawns[i].Picture).index]->texture, &ddGfx->vMonster->at(pawns[i].Picture).r, &r);
+      DA2_RenderCopy(display->renderer, ddGfx->Monsters[ddGfx->vMonster->at(pawns[i].Picture).index]->texture, &ddGfx->vMonster->at(pawns[i].Picture).r, &r);
 			
 			//Draw any status effects
       r.w=16;
@@ -563,29 +563,29 @@ bool cDA2BattleEngine::Render(bool mouse){
 				r.x = 80 + pawns[i].XPos * 96;
 				r.y = 464;
 				//ddObj->ddsb->Blt(&r, ddGfx->Tiles[0], &ddGfx->aBattleStatus[0], DDBLT_WAIT|DDBLT_KEYSRC,NULL);
-        SDL_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->aBattleStatus[0], &r);
+        DA2_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->aBattleStatus[0], &r);
 			}
 			if(pawns[i].ModSpd>0){
 				r.x = 96 + pawns[i].XPos * 96;
 				r.y = 464;
 				//ddObj->ddsb->Blt(&r, ddGfx->Tiles[0], &ddGfx->aBattleStatus[1], DDBLT_WAIT|DDBLT_KEYSRC,NULL);
-        SDL_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->aBattleStatus[1], &r);
+        DA2_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->aBattleStatus[1], &r);
 			}
 			if(pawns[i].ModStr>0){
 				r.x = 112 + pawns[i].XPos * 96;
 				r.y = 464;
 				//ddObj->ddsb->Blt(&r, ddGfx->Tiles[0], &ddGfx->aBattleStatus[2], DDBLT_WAIT|DDBLT_KEYSRC,NULL);
-        SDL_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->aBattleStatus[2], &r);
+        DA2_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->aBattleStatus[2], &r);
 			}
 			if(pawns[i].ModArmor>0){
 				r.x = 128 + pawns[i].XPos * 96;
 				r.y = 464;
 				//ddObj->ddsb->Blt(&r, ddGfx->Tiles[0], &ddGfx->aBattleStatus[3], DDBLT_WAIT|DDBLT_KEYSRC,NULL);
-        SDL_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->aBattleStatus[3], &r);
+        DA2_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->aBattleStatus[3], &r);
 			}
 		} else {
 			//ddObj->ddsb->Blt(&r, ddGfx->Monsters[ddGfx->vMonster->at(pawns[i].Picture+1).index], &ddGfx->vMonster->at(pawns[i].Picture+1).r, DDBLT_WAIT|DDBLT_KEYSRC,NULL);
-      SDL_RenderCopy(display->renderer, ddGfx->Monsters[ddGfx->vMonster->at(pawns[i].Picture + 1).index]->texture, &ddGfx->vMonster->at(pawns[i].Picture + 1).r, &r);
+      DA2_RenderCopy(display->renderer, ddGfx->Monsters[ddGfx->vMonster->at(pawns[i].Picture + 1).index]->texture, &ddGfx->vMonster->at(pawns[i].Picture + 1).r, &r);
 		}
 	}
 
@@ -597,7 +597,7 @@ bool cDA2BattleEngine::Render(bool mouse){
       r.w=96; 
       r.h=96;
 			//ddObj->ddsb->Blt(&r, ddGfx->Monsters[ddGfx->vMonster->at(pawns[i].Picture).index], &ddGfx->vMonster->at(pawns[i].Picture).r, DDBLT_WAIT|DDBLT_KEYSRC,NULL);
-      SDL_RenderCopy(display->renderer, ddGfx->Monsters[ddGfx->vMonster->at(pawns[i].Picture).index]->texture, &ddGfx->vMonster->at(pawns[i].Picture).r, &r);
+      DA2_RenderCopy(display->renderer, ddGfx->Monsters[ddGfx->vMonster->at(pawns[i].Picture).index]->texture, &ddGfx->vMonster->at(pawns[i].Picture).r, &r);
 
 			//Draw any status effects
       r.w=16;
@@ -606,31 +606,31 @@ bool cDA2BattleEngine::Render(bool mouse){
 				r.x = 80 + pawns[i].XPos * 96;
 				r.y = 250 + pawns[i].YPos * 96;
 				//ddObj->ddsb->Blt(&r, ddGfx->Tiles[0], &ddGfx->aBattleStatus[4], DDBLT_WAIT|DDBLT_KEYSRC,NULL);
-        SDL_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->aBattleStatus[4], &r);
+        DA2_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->aBattleStatus[4], &r);
 			}
 			if(pawns[i].ModSpd<0){
 				r.x = 96 + pawns[i].XPos * 96;
 				r.y = 250 + pawns[i].YPos * 96;
 				//ddObj->ddsb->Blt(&r, ddGfx->Tiles[0], &ddGfx->aBattleStatus[5], DDBLT_WAIT|DDBLT_KEYSRC,NULL);
-        SDL_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->aBattleStatus[5], &r);
+        DA2_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->aBattleStatus[5], &r);
 			}
 			if(pawns[i].ModStr<0){
 				r.x = 112 + pawns[i].XPos * 96;
 				r.y = 250 + pawns[i].YPos * 96;
 				//ddObj->ddsb->Blt(&r, ddGfx->Tiles[0], &ddGfx->aBattleStatus[6], DDBLT_WAIT|DDBLT_KEYSRC,NULL);
-        SDL_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->aBattleStatus[6], &r);
+        DA2_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->aBattleStatus[6], &r);
 			}
 			if(pawns[i].ModArmor<0){
 				r.x = 128 + pawns[i].XPos * 96;
 				r.y = 250 + pawns[i].YPos * 96;
 				//ddObj->ddsb->Blt(&r, ddGfx->Tiles[0], &ddGfx->aBattleStatus[7], DDBLT_WAIT|DDBLT_KEYSRC,NULL);
-        SDL_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->aBattleStatus[7], &r);
+        DA2_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->aBattleStatus[7], &r);
 			}
 			if(pawns[i].ActionCounter<0){
 				r.x = 144 + pawns[i].XPos * 96;
 				r.y = 250 + pawns[i].YPos * 96;
 				//ddObj->ddsb->Blt(&r, ddGfx->Tiles[0], &ddGfx->aBattleStatus[8], DDBLT_WAIT|DDBLT_KEYSRC,NULL);
-        SDL_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->aBattleStatus[8], &r);
+        DA2_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->aBattleStatus[8], &r);
 			}
 
 			//draw monster name
@@ -648,7 +648,7 @@ bool cDA2BattleEngine::Render(bool mouse){
 		if(i==0) {
 			r.y=15; r.h=32;
 			//ddObj->ddsb->Blt(&r, ddGfx->Chars[0],&ddGfx->vNPC->at(i*16).r,DDBLT_WAIT|DDBLT_KEYSRC,NULL);
-      SDL_RenderCopy(display->renderer, ddGfx->Chars[0]->texture, &ddGfx->vNPC->at(i * 16).r, &r);
+      DA2_RenderCopy(display->renderer, ddGfx->Chars[0]->texture, &ddGfx->vNPC->at(i * 16).r, &r);
 			sprintf(str,"H: %d/%d\nM: %d/%d\nA:",pawns[i].HP,pawns[i].MaxHP,pawns[i].MP,pawns[i].MaxMP);
 			text.drawText(display->renderer,495,15,0,str);
 			box.DrawBox(520,50,622,60,15);
@@ -657,7 +657,7 @@ bool cDA2BattleEngine::Render(bool mouse){
 		} else {
 			r.y=(i-1)*36+66; r.h=32;
 			//ddObj->ddsb->Blt(&r, ddGfx->Chars[0],&ddGfx->vNPC->at(i*16).r,DDBLT_WAIT|DDBLT_KEYSRC,NULL);
-      SDL_RenderCopy(display->renderer, ddGfx->Chars[0]->texture, &ddGfx->vNPC->at(i * 16).r, &r);
+      DA2_RenderCopy(display->renderer, ddGfx->Chars[0]->texture, &ddGfx->vNPC->at(i * 16).r, &r);
 			sprintf(str,"H: %d/%d\nA:",pawns[i].HP,pawns[i].MaxHP);
 			text.drawText(display->renderer,495,(i-1)*36+66,0,str);
 			box.DrawBox(520,(i-1)*36+85,622,(i-1)*36+95,15);
@@ -704,7 +704,7 @@ bool cDA2BattleEngine::Render(bool mouse){
 		r.x=diObj->MouseX() - ddGfx->CursorX[7];
 		r.h=24;
 		r.w=16;
-    SDL_RenderCopy(display->renderer, ddGfx->Cursor->texture, &ddGfx->aCursor[7], &r);
+    DA2_RenderCopy(display->renderer, ddGfx->Cursor->texture, &ddGfx->aCursor[7], &r);
 	}
 
 	return true;
@@ -1101,7 +1101,7 @@ bool cDA2BattleEngine::BattleAnimation(){
 			r.w=32; 
 			r.h=32;
 			//ddObj->ddsb->Blt(&r, ddGfx->Tiles[0],&ddGfx->vTile->at(action->at(0).damage[i].graphic).r,DDBLT_WAIT|DDBLT_KEYSRC,NULL);
-      SDL_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->vTile->at(action->at(0).damage[i].graphic).r, &r);
+      DA2_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->vTile->at(action->at(0).damage[i].graphic).r, &r);
 
 			//animate quickly for first half second or so
 			x=pawns[action->at(0).damage[i].pawn].XPos*96+130-(strlen(str)*4);
@@ -1125,7 +1125,7 @@ bool cDA2BattleEngine::BattleAnimation(){
 			r.w=32; 
 			r.h=32;
 			//ddObj->ddsb->Blt(&r, ddGfx->Tiles[0],&ddGfx->vTile->at(action->at(0).damage[6].graphic).r,DDBLT_WAIT|DDBLT_KEYSRC,NULL);
-      SDL_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->vTile->at(action->at(0).damage[6].graphic).r, &r);
+      DA2_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->vTile->at(action->at(0).damage[6].graphic).r, &r);
 			break;
 			
 		default: //do nothing
@@ -1289,14 +1289,14 @@ bool cDA2BattleEngine::SpellRender(){
 		r.y=216;
 		r.h=16;
 		//ddObj->ddsb->Blt(&r, ddGfx->Windows,&ddGfx->aWindows[11],DDBLT_WAIT,NULL);
-    SDL_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[11], &r);
+    DA2_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[11], &r);
 
 	} 
 	if(count<party->SpellCount) { //draw down scrollbar
 		r.y=344;
 		r.h=16;
 		//ddObj->ddsb->Blt(&r, ddGfx->Windows,&ddGfx->aWindows[12],DDBLT_WAIT,NULL);
-    SDL_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[12], &r);
+    DA2_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[12], &r);
 	} 
 
 	//Highlight ListSelection

@@ -22,10 +22,10 @@ bool cTextWin::Render(){
   //translucent background
   SDL_GetRenderDrawColor(display->renderer, &R, &G, &B, &A);
   SDL_SetRenderDrawColor(display->renderer, 0, 0, 0, 200);
-  SDL_RenderFillRect(display->renderer, &r);
+  DA2_RenderFillRect(display->renderer, &r);
   SDL_SetRenderDrawColor(display->renderer, R, G, B, A);
 
-  SDL_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[0], &r);
+  DA2_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[0], &r);
 	text.drawText(display->renderer,xPos+21,yPos+16,63,str);
 
 	return true;

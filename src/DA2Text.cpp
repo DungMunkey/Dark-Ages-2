@@ -96,7 +96,7 @@ int cText::drawText(SDL_Renderer *surf, int x, int y, int wrap, char *txt, int c
 			r.y=yPos;
 			r.w=8;
 			r.h=16;
-      SDL_RenderCopy(surf, ddGfx->Font->texture, &ddGfx->aFont[color][txt[i]], &r);
+      DA2_RenderCopy(surf, ddGfx->Font->texture, &ddGfx->aFont[color][txt[i]], &r);
 			//surf->Blt(&r, ddGfx->Font, &ddGfx->aFont[color][txt[i]], DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 			xPos+=8;
 		}
@@ -124,7 +124,7 @@ int cText::drawText(SDL_Renderer *surf, int x, int y, int wrap, char *txt, int c
 			r.y=yPos;
 			r.w=8;
 			r.h=16;
-      SDL_RenderCopy(surf, ddGfx->Font->texture, &ddGfx->aFont[color][tok[i]], &r);
+      DA2_RenderCopy(surf, ddGfx->Font->texture, &ddGfx->aFont[color][tok[i]], &r);
 			//surf->Blt(&r, ddGfx->Font, &ddGfx->aFont[color][tok[i]], DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 			xPos+=8;
 			count++;
@@ -136,7 +136,7 @@ int cText::drawText(SDL_Renderer *surf, int x, int y, int wrap, char *txt, int c
 			r.y=yPos;
 			r.w=8;
 			r.h=16;
-      SDL_RenderCopy(surf, ddGfx->Font->texture, &ddGfx->aFont[color][32], &r);
+      DA2_RenderCopy(surf, ddGfx->Font->texture, &ddGfx->aFont[color][32], &r);
 			//surf->Blt(&r, ddGfx->Font, &ddGfx->aFont[color][32], DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 			xPos+=8;
 			count++;

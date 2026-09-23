@@ -15,7 +15,7 @@ CGraphic::CGraphic(char* fn, CDisplay* display, bool alpha, Uint8 r, Uint8 g, Ui
 }
 
 CGraphic::~CGraphic(){
-  if(surface != NULL) SDL_FreeSurface(surface);
+  if(surface != NULL) SDL_DestroySurface(surface);
   if(texture != NULL) SDL_DestroyTexture(texture);
   surface=NULL;
   texture=NULL;
@@ -32,27 +32,28 @@ bool CGraphic::loadTexture(char* fn, CDisplay* display, bool surf, bool alpha, U
   if(texture != NULL) SDL_DestroyTexture(texture);
   texture=NULL;
 
-  if(surface != NULL) SDL_FreeSurface(surface);
+  if(surface != NULL) SDL_DestroySurface(surface);
   surface=NULL;
 
-  //Load image at specified path 
+  //Load image at specified path
   SDL_Surface* tmpSurface;
   tmpSurface = SDL_LoadBMP(fn);
   if(tmpSurface == NULL) {
-    printf("Unable to load image %s! SDL_image Error: %s\n", fn, SDL_GetError());
+    printf("Unable to load image %s! SDL Error: %s\n", fn, SDL_GetError());
     return false;
   } else {
-    surface = SDL_ConvertSurface(tmpSurface, &display->pixelFormat, NULL);
-    if(alpha) SDL_SetColorKey(surface, SDL_TRUE, SDL_MapRGB(surface->format, r, g, b));
-    //Create texture from surface pixels 
+    surface = SDL_ConvertSurface(tmpSurface, display->pixelFormat);
+    if(alpha) SDL_SetSurfaceColorKey(surface, true, SDL_MapRGB(SDL_GetPixelFormatDetails(surface->format), NULL, r, g, b));
+    //Create texture from surface pixels
     texture = SDL_CreateTextureFromSurface(display->renderer, surface);
     if(texture == NULL) {
       printf("Unable to create texture from %s! SDL Error: %s\n", fn, SDL_GetError());
       return false;
     }
+    SDL_SetTextureScaleMode(texture, SDL_SCALEMODE_NEAREST); //pixel art - nearest neighbor, not blurred
 
-    //Get rid of old loaded surface 
-    SDL_FreeSurface(tmpSurface);
+    //Get rid of old loaded surface
+    SDL_DestroySurface(tmpSurface);
     tmpSurface=NULL;
   }
 

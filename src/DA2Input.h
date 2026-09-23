@@ -1,7 +1,7 @@
 #ifndef _DA2INPUT_H
 #define _DA2INPUT_H
 
-#include <SDL.h>
+#include <SDL3/SDL.h>
 #include <stdio.h>
 
 enum DA2KEYS{
@@ -75,8 +75,8 @@ public:
 
 	bool keyLocked[256];
 	bool mouseLocked[2];
-	int mousePosX;
-	int mousePosY;
+	float mousePosX;
+	float mousePosY;
   int mouseX;
   int mouseY;
   float multPosX;

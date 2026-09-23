@@ -309,7 +309,7 @@ bool cDA2Journal::Render(){
 	//display map
 	r.x=JournalX;	r.y=JournalY;	r.w=408;	r.h=424;
 	r2.x=8,r2.w=408; r2.y=8; r2.h=424;
-  SDL_RenderCopy(display->renderer, ddGfx->WorldMap->texture, &r, &r2);
+  DA2_RenderCopy(display->renderer, ddGfx->WorldMap->texture, &r, &r2);
 	//ddObj->ddsb->Blt(&r2, ddGfx->WorldMap, &r, DDBLT_WAIT,NULL);
 
 	if(bTowns){
@@ -385,9 +385,9 @@ bool cDA2Journal::Render(){
 			if(JournalText[i].EndPoint.X>0 && JournalText[i].EndPoint.Y>0){
 				r.y=JournalText[i].EndPoint.Y-JournalY+24;
 				r.x=JournalText[i].EndPoint.X-JournalX+22;
-        if(JournalText[i].MainQuest) SDL_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->vTile->at(50).r, &r); 
+        if(JournalText[i].MainQuest) DA2_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->vTile->at(50).r, &r); 
         //ddObj->ddsb->Blt(&r, ddGfx->Tiles[0], &ddGfx->vTile->at(50).r, DDBLT_WAIT | DDBLT_KEYSRC, NULL);
-        else SDL_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->vTile->at(48).r, &r); 
+        else DA2_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->vTile->at(48).r, &r); 
         //ddObj->ddsb->Blt(&r, ddGfx->Tiles[0], &ddGfx->vTile->at(48).r, DDBLT_WAIT | DDBLT_KEYSRC, NULL);
 			}
 		}
@@ -397,7 +397,7 @@ bool cDA2Journal::Render(){
 	if(PlayerX>0 && PlayerY>0){
 		r.y=PlayerY-JournalY;
 		r.x=PlayerX-JournalX;
-    SDL_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->vTile->at(20).r, &r);
+    DA2_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->vTile->at(20).r, &r);
 		//ddObj->ddsb->Blt(&r, ddGfx->Tiles[0],&ddGfx->vTile->at(20).r,DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 	}
 
@@ -406,7 +406,7 @@ bool cDA2Journal::Render(){
 		if(JournalText[journalIndex[curEntry]].EndPoint.X>0 && JournalText[journalIndex[curEntry]].EndPoint.Y>0){
 			r.y=JournalText[journalIndex[curEntry]].EndPoint.Y-JournalY+24;
 			r.x=JournalText[journalIndex[curEntry]].EndPoint.X-JournalX+22;
-      SDL_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->vTile->at(26).r, &r);
+      DA2_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->vTile->at(26).r, &r);
 			//ddObj->ddsb->Blt(&r, ddGfx->Tiles[0],&ddGfx->vTile->at(26).r,DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 		}
 	}
@@ -414,44 +414,44 @@ bool cDA2Journal::Render(){
 	//display JournalFace
 	//r.left=0;	r.top=0;	r.right=r.left+640;	r.bottom=r.top+480;
 	//ddObj->ddsb->Blt(&r, ddGfx->JournalFace, &r, DDBLT_WAIT|DDBLT_KEYSRC,NULL);
-  SDL_RenderCopy(display->renderer, ddGfx->JournalFace->texture, NULL, NULL);
+  DA2_RenderCopy(display->renderer, ddGfx->JournalFace->texture, NULL, NULL);
 
 	if(bMain){
 		r.y=0;r.x=452;
-    SDL_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->vTile->at(49).r, &r);
+    DA2_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->vTile->at(49).r, &r);
 		//ddObj->ddsb->Blt(&r, ddGfx->Tiles[0],&ddGfx->vTile->at(49).r,DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 	} else {
 		r.y=0;r.x=504;
-    SDL_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->vTile->at(49).r, &r);
+    DA2_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->vTile->at(49).r, &r);
 		//ddObj->ddsb->Blt(&r, ddGfx->Tiles[0],&ddGfx->vTile->at(49).r,DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 	}
 	if(bComplete){
 		r.y=0;r.x=608;
-    SDL_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->vTile->at(49).r, &r);
+    DA2_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->vTile->at(49).r, &r);
 		//ddObj->ddsb->Blt(&r, ddGfx->Tiles[0],&ddGfx->vTile->at(49).r,DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 	} else {
 		r.y=0;r.x=556;
-    SDL_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->vTile->at(49).r, &r);
+    DA2_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->vTile->at(49).r, &r);
 		//ddObj->ddsb->Blt(&r, ddGfx->Tiles[0],&ddGfx->vTile->at(49).r,DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 	}
 	if(bPortals){
 		r.y=432;r.x=118;
-    SDL_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->vTile->at(49).r, &r);
+    DA2_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->vTile->at(49).r, &r);
 		//ddObj->ddsb->Blt(&r, ddGfx->Tiles[0],&ddGfx->vTile->at(49).r,DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 	}
 	if(bTowns){
 		r.y=432;r.x=188;
-    SDL_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->vTile->at(49).r, &r);
+    DA2_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->vTile->at(49).r, &r);
 		//ddObj->ddsb->Blt(&r, ddGfx->Tiles[0],&ddGfx->vTile->at(49).r,DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 	}
 	if(bKeeps){
 		r.y=432;r.x=257;
-    SDL_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->vTile->at(49).r, &r);
+    DA2_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->vTile->at(49).r, &r);
 		//ddObj->ddsb->Blt(&r, ddGfx->Tiles[0],&ddGfx->vTile->at(49).r,DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 	}
 	if(bQuests){
 		r.y=432;r.x=327;
-    SDL_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->vTile->at(49).r, &r);
+    DA2_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->vTile->at(49).r, &r);
 		//ddObj->ddsb->Blt(&r, ddGfx->Tiles[0],&ddGfx->vTile->at(49).r,DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 	}
 	
@@ -468,18 +468,18 @@ bool cDA2Journal::Render(){
 			strcat(str,"\n\n");
 		}
     r2.x=426,r2.w=188; r2.y=130; r2.h=220;
-    SDL_RenderSetClipRect(display->renderer, &r2);
+    SDL_SetRenderClipRect(display->renderer, &r2);
 		LineCount=text.drawText(display->renderer,426,130-TextOffset,23,str);
-    SDL_RenderSetClipRect(display->renderer, NULL);
+    SDL_SetRenderClipRect(display->renderer, NULL);
 		MaxTextOffset=LineCount*16-220;
-    //SDL_RenderCopy(display->renderer, ddGfx->TextSurface->texture, &r, &r2);
+    //DA2_RenderCopy(display->renderer, ddGfx->TextSurface->texture, &r, &r2);
 		//ddObj->ddsb->Blt(&r2, ddGfx->TextSurface, &r, DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 	}
 
 	//draw buttons
-  if(TextOffset<MaxTextOffset) SDL_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[12], &clickList[6]);
+  if(TextOffset<MaxTextOffset) DA2_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[12], &clickList[6]);
   //ddObj->ddsb->Blt(&clickList[6], ddGfx->Windows, &ddGfx->aWindows[12], DDBLT_WAIT, NULL);
-  if(TextOffset>0) SDL_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[11], &clickList[5]); 
+  if(TextOffset>0) DA2_RenderCopy(display->renderer, ddGfx->Windows->texture, &ddGfx->aWindows[11], &clickList[5]); 
   //ddObj->ddsb->Blt(&clickList[5], ddGfx->Windows, &ddGfx->aWindows[11], DDBLT_WAIT, NULL);
 
 	//display the mouse cursor
@@ -487,7 +487,7 @@ bool cDA2Journal::Render(){
 	r.x=diObj->MouseX()-16;
 	r.h=32;
 	r.w=32;
-  SDL_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->vTile->at(20).r, &r);
+  DA2_RenderCopy(display->renderer, ddGfx->Tiles[0]->texture, &ddGfx->vTile->at(20).r, &r);
 	//ddObj->ddsb->Blt(&r, ddGfx->Tiles[0],&ddGfx->vTile->at(20).r,DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 
 	return true;

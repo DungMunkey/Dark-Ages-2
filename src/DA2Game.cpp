@@ -97,8 +97,8 @@ bool cDA2Game::Init(CDisplay* d, cDA2Gfx *gfx, cDA2Input *inp, cItemController *
   */
 
   canvas = SDL_CreateTexture(display->renderer, SDL_PIXELFORMAT_RGBA8888, SDL_TEXTUREACCESS_TARGET, 640, 480);
-  collide = SDL_CreateRGBSurface(0, 640, 480, 32, 0, 0, 0, 0);
-  SDL_SetColorKey(collide, SDL_TRUE, 0);
+  collide = SDL_CreateSurface(640, 480, SDL_PIXELFORMAT_RGBA8888);
+  SDL_SetSurfaceColorKey(collide, true, 0);
 
 	bDebug=false;
 	return true;
@@ -241,7 +241,7 @@ int cDA2Game::GoGame(){
 	if(bFlip) {
     FPSCounter++;
     SDL_SetRenderTarget(display->renderer, NULL);
-    SDL_RenderCopy(display->renderer, canvas, NULL, NULL);
+    DA2_RenderCopy(display->renderer, canvas, NULL, NULL);
     SDL_RenderPresent(display->renderer);
     SDL_SetRenderTarget(display->renderer, canvas);
 		//ddObj->ddsp->Flip(NULL,DDFLIP_WAIT); //|DDFLIP_NOVSYNC);
@@ -855,7 +855,7 @@ bool cDA2Game::Render() {
 				r.w=32;
 				r.h=32;
 				if(r.x>639 || r.y>479) continue;
-        SDL_RenderCopy(display->renderer, ddGfx->Tiles[ddGfx->vTile->at(Tile).index]->texture, &ddGfx->vTile->at(Tile).r, &r);
+        DA2_RenderCopy(display->renderer, ddGfx->Tiles[ddGfx->vTile->at(Tile).index]->texture, &ddGfx->vTile->at(Tile).r, &r);
 				//hr=ddObj->ddsb->Blt(&r, ddGfx->Tiles[ddGfx->vTile->at(Tile).index], &ddGfx->vTile->at(Tile).r, DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 			
 			}
@@ -873,7 +873,7 @@ bool cDA2Game::Render() {
 			r.y=224;
 			r.w=32;
 			r.h=32;
-      SDL_RenderCopy(display->renderer, ddGfx->Chars[0]->texture, &ddGfx->vNPC->at(Player.imageOffset + (Player.dir * 4) + Player.frame).r, &r);
+      DA2_RenderCopy(display->renderer, ddGfx->Chars[0]->texture, &ddGfx->vNPC->at(Player.imageOffset + (Player.dir * 4) + Player.frame).r, &r);
 			//ddObj->ddsb->Blt(&r, ddGfx->Chars[0],&ddGfx->vNPC->at(Player.imageOffset+(Player.dir*4)+Player.frame).r,DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 		}
 
@@ -890,7 +890,7 @@ bool cDA2Game::Render() {
 		r.y=0;
 		r.h=480;
 		r.w=640;
-    SDL_RenderCopy(display->renderer, ddGfx->Border->texture, &r, &r);
+    DA2_RenderCopy(display->renderer, ddGfx->Border->texture, &r, &r);
 		//ddObj->ddsb->Blt(&r,ddGfx->Border,&r,DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 	}
 
@@ -904,7 +904,7 @@ bool cDA2Game::Render() {
   r.x=diObj->mouseX - ddGfx->CursorX[Cursor[x][y]];
   r.h=24;
   r.w=16;
-  //SDL_RenderCopy(display->renderer, ddGfx->Cursor->texture, &ddGfx->aCursor[Cursor[x][y]], &r);
+  //DA2_RenderCopy(display->renderer, ddGfx->Cursor->texture, &ddGfx->aCursor[Cursor[x][y]], &r);
   //ddObj->ddsb->Blt(&r, ddGfx->Cursor,&ddGfx->aCursor[Cursor[x][y]],DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 	//sprintf(txt,"MouseX: %d  MouseY: %d  Cursor: %d",diObj->MouseX(),diObj->MouseY(),Cursor[x][y]);
 	//text.drawText(display->renderer,50,35,0,txt);
@@ -915,7 +915,7 @@ bool cDA2Game::Render() {
 	//fclose(f);
 	
   //SDL_SetRenderTarget(display->renderer, NULL);
-  //SDL_RenderCopy(display->renderer, canvas, NULL, NULL);
+  //DA2_RenderCopy(display->renderer, canvas, NULL, NULL);
 
 	return true;
 }
@@ -1111,7 +1111,7 @@ void cDA2Game::NPCRender(){
 					 y-(PlayerCam.TilePosY-8) >=0 && y-(PlayerCam.TilePosY-8) <=16) {
 					r.x=(x-(PlayerCam.TilePosX-10))*32-PlayerCam.OffsetX+Maps[TrueMap].NPCArray[i].xoffset;
 					r.y=(y-(PlayerCam.TilePosY-8))*32-PlayerCam.OffsetY+Maps[TrueMap].NPCArray[i].yoffset;
-          SDL_RenderCopy(display->renderer, ddGfx->Chars[ddGfx->vNPC->at(Tile).index]->texture, &ddGfx->vNPC->at(Tile).r, &r);
+          DA2_RenderCopy(display->renderer, ddGfx->Chars[ddGfx->vNPC->at(Tile).index]->texture, &ddGfx->vNPC->at(Tile).r, &r);
 					//ddObj->ddsb->Blt(&r, ddGfx->Chars[ddGfx->vNPC->at(Tile).index], &ddGfx->vNPC->at(Tile).r, DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 				}
 			}
@@ -1143,7 +1143,7 @@ void cDA2Game::ObjRender(SDL_Renderer *surf, bool bSolid){
            y - (PlayerCam.TilePosY - 8) >= 0 && y - (PlayerCam.TilePosY - 8) <= 16) {
           r.x=(x - (PlayerCam.TilePosX - 10)) * 32 - PlayerCam.OffsetX;
           r.y=(y - (PlayerCam.TilePosY - 8)) * 32 - PlayerCam.OffsetY;
-          if(Tile>0) SDL_RenderCopy(surf, ddGfx->Objects[ddGfx->vObj->at(Tile).index][colorCounter]->texture, &ddGfx->vObj->at(Tile).r, &r);
+          if(Tile>0) DA2_RenderCopy(surf, ddGfx->Objects[ddGfx->vObj->at(Tile).index][colorCounter]->texture, &ddGfx->vObj->at(Tile).r, &r);
           //if(Tile>0) surf->Blt(&r, ddGfx->Objects[ddGfx->vObj->at(Tile).index], &ddGfx->vObj->at(Tile).r, DDBLT_WAIT|DDBLT_KEYSRC,NULL);
           if(bHighlightObject && !Maps[TrueMap].ObjArray->at(i).HideTab) box.DrawBox(r.x, r.y, r.x + 32, r.y + 32, 88, false, colorCounter);
         }
@@ -1811,7 +1811,7 @@ bool cDA2Game::CheckCollide(int dir){
 
 
 	//clear the collision surface
-  SDL_FillRect(collide, NULL, 0x000000);
+  SDL_FillSurfaceRect(collide, NULL, 0x000000);
 
 	//Blt relevant tiles
 	for(z=z1;z<z2;z++){
@@ -1869,7 +1869,7 @@ bool cDA2Game::CheckCollide(int dir){
 		case 0:
 			for(x=312;x<328;x++){
         pixelColor = *(Uint32*)((Uint8*)collide->pixels + 255 * collide->pitch + x*4);
-        SDL_GetRGBA(pixelColor, collide->format, &red, &green, &blue, &alpha);
+        DA2_GetRGBA(pixelColor, collide->format, &red, &green, &blue, &alpha);
         if(red>0 || green > 0 || blue > 0 /*|| alpha > 0*/) return false;
 				//if ( ((BYTE *) ddsd.lpSurface)[255 * ddsd.lPitch + x] !=0) {
 				//	ddObj->ddsc->Unlock(NULL);
@@ -1880,7 +1880,7 @@ bool cDA2Game::CheckCollide(int dir){
 		case 1:
 			for(y=224;y<256;y++){
         pixelColor = *(Uint32*)((Uint8*)collide->pixels + y * collide->pitch + 327 * 4);
-        SDL_GetRGBA(pixelColor, collide->format, &red, &green, &blue, &alpha);
+        DA2_GetRGBA(pixelColor, collide->format, &red, &green, &blue, &alpha);
         if(red>0 || green > 0 || blue > 0 /*|| alpha > 0*/) return false;
 				//if ( ((BYTE *) ddsd.lpSurface)[y * ddsd.lPitch + 327] !=0) {
 				//	ddObj->ddsc->Unlock(NULL);
@@ -1891,7 +1891,7 @@ bool cDA2Game::CheckCollide(int dir){
 		case 2:
 			for(x=312;x<328;x++){
         pixelColor = *(Uint32*)((Uint8*)collide->pixels + 224 * collide->pitch + x * 4);
-        SDL_GetRGBA(pixelColor, collide->format, &red, &green, &blue, &alpha);
+        DA2_GetRGBA(pixelColor, collide->format, &red, &green, &blue, &alpha);
         if(red>0 || green > 0 || blue > 0 /*|| alpha > 0*/) return false;
 				//if ( ((BYTE *) ddsd.lpSurface)[224 * ddsd.lPitch + x] !=0) {
 				//	ddObj->ddsc->Unlock(NULL);
@@ -1902,7 +1902,7 @@ bool cDA2Game::CheckCollide(int dir){
 		case 3:
 			for(y=224;y<256;y++){
         pixelColor = *(Uint32*)((Uint8*)collide->pixels + y * collide->pitch + 312 * 4);
-        SDL_GetRGBA(pixelColor, collide->format, &red, &green, &blue, &alpha);
+        DA2_GetRGBA(pixelColor, collide->format, &red, &green, &blue, &alpha);
         if(red>0 || green > 0 || blue > 0 /*|| alpha > 0*/) return false;
 				//if ( ((BYTE *) ddsd.lpSurface)[y * ddsd.lPitch + 312] !=0) {
 				//	ddObj->ddsc->Unlock(NULL);
@@ -1914,7 +1914,7 @@ bool cDA2Game::CheckCollide(int dir){
 			for(y=224;y<256;y++){
 				//left
         pixelColor = *(Uint32*)((Uint8*)collide->pixels + y * collide->pitch + 312 * 4);
-        SDL_GetRGBA(pixelColor, collide->format, &red, &green, &blue, &alpha);
+        DA2_GetRGBA(pixelColor, collide->format, &red, &green, &blue, &alpha);
         if(red>0 || green > 0 || blue > 0 /*|| alpha > 0*/) {
 				//if ( ((BYTE *) ddsd.lpSurface)[y * ddsd.lPitch + 312] !=0) {
 					RoofX= (312-256+PlayerCam.OffsetX)/32 + PlayerCam.TilePosX-2;
@@ -1924,7 +1924,7 @@ bool cDA2Game::CheckCollide(int dir){
 				}
 				//right
         pixelColor = *(Uint32*)((Uint8*)collide->pixels + y * collide->pitch + 327 * 4);
-        SDL_GetRGBA(pixelColor, collide->format, &red, &green, &blue, &alpha);
+        DA2_GetRGBA(pixelColor, collide->format, &red, &green, &blue, &alpha);
         if(red>0 || green > 0 || blue > 0 /*|| alpha > 0*/) {
 				//if ( ((BYTE *) ddsd.lpSurface)[y * ddsd.lPitch + 327] !=0) {
 					RoofX= (327-256+PlayerCam.OffsetX)/32 + PlayerCam.TilePosX-2;
@@ -1936,7 +1936,7 @@ bool cDA2Game::CheckCollide(int dir){
 			for(x=312;x<328;x++){
 				//top
         pixelColor = *(Uint32*)((Uint8*)collide->pixels + 224 * collide->pitch + x * 4);
-        SDL_GetRGBA(pixelColor, collide->format, &red, &green, &blue, &alpha);
+        DA2_GetRGBA(pixelColor, collide->format, &red, &green, &blue, &alpha);
         if(red>0 || green > 0 || blue > 0 /*|| alpha > 0*/) {
 				//if ( ((BYTE *) ddsd.lpSurface)[224 * ddsd.lPitch + x] !=0) {
 					RoofX= (x-256+PlayerCam.OffsetX)/32 + PlayerCam.TilePosX-2;
@@ -1946,7 +1946,7 @@ bool cDA2Game::CheckCollide(int dir){
 				}
 				//bottom
         pixelColor = *(Uint32*)((Uint8*)collide->pixels + 255 * collide->pitch + x * 4);
-        SDL_GetRGBA(pixelColor, collide->format, &red, &green, &blue, &alpha);
+        DA2_GetRGBA(pixelColor, collide->format, &red, &green, &blue, &alpha);
         if(red>0 || green > 0 || blue > 0 /*|| alpha > 0*/) {
 				//if ( ((BYTE *) ddsd.lpSurface)[255 * ddsd.lPitch + x] !=0) {
 					RoofX= (x-256+PlayerCam.OffsetX)/32 + PlayerCam.TilePosX-2;

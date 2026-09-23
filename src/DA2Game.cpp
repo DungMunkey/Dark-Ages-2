@@ -1587,8 +1587,8 @@ bool cDA2Game::Logic() {
   //Walk-cycle animation frame: advances once per fixed distance traveled rather than a fixed amount of
   //time, so it naturally runs faster when the player is moving faster (mouse-drag or keyboard, either
   //one - walkAnimDist is fed by every stepping loop above).
-  if(walkAnimDist >= 8) {
-    walkAnimDist-=8;
+  if(walkAnimDist >= 16) {
+    walkAnimDist-=16;
     Player.frame++;
     if(Player.frame > 3) Player.frame=0;
   }

@@ -67,13 +67,11 @@ int main(int argc, char* args[]) {
   }
   SDL_SetRenderLogicalPresentation(display.renderer, 640, 480, SDL_LOGICAL_PRESENTATION_LETTERBOX);
   MyGfx.LoadGfx(&display);
-  //SDL_ShowCursor(SDL_DISABLE);
+  SDL_HideCursor(); //the game draws its own cursor sprite; hide the OS one so they don't both show
 
   cDA2Input input;
-  float sx, sy;
-  SDL_GetRenderScale(display.renderer, &sx, &sy);
-  printf("w:%d h:%d\t%f - %f\n", display.screenWidth,display.screenHeight,sx,sy);
-  input.setMouseOffsets(sx, (display.screenWidth/sx-640)/2, sy, (display.screenHeight/sy-480)/2);
+  input.setRenderer(display.renderer);
+  printf("w:%d h:%d\n", display.screenWidth,display.screenHeight);
 
   //Process title screen until player chooses to quit
   MyMusic->PlayTheme();

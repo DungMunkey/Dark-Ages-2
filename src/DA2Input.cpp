@@ -3,8 +3,7 @@
 cDA2Input::cDA2Input(){
   mousePosX=0;
   mousePosY=0;
-  offsetPosX=1;
-  offsetPosY=1;
+  renderer=NULL;
   int i;
   for(i=0; i < 128; i++) {
     keyState[i]=false;
@@ -48,8 +47,10 @@ void cDA2Input::pollEvents(){
     else if(e.type == SDL_EVENT_MOUSE_BUTTON_UP) setButton(e.button.button, false);
   }
   SDL_GetMouseState(&mousePosX, &mousePosY);
-  mouseX=(int)(mousePosX / multPosX) - offsetPosX;
-  mouseY=(int)(mousePosY / multPosY) - offsetPosY;
+  float lx=mousePosX, ly=mousePosY;
+  if(renderer != NULL) SDL_RenderCoordinatesFromWindow(renderer, mousePosX, mousePosY, &lx, &ly);
+  mouseX=(int)lx;
+  mouseY=(int)ly;
 }
 
 bool cDA2Input::getButtonState(int k){
@@ -180,9 +181,6 @@ void cDA2Input::setKey(SDL_Keycode k, bool b){
   if(!b)  keyLocked[x]=false;
 }
 
-void cDA2Input::setMouseOffsets(float mx, int ox, float my, int oy){
-  multPosX=mx;
-  multPosY=my;
-  offsetPosX=ox;
-  offsetPosY=oy;
+void cDA2Input::setRenderer(SDL_Renderer* r){
+  renderer=r;
 }

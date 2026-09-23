@@ -71,7 +71,7 @@ public:
   bool isPressed(int k);
   bool isReleased(int k);
   void pollEvents();
-  void setMouseOffsets(float mx, int ox, float my, int oy);
+  void setRenderer(SDL_Renderer* r); //needed to map real window mouse coordinates into the game's logical 640x480 space
 
 	bool keyLocked[256];
 	bool mouseLocked[2];
@@ -79,10 +79,6 @@ public:
 	float mousePosY;
   int mouseX;
   int mouseY;
-  float multPosX;
-  float multPosY;
-  int offsetPosX;
-  int offsetPosY;
 
   bool CheckMousePos(SDL_Rect& r); //return true if in this box
   bool CheckLock(DA2KEYS key);
@@ -100,6 +96,7 @@ private:
   bool keyState[128];
   bool buttonState[3];
   int  lastButton;
+  SDL_Renderer* renderer;
 
   void setButton(Uint8 k, bool b);
   void setKey(SDL_Keycode k, bool b);

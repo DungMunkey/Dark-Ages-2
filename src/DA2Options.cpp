@@ -78,13 +78,8 @@ bool cDA2Options::Logic(){
           if(tmpScreen!=Options.ScreenRes) {
             Options.ScreenRes=tmpScreen;
             display->resize(Options.ScreenRes);
-            float sx, sy;
-            SDL_Texture* tempText =SDL_GetRenderTarget(display->renderer);
-            SDL_SetRenderTarget(display->renderer, NULL);
-            SDL_GetRenderScale(display->renderer, &sx, &sy);
-            SDL_SetRenderTarget(display->renderer, tempText);
-            tempText=NULL;
-            diObj->setMouseOffsets(sx, (display->screenWidth / sx - 640) / 2, sy, (display->screenHeight / sy - 480) / 2);
+            //mouse coordinates are mapped through SDL_RenderCoordinatesFromWindow (see DA2Input::pollEvents),
+            //which reads the renderer's current logical presentation on every call, so no offset recompute is needed here.
             conf->h=display->screenHeight;
             conf->w=display->screenWidth;
           }

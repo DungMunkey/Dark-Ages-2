@@ -904,7 +904,7 @@ bool cDA2Game::Render() {
   r.x=diObj->mouseX - ddGfx->CursorX[Cursor[x][y]];
   r.h=24;
   r.w=16;
-  //DA2_RenderCopy(display->renderer, ddGfx->Cursor->texture, &ddGfx->aCursor[Cursor[x][y]], &r);
+  DA2_RenderCopy(display->renderer, ddGfx->Cursor->texture, &ddGfx->aCursor[Cursor[x][y]], &r);
   //ddObj->ddsb->Blt(&r, ddGfx->Cursor,&ddGfx->aCursor[Cursor[x][y]],DDBLT_WAIT|DDBLT_KEYSRC,NULL);
 	//sprintf(txt,"MouseX: %d  MouseY: %d  Cursor: %d",diObj->MouseX(),diObj->MouseY(),Cursor[x][y]);
 	//text.drawText(display->renderer,50,35,0,txt);

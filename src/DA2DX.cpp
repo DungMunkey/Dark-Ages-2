@@ -107,6 +107,11 @@ bool CDisplay::init(sConf& conf) {
         printf("Renderer could not be created! SDL Error: %s\n", SDL_GetError());
         success = false;
       } else {
+        //Cap the frame rate to the display's refresh rate instead of running the game loop as fast as the
+        //hardware allows (it never has been capped - the original code's SDL_RENDERER_PRESENTVSYNC flag was
+        //commented out). Several places advance game state by a fixed amount per frame rather than per
+        //elapsed time, so an uncapped loop made those run far faster than intended on modern hardware.
+        SDL_SetRenderVSync(renderer, 1);
         //Initialize renderer color
         SDL_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF, 0xFF);
         SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);

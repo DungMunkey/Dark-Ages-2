@@ -139,7 +139,8 @@ private:
 	bool bKeeps;
 
 	SDL_Rect clickList[21];
-	
+	Uint32 clickTime; //throttles the map-scroll buttons so holding one doesn't repeat every single frame
+
 	bool LoadJournal();
 	vector<int> journalIndex;
 

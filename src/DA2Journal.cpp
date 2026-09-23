@@ -5,6 +5,7 @@ cDA2Journal::cDA2Journal(){
 	ddGfx=NULL;
 	diObj=NULL;
 	flags=NULL;
+	clickTime=SDL_GetTicks();
 }
 
 cDA2Journal::~cDA2Journal(){
@@ -140,7 +141,8 @@ void cDA2Journal::SortJournal(){
 
 int cDA2Journal::Logic(){
 	int i;
-	bool bClick;
+	bool bClick=false;
+	Uint32 ElapsedTime=SDL_GetTicks();
 
 	diObj->pollEvents();
 
@@ -165,29 +167,43 @@ int cDA2Journal::Logic(){
 				return 0;
 				break;
 			case 1:
-				JournalY-=3;
-				if(JournalY<0) JournalY=0;
+				if(ElapsedTime-clickTime > 30){
+					clickTime=ElapsedTime;
+					JournalY-=3;
+					if(JournalY<0) JournalY=0;
+				}
 				break;
 			case 2:
-				JournalY+=3;
-				if(JournalY>600) JournalY=600;
+				if(ElapsedTime-clickTime > 30){
+					clickTime=ElapsedTime;
+					JournalY+=3;
+					if(JournalY>600) JournalY=600;
+				}
 				break;
 			case 3:
-				JournalX-=3;
-				if(JournalX<0) JournalX=0;
+				if(ElapsedTime-clickTime > 30){
+					clickTime=ElapsedTime;
+					JournalX-=3;
+					if(JournalX<0) JournalX=0;
+				}
 				break;
 			case 4:
-				JournalX+=3;
-				if(JournalX>616) JournalX=616;
+				if(ElapsedTime-clickTime > 30){
+					clickTime=ElapsedTime;
+					JournalX+=3;
+					if(JournalX>616) JournalX=616;
+				}
 				break;
 			case 5:
-				if(TextOffset>0) {
+				if(ElapsedTime-clickTime > 30 && TextOffset>0) {
+					clickTime=ElapsedTime;
 					TextOffset-=2;
 					if(TextOffset<0) TextOffset=0;
 				}
 				break;
 			case 6:
-				if(TextOffset<MaxTextOffset) {
+				if(ElapsedTime-clickTime > 30 && TextOffset<MaxTextOffset) {
+					clickTime=ElapsedTime;
 					TextOffset+=2;
 					if(TextOffset>MaxTextOffset) TextOffset=MaxTextOffset;
 				}

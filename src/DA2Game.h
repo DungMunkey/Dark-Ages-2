@@ -166,8 +166,7 @@ public:
   unsigned int tickAnim;
   unsigned int tickFPS;
   unsigned int tickNPC;
-  unsigned int tickX;
-  unsigned int tickY;
+  unsigned int walkAnimTimer; //ms accumulated toward the next walk-cycle frame advance, only while Player.Moving
 
 	//__int64 fps64;
 	//__int64 freq;
@@ -201,8 +200,8 @@ private:
   SDL_Texture* canvas;
   SDL_Surface* collide;
 
-	double xProgress;
-	double yProgress;
+	double xProgress; //fractional pixels of accumulated movement distance toward the next whole-pixel step (X axis)
+	double yProgress; //same, Y axis
 	int xSpeed;
 	int ySpeed;
 
